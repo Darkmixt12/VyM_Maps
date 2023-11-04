@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
-import { PlacesService } from '../../services';
+import { MapService, PlacesService } from '../../services';
 import { Map, Popup, Marker } from 'mapbox-gl';
 
 @Component({
@@ -10,6 +10,7 @@ import { Map, Popup, Marker } from 'mapbox-gl';
 export class MapViewComponent implements OnInit, AfterViewInit{
   
   private _placesService = inject(PlacesService)
+  private _mapService = inject(MapService)
   
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef
@@ -47,5 +48,7 @@ export class MapViewComponent implements OnInit, AfterViewInit{
       .setLngLat( this._placesService.userLocation) 
       .setPopup( popup )  
       .addTo( map ) 
+
+    this._mapService.setMap(map)
   }
 }
