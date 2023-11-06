@@ -5,6 +5,8 @@ import { MapViewComponent } from './components/map-view/map-view.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { MyLocationComponent } from './components/my-location/my-location.component';
 import { VymLogoComponent } from './components/vym-logo/vym-logo.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
 
 
 
@@ -14,7 +16,9 @@ import { VymLogoComponent } from './components/vym-logo/vym-logo.component';
     MapViewComponent,
     LoadingComponent,
     MyLocationComponent,
-    VymLogoComponent
+    VymLogoComponent,
+    SearchBarComponent,
+    SearchResultComponent
   ],
   imports: [
     CommonModule

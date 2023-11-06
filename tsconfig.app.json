@@ -3,7 +3,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [
+      "node" // para que funcione el debounce del search bar
+    ]
   },
   "files": [
     "src/main.ts"
