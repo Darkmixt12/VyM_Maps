@@ -1,0 +1,40 @@
+<div class="row mt-3">
+    <div></div>
+    <div class="col">
+      <h3>Listado de Locales</h3>
+      <hr>
+    </div>
+  </div>
+  
+  <div class="row mt-2">
+  
+    <div class="col m-3">
+  
+        <div class="row">
+  
+          <!-- Houses -->
+          <div *ngFor="let location of locations"  class="col-xs-4 col-md-3 col-sm-5 mb-3">
+  
+            <div class="card">
+              <!-- <img src="..." class="card-img-top"> -->
+              
+              <div class="card-img-top">
+                <app-mini-maps [lngLat]="location.lngLat"></app-mini-maps>
+              </div>
+  
+              <div class="card-body">
+                <h5 class="card-title">{{ location.title }}</h5>
+                <p class="card-text">{{ location.description }}</p>
+              </div>
+            </div>
+  
+          </div>
+  
+  
+  
+        </div>
+  
+  
+  
+    </div>
+  </div>
