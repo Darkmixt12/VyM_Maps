@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DescripcionesMapasComponent } from './components/descripciones-mapas/descripciones-mapas.component';
+import { DescripcionesMapasComponent } from './pages/descripciones-mapas/descripciones-mapas.component';
 
 
 const routes: Routes = [

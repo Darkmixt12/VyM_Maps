@@ -25,6 +25,7 @@ export class PlacesApiClient extends HttpClient {
 			params: {
 				limit: 5,
 				language: 'es',
+				country: 'cr',
 				access_token: environment.apiKey,
 				...options.params
 			}

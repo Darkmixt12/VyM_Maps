@@ -1,0 +1,21 @@
+<div class="container">
+	<h3>Agregar Ubicacion</h3>
+	<form action="" [formGroup]="myForm">
+		<div>
+		<label for="exampleInputEmail1">Nombre</label>
+		<input formControlName="title" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese el nombre de la Ubicacion">
+	</div>
+	<div>
+		<label for="exampleInputEmail1">Decripcion</label>
+		<input formControlName="description" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese una descripcion">
+	</div>
+	<div>
+		<label for="exampleInputEmail1">Ubicacion</label>
+		<input formControlName="lngLat" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Latitud y Logitud">
+	</div>
+	<button (click)="onSubmit()">
+		Guardar
+	</button>
+	</form>
+
+</div>

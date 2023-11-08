@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DescripcionesMapasComponent } from './components/descripciones-mapas/descripciones-mapas.component';
+import { DescripcionesMapasComponent } from './pages/descripciones-mapas/descripciones-mapas.component';
 import { MiniMapsComponent } from './components/mini-maps/mini-maps.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { FormUbicationComponent } from './components/form-ubication/form-ubication.component';
+import { MaterialModule } from '../material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,13 +13,16 @@ import { HomeRoutingModule } from './home-routing.module';
 @NgModule({
   declarations: [
 	DescripcionesMapasComponent,
-  MiniMapsComponent
+  MiniMapsComponent,
+  FormUbicationComponent
 
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
-
+    HomeRoutingModule,
+    MaterialModule,
+    ReactiveFormsModule
+    
   ]
 })
 export class HomeModule { }
