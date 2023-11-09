@@ -8,6 +8,7 @@ import { VymLogoComponent } from './components/vym-logo/vym-logo.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { BtnHomeComponent } from '../alone/components/btn-home/btn-home.component';
+import { MarkerBtnComponent } from './components/marker-btn/marker-btn.component';
 
 
 
@@ -20,6 +21,7 @@ import { BtnHomeComponent } from '../alone/components/btn-home/btn-home.componen
     VymLogoComponent,
     SearchBarComponent,
     SearchResultComponent,
+    MarkerBtnComponent,
     
   ],
   imports: [

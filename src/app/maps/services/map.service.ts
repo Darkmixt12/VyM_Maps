@@ -1,8 +1,15 @@
 import { Injectable, inject } from '@angular/core';
-import { AnySourceData, LngLatBounds, LngLatLike, Map, Marker, Popup } from 'mapbox-gl'
+import { AnySourceData, LngLat, LngLatBounds, LngLatLike, Map, Marker, Popup } from 'mapbox-gl'
 import { Feature } from '../interfaces/places';
 import { DirectionsApiClient } from '../api/directionsApiClient';
 import { DirectionsResponse, Route } from '../interfaces/directions';
+
+interface MarkerandColor {
+  color: string;
+  marker: Marker
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +18,7 @@ export class MapService {
 
   private map: Map | undefined
   private markers: Marker[] = []
+  public currentMarker: MarkerandColor[] = []
 
   get isMapReady(){
     return !!this.map
@@ -123,6 +131,5 @@ export class MapService {
         })
         }
 
-  
- 
+
 }

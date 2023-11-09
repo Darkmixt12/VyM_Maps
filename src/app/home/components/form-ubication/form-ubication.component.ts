@@ -27,7 +27,7 @@ onSubmit(){
   // const locations = Object.values(this.myForm.value)
   // console.log(locations)
   // locations.push(this.location)
-  // console.log(this.location)
+   console.log(this.location)
 }
 
 }

@@ -15,4 +15,5 @@ export class MapPageComponent {
   get isUserLocationReady(){
     return this._placesService.isUserLocationReady;
   }
+
 }

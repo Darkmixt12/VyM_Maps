@@ -1,6 +1,6 @@
 import { Component, OnInit, inject, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { MapService, PlacesService } from '../../services';
-import { Map, Popup, Marker } from 'mapbox-gl';
+import { Map, Popup, Marker, LngLat } from 'mapbox-gl';
 import * as mapboxgl from 'mapbox-gl';
 
 
@@ -14,6 +14,7 @@ export class MapViewComponent implements OnInit, AfterViewInit{
   
   private _placesService = inject(PlacesService)
   private _mapService = inject(MapService)
+  public map?: Map;
   
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef
@@ -33,7 +34,7 @@ export class MapViewComponent implements OnInit, AfterViewInit{
 
     if(!this._placesService.userLocation) throw new Error('No hay placesService.userLocation')
 
-    const map = new Map({
+    this.map = new Map({
       container: this.mapDivElement.nativeElement, // container ID
       style: 'mapbox://styles/mapbox/streets-v12', // style URL
       center: this._placesService.userLocation, // starting position [lng, lat]
@@ -50,8 +51,35 @@ export class MapViewComponent implements OnInit, AfterViewInit{
     new Marker({color: 'red'})
       .setLngLat( this._placesService.userLocation) 
       .setPopup( popup )  
-      .addTo( map ) 
+      .addTo( this.map ) 
 
-    this._mapService.setMap(map)
+    this._mapService.setMap(this.map)
+  }
+
+
+  getMarkerLngLat(lngLat: LngLat){
+    if(!this.map) return
+
+    const marker = new Marker({
+      draggable: true,
+      color: 'black'
+    })
+    .setLngLat(lngLat)
+    .addTo(this.map)
+    
+    marker.on('dragend', ()=>{
+      console.log(lngLat)
+    })
+  }
+
+  createMarker(){
+    if(!this.map) return
+    console.log('si estoy sirviendo mae')
+
+    
+    const lgnLat = this.map.getCenter()
+    this.getMarkerLngLat(lgnLat)
+
+    
   }
 }
