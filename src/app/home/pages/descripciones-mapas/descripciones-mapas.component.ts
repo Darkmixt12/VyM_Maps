@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { FormUbicationComponent } from '../../components/form-ubication/form-ubication.component';
+import { MarkerBtnComponent } from 'src/app/maps/components/marker-btn/marker-btn.component';
 
 export interface House {
   title: string;

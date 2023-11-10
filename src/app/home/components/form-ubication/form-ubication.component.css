@@ -14,3 +14,8 @@ label{
 	margin-bottom:10px;
 	margin-top: 10px
 }
+
+.latitud_input{
+	display: flex;
+}
+

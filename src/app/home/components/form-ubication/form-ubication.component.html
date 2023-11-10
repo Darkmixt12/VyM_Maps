@@ -11,11 +11,17 @@
 	</div>
 	<div>
 		<label for="exampleInputEmail1">Ubicacion</label>
+		<div class="latitud_input" >
 		<input formControlName="lngLat" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Latitud y Logitud">
+		<button class="btn btn-primary ms-1" (click)="openDialog()">
+			+
+		</button>
+		</div>
 	</div>
-	<button (click)="onSubmit()">
+	<button class="btn btn-primary mt-5 w-100">
 		Guardar
 	</button>
+	
 	</form>
 
 </div>

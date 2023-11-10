@@ -58,31 +58,4 @@ export class MapViewComponent implements OnInit, AfterViewInit{
   }
 
 
-  getMarkerLngLat(lngLat: LngLat){
-    if(!this.map) return
-
-    const marker = new Marker({
-      draggable: true,
-      color: 'black'
-    })
-    .setLngLat(lngLat)
-    .addTo(this.map)
-    
-    marker.on('dragend', ()=>{
-      console.log(lngLat)
-      const ubicaciones =marker.getLngLat()
-      this.ubicacion = ubicaciones
-    })
-  }
-
-  createMarker(){
-    if(!this.map) return
-    console.log('si estoy sirviendo mae')
-
-    
-    const lgnLat = this.map.getCenter()
-    this.getMarkerLngLat(lgnLat)
-
-    
-  }
 }
