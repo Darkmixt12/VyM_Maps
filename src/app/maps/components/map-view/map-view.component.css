@@ -8,6 +8,12 @@
 
 button{
 	position: fixed;
-	margin-top: 50px;
+	margin-top: 200px;
+	margin-right: 500px;
+}
+
+input{
+	position: fixed;
+	margin-top: 250px;
 	margin-right: 500px;
 }

@@ -15,7 +15,8 @@ export class MapViewComponent implements OnInit, AfterViewInit{
   private _placesService = inject(PlacesService)
   private _mapService = inject(MapService)
   public map?: Map;
-  
+  public ubicacion! : LngLat
+
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef
 
@@ -69,6 +70,8 @@ export class MapViewComponent implements OnInit, AfterViewInit{
     
     marker.on('dragend', ()=>{
       console.log(lngLat)
+      const ubicaciones =marker.getLngLat()
+      this.ubicacion = ubicaciones
     })
   }
 
