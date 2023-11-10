@@ -24,3 +24,17 @@ button{
     border-radius: 20px !important;
 
   }
+
+
+  .sidenav-cards{
+    margin-top: 20px;
+    display: flex;
+  }
+
+  alone-side-menu{
+    background: whitesmoke;
+    border-radius: 10px;
+    margin-left: 20px;
+    width: 30%;
+    box-shadow: 1px 1px 4px 4px rgba(0, 0, 0, 0.1);
+  }

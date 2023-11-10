@@ -6,6 +6,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { FormUbicationComponent } from './components/form-ubication/form-ubication.component';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SideMenuComponent } from '../alone/components/side-menu/side-menu.component';
 
 
 
@@ -14,14 +15,16 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
 	DescripcionesMapasComponent,
   MiniMapsComponent,
-  FormUbicationComponent
+  FormUbicationComponent,
+  
 
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SideMenuComponent
     
   ]
 })
