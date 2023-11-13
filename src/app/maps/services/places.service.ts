@@ -11,7 +11,7 @@ export class PlacesService {
   private placesHttp = inject(PlacesApiClient)
   private _mapService = inject(MapService);
 
-  public userLocation: [number,number] |undefined
+  public userLocation?: [number,number]
   public isLoadingPlaces: boolean = false;
   public places: Feature[] = []
   //public isLoading

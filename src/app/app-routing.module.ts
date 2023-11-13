@@ -4,7 +4,16 @@ import { MapPageComponent } from './maps/pages/map-page/map-page.component';
 
 const routes: Routes = [
   {
-    path: '', component: MapPageComponent
+    path: 'map', 
+    loadChildren: () => import('./maps/maps.module').then(m => m.MapsModule)
+  },
+
+  {
+    path: 'home', 
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: '**', redirectTo: 'home'
   }
 ];
 

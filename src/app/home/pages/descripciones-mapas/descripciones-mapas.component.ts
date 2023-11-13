@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import { FormUbicationComponent } from '../../components/form-ubication/form-ubication.component';
 import { MarkerBtnComponent } from 'src/app/maps/components/marker-btn/marker-btn.component';
 
 export interface House {
@@ -20,17 +19,6 @@ export class DescripcionesMapasComponent {
     public dialog: MatDialog,
     ){}
 
-    openDialog() {
-      const dialogRef = this.dialog.open(FormUbicationComponent, {
-        height: '550px',
-        width: '450px',
-        data: {locations: this.locations}
-      });
-  
-      dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`);
-      });
-    }
 
   public locations: House[] = [
     {

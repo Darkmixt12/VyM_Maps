@@ -8,8 +8,8 @@ import { VymLogoComponent } from './components/vym-logo/vym-logo.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { BtnHomeComponent } from '../alone/components/btn-home/btn-home.component';
-import { MarkerBtnComponent } from './components/marker-btn/marker-btn.component';
-import { SideMenuComponent } from '../alone/components/side-menu/side-menu.component';
+import { MapRoutingModule } from './maps-routing.module';
+import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
 
 
 
@@ -22,13 +22,13 @@ import { SideMenuComponent } from '../alone/components/side-menu/side-menu.compo
     VymLogoComponent,
     SearchBarComponent,
     SearchResultComponent,
-    MarkerBtnComponent,
+    MapsLayoutComponent,
     
   ],
   imports: [
     CommonModule,
     BtnHomeComponent,
-    SideMenuComponent
+    MapRoutingModule
   ]
 })
 export class MapsModule { }

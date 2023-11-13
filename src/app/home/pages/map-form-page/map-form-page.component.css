@@ -1,0 +1,37 @@
+.container{
+	padding: 25px;
+	
+	background-color: white;
+	border-radius: 5px;
+	width: 25vw;
+	height: 50vh;
+}
+
+h3{
+	text-align: center;
+	padding: 35px;
+	color: black;
+	margin-top: 20px;
+}
+
+label{
+	color: black;
+	margin-bottom:10px;
+	margin-top: 10px
+}
+
+.latitud_input{
+	display: flex;
+}
+
+
+.container-map{
+	display: flex;
+}
+
+.map-container{
+	padding-top: 200px;
+	border-radius: 10;
+}
+
+

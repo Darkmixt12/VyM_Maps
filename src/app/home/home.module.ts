@@ -3,10 +3,13 @@ import { CommonModule } from '@angular/common';
 import { DescripcionesMapasComponent } from './pages/descripciones-mapas/descripciones-mapas.component';
 import { MiniMapsComponent } from './components/mini-maps/mini-maps.component';
 import { HomeRoutingModule } from './home-routing.module';
-import { FormUbicationComponent } from './components/form-ubication/form-ubication.component';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SideMenuComponent } from '../alone/components/side-menu/side-menu.component';
+import { MapFormPageComponent } from './pages/map-form-page/map-form-page.component';
+import { MapRoutingModule } from '../maps/maps-routing.module';
+import { HomeLayoutComponent } from './layout/home-layout/home-layout.component';
+
+
 
 
 
@@ -15,7 +18,9 @@ import { SideMenuComponent } from '../alone/components/side-menu/side-menu.compo
   declarations: [
 	DescripcionesMapasComponent,
   MiniMapsComponent,
-  FormUbicationComponent,
+  MapFormPageComponent,
+  HomeLayoutComponent,
+
   
 
   ],
@@ -24,7 +29,8 @@ import { SideMenuComponent } from '../alone/components/side-menu/side-menu.compo
     HomeRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    SideMenuComponent
+    MapRoutingModule,
+ 
     
   ]
 })
