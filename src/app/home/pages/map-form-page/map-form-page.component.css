@@ -9,7 +9,7 @@
 
 h3{
 	text-align: center;
-	padding: 35px;
+	padding: 15px;
 	color: black;
 	margin-top: 20px;
 }
@@ -26,12 +26,63 @@ label{
 
 
 .container-map{
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 30px;
+	grid-auto-rows: minmax(100px, auto);
 }
 
 .map-container{
-	padding-top: 200px;
-	border-radius: 10;
+	top: 0px;
+	right: 0px;
+	width: 50vw;
+	height: 50vh;
+	margin-top: 20px;
+	border-radius: 10px;
+	
+
 }
 
+.div-map{
+	padding-top: 20;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 60px;
+	background-color: whitesmoke;
+	border-radius: 10px;
+}
 
+.btn-map{
+	position: fixed;
+	margin-top: 10px;
+}
+
+.input-map{
+	position: fixed;
+	margin-top: 10px;
+	width: 300px;
+	margin-left: 40px;
+
+}
+
+.input-Lat{
+	position: fixed;
+	display: flex;
+	margin-top: 10px;
+	width: 300px;
+	margin-left: 200px;
+	
+}
+
+.input-Lng{
+	position: fixed;
+	display: flex;
+	margin-top: 10px;
+	width: 300px;
+	margin-left: 550px;
+	
+}
+
+.label-lnglat{
+	margin-right: 20px;
+}

@@ -1,4 +1,3 @@
-
 <div class="container-map">
   <div class="container">
     <h3>Agregar Ubicacion</h3>
@@ -43,7 +42,27 @@
     </form>
   </div>
 
-  <div>
-  </div>
+  <div class="div-map">
+    <div #mapDiv class="map-container"></div>
+    <button (click)="createMarker()" class="btn-map btn btn-primary"> Añadir Marcador </button>
   
+    <div class="input-Lat">
+    <label class="label-lnglat"> Latitud </label>
+    <input class=" form-control" type="text" [value]="test?.lat">
+      
+    </div>
+
+    <div class="input-Lng">
+    <label class="label-lnglat"> Longitud </label>
+    <input class=" form-control" type="text" [value]="test?.lng">
+    </div>
+  </div>
+
+
+
+
+    
+ 
+
+
 </div>
