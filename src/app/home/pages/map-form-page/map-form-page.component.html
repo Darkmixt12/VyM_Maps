@@ -28,17 +28,16 @@
         <label for="exampleInputEmail1">Ubicacion</label>
         <div class="latitud_input">
           <input
+            #txtInput
             formControlName="lngLat"
-            type="email"
+            type="string"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
             placeholder="Latitud y Logitud"
           />
           <button class="btn btn-primary ms-1">+</button>
         </div>
       </div>
-      <button class="btn btn-primary mt-5 w-100">Guardar</button>
+      <button class="btn btn-primary mt-5 w-100" (click)="LogForm()">Guardar</button>
     </form>
   </div>
 

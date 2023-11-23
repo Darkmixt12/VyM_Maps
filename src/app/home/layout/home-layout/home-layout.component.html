@@ -1,38 +1,14 @@
-<mat-sidenav-container fullscreen>
+<div class="flex bg-slate-100 text-black overflow-y-scroll w-screen h-screen antialiased selection:bg-blue-600 selection:text-white">
+    
+	
+	<div class="flex relative w-screen">
 
-	<mat-sidenav #sidenav mode="push" [ngStyle]="{ width: '250px'}">
+		<app-nav-bar></app-nav-bar>
 
-		<mat-toolbar color="accent">
+		<div class="text-black px-2 mt-2 w-full">
+			<router-outlet/>
+		</div>
 
-			<span> Menu</span>
-			<span class="spacer"></span>
-			<button mat-icon-button (click)="sidenav.toggle()">
-				<mat-icon>menu</mat-icon>
-			</button>
-		</mat-toolbar>
+    </div>
+</div>
 
-		<mat-nav-list>
-		 <mat-list-item
-		 *ngFor="let item of sidebarItems"
-		 [routerLink]="item.url"
-		 (click)="sidenav.toggle()"
-		 >
-			<mat-icon> {{item.icon}} </mat-icon>
-			{{item.label}}
-		 </mat-list-item>
-		</mat-nav-list>
-
-	</mat-sidenav>
-
-	<mat-toolbar color="primary">
-		<button mat-icon-button (click)="sidenav.toggle()">
-			<mat-icon>menu</mat-icon>
-		</button>
-
-	</mat-toolbar>
-
-
-	<div class="container p-2">
-	<router-outlet></router-outlet>
-	</div>
-</mat-sidenav-container>

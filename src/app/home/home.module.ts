@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MapFormPageComponent } from './pages/map-form-page/map-form-page.component';
 import { MapRoutingModule } from '../maps/maps-routing.module';
 import { HomeLayoutComponent } from './layout/home-layout/home-layout.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -30,8 +31,8 @@ import { HomeLayoutComponent } from './layout/home-layout/home-layout.component'
     MaterialModule,
     ReactiveFormsModule,
     MapRoutingModule,
- 
-    
+    SharedModule,
+
   ]
 })
 export class HomeModule { }

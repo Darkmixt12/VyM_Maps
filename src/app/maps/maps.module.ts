@@ -7,7 +7,7 @@ import { MyLocationComponent } from './components/my-location/my-location.compon
 import { VymLogoComponent } from './components/vym-logo/vym-logo.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
-import { BtnHomeComponent } from '../alone/components/btn-home/btn-home.component';
+import { BtnHomeComponent } from '../shared/btn-home/btn-home.component';
 import { MapRoutingModule } from './maps-routing.module';
 import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
 

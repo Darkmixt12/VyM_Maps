@@ -26,10 +26,11 @@ export class MapFormPageComponent{
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef
 
+
   public myForm: FormGroup = this.fb.group({
     title: ['test1', [Validators.required]],
     description: ['de la calle maestra', [Validators.required]],
-    lngLat: [this.test, [Validators.required]],
+    lngLat: ['', [Validators.required]],
 })
 
   ngAfterViewInit(): void {
@@ -61,8 +62,7 @@ addMarker(lngLat: LngLat){
   
   marker.on('dragend', ()=>{
    this.test = marker.getLngLat();
-   this.test2 = [this.test?.lng , this.test?.lat]
-   console.log(this.test2)
+   this.test2 = [this.test.lng , this.test.lat]
   })
 }
 
@@ -75,6 +75,12 @@ createMarker(){
   
   
 }
+
+LogForm(){
+  console.log(this.myForm.value)
+}
+
+
 
 
 
