@@ -1,5 +1,5 @@
 <div class="container-map">
-  <div class="container">
+  <div class="container mt-6">
     <h3>Agregar Ubicacion</h3>
     <form action="" [formGroup]="myForm">
       <div>
@@ -14,13 +14,23 @@
         />
       </div>
       <div>
+        <label for="exampleInputEmail1">Provincia</label>
+        <select class="form-select" aria-label="Default select example" formControlName="provincia">
+          <option value="San Jose">San Jose</option>
+          <option value="Heredia">Heredia</option>
+          <option value="Cartago">Cartago</option>
+          <option value="Alajuela">Alajuela</option>
+          <option value="Limon">Limón</option>
+          <option value="Guanacaste">Guanacaste</option>
+          <option value="Puntarenas">Puntarenas</option>
+
+        </select>
+      </div>
+      <div>
         <label for="exampleInputEmail1">Decripcion</label>
         <input
           formControlName="description"
-          type="email"
           class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
           placeholder="Ingrese una descripcion"
         />
       </div>
@@ -28,33 +38,35 @@
         <label for="exampleInputEmail1">Ubicacion</label>
         <div class="latitud_input">
           <input
-            #txtInput
+            
             formControlName="lngLat"
-            type="string"
+            type="text"
             class="form-control"
             placeholder="Latitud y Logitud"
           />
-          <button class="btn btn-primary ms-1">+</button>
+          <button (click)="inputFormValue()" class="btn btn-primary ms-1">+</button>
         </div>
       </div>
-      <button class="btn btn-primary mt-5 w-100" (click)="LogForm()">Guardar</button>
+      <button (click)="formlog(myForm.value)" class="btn btn-primary mt-5 w-100">Guardar</button>
     </form>
   </div>
 
-  <div class="div-map">
+  <div class="div-map mt-6">
     <div #mapDiv class="map-container"></div>
     <button (click)="createMarker()" class="btn-map btn btn-primary"> Añadir Marcador </button>
   
+    <div class="input-Lng">
+      <label class="label-lnglat"> Longitud </label>
+      <input class=" form-control" type="text" [value]="test?.lng">
+      </div>
+
     <div class="input-Lat">
     <label class="label-lnglat"> Latitud </label>
     <input class=" form-control" type="text" [value]="test?.lat">
       
     </div>
 
-    <div class="input-Lng">
-    <label class="label-lnglat"> Longitud </label>
-    <input class=" form-control" type="text" [value]="test?.lng">
-    </div>
+
   </div>
 
 

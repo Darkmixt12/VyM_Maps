@@ -1,35 +1,39 @@
-import { Component, ElementRef, Inject, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, Inject, ViewChild, inject, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LngLat, Map, Marker, Popup } from 'mapbox-gl';
 import { MapService, PlacesService } from 'src/app/maps/services';
-
+import { LocationArray } from '../../interfaces/Locations';
 interface MarkerandColor {
   color: string;
   marker: Marker
 }
+
 
 @Component({
   selector: 'app-map-form-page',
   templateUrl: './map-form-page.component.html',
   styleUrls: ['./map-form-page.component.css']
 })
-export class MapFormPageComponent{
+export class MapFormPageComponent implements AfterViewInit, OnInit{
 
 
   private fb = inject(FormBuilder)
 
+
   public currentMarker: MarkerandColor[] = []
   public test?: LngLat
   public map?: Map;
-  public test2?: [number | undefined, number | undefined] 
+  public locationsArray : LocationArray[] = []
 
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef
 
 
+
   public myForm: FormGroup = this.fb.group({
-    title: ['test1', [Validators.required]],
-    description: ['de la calle maestra', [Validators.required]],
+    title: ['', [Validators.required]],
+    provincia: ['', Validators.required],
+    description: ['', [Validators.required]],
     lngLat: ['', [Validators.required]],
 })
 
@@ -43,6 +47,12 @@ export class MapFormPageComponent{
       zoom: 12, // starting zoom
       });
     //this._mapService.setMap(this.map)
+  }
+
+  ngOnInit(){
+    console.log('hola')
+    const Ubicaciones = localStorage.getItem('locations')
+    console.log(Ubicaciones)
   }
 
 
@@ -62,7 +72,6 @@ addMarker(lngLat: LngLat){
   
   marker.on('dragend', ()=>{
    this.test = marker.getLngLat();
-   this.test2 = [this.test.lng , this.test.lat]
   })
 }
 
@@ -76,13 +85,23 @@ createMarker(){
   
 }
 
-LogForm(){
-  console.log(this.myForm.value)
+inputFormValue(){
+
+  if  (!this.test) return
+  this.myForm.patchValue({
+    lngLat: [this.test.lng,this.test.lat]
+  })
 }
 
+formlog(myForm : any){
+  console.log(myForm)
 
-
-
-
-
+  // if(!myForm.value) return 
+  if(!myForm) return 
+  this.locationsArray.push(myForm)
+  console.log('Buenas tardes', this.locationsArray)
+  localStorage.setItem('locations', JSON.stringify(this.locationsArray));
+  
 }
+
+}    

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { MarkerBtnComponent } from 'src/app/maps/components/marker-btn/marker-btn.component';
+import { LocationArray } from '../../interfaces/Locations';
 
 export interface House {
   title: string;
@@ -61,7 +62,14 @@ export class DescripcionesMapasComponent {
       description: 'Local comercial disponible en Madrid, España, cerca de El Jardín Secreto.',
       lngLat: [ -3.7112735618380177, 40.42567285425766 ]
     },
-  ]
+    {
+      title: 'Estadio la Sabana',
+      description: 'Local comercial disponible en Madrid, España, cerca de El Jardín Secreto.',
+      lngLat: [-84.10773189062814,9.93690487667125 ]
 
+    }
+  ]
+ 
+  
 
 }

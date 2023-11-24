@@ -48,7 +48,7 @@ label{
 	padding-right: 20px;
 	padding-left: 20px;
 	padding-bottom: 60px;
-	background-color: whitesmoke;
+	background-color: white	;
 	border-radius: 10px;
 }
 
@@ -66,11 +66,12 @@ label{
 }
 
 .input-Lat{
+	
 	position: fixed;
 	display: flex;
 	margin-top: 10px;
 	width: 300px;
-	margin-left: 200px;
+	margin-left: 550px;
 	
 }
 
@@ -79,7 +80,8 @@ label{
 	display: flex;
 	margin-top: 10px;
 	width: 300px;
-	margin-left: 550px;
+	margin-left: 200px;
+
 	
 }
 

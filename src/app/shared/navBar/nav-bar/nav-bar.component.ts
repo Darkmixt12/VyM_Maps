@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class NavBarComponent {
 
   public navBarRoutes = [
-    { label: 'Mapa', description: 'Mapa Completo', url: './fullview'},
+    { label: 'Mapa', description: 'Mapa Completo', url: '/map/fullview'},
     { label: 'Lugares', description: 'Ubicaciones Añadidas', url: './ubicaciones'},
     { label: 'Nuevo Lugar', description: 'Nueva Ubicacion', url: './form'},
   ]
