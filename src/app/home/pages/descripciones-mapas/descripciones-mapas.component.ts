@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { MarkerBtnComponent } from 'src/app/maps/components/marker-btn/marker-btn.component';
 import { LocationArray } from '../../interfaces/Locations';
@@ -9,17 +9,25 @@ export interface House {
   lngLat: [number, number];
 }
 
+export interface RenderLocation {
+  title: string;
+  provincia: string;
+  description : string;
+  lngLat: [number, number]
+}
+
 @Component({
   selector: 'app-descri-maps',
   templateUrl: './descripciones-mapas.component.html',
   styleUrls: ['./descripciones-mapas.component.css'],
   providers: [MatDialog]
 })
-export class DescripcionesMapasComponent {
+export class DescripcionesMapasComponent implements OnInit{
   constructor(
     public dialog: MatDialog,
     ){}
 
+  public lugaresRender? : RenderLocation[]
 
   public locations: House[] = [
     {
@@ -68,8 +76,20 @@ export class DescripcionesMapasComponent {
       lngLat: [-84.10773189062814,9.93690487667125 ]
 
     }
+
+    
   ]
- 
+  
+  ngOnInit() {
+    this.readFormLocalStorage()
+  }
+
+  readFormLocalStorage(){
+    const plainMarkersString = localStorage.getItem('locations') ?? '[]'
+    const plainMarkers = JSON.parse(plainMarkersString)
+    this.lugaresRender = plainMarkers
+  }
+  
   
 
 }

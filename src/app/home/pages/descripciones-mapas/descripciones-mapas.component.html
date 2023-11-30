@@ -18,7 +18,7 @@
       <div class="row">
         <!-- Houses -->
         <div
-          *ngFor="let location of locations"
+          *ngFor="let location of lugaresRender"
           class="col-xs-4 col-md-3 col-sm-5 mb-3"
         >
 
@@ -26,12 +26,14 @@
           <div class="card">
             <!-- <img src="..." class="card-img-top"> -->
 
+            
+              <h5 class="card-header pt-2">{{ location.title  | uppercase }}</h5>
+         
             <div class="card-img-top">
               <app-mini-maps [lngLat]="location.lngLat"></app-mini-maps>
             </div>
-
             <div class="card-body">
-              <h5 class="card-title">{{ location.title }}</h5>
+              <h5 class="card-title">{{ location.provincia }}</h5>
               <p class="card-text">{{ location.description }}</p>
             </div>
           </div>

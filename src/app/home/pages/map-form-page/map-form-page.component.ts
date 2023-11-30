@@ -47,6 +47,7 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
       zoom: 12, // starting zoom
       });
     //this._mapService.setMap(this.map)
+ 
   }
 
   ngOnInit(){
@@ -99,9 +100,15 @@ formlog(myForm : any){
   // if(!myForm.value) return 
   if(!myForm) return 
   this.locationsArray.push(myForm)
-  console.log('Buenas tardes', this.locationsArray)
-  localStorage.setItem('locations', JSON.stringify(this.locationsArray));
+  this.saveToLocalStorage()
+  this.myForm.reset()
   
 }
 
+saveToLocalStorage(){
+  localStorage.setItem('locations', JSON.stringify(this.locationsArray))
+}
+
+
 }    
+
