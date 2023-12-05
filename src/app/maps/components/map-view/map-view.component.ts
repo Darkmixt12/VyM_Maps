@@ -70,18 +70,22 @@ export class MapViewComponent implements OnInit, AfterViewInit{
     this.lugaresRender = plainMarkers
   }
 
-
+  
   generateMarkers(){
 
     if(!this.map) return
 
-    new Marker({
-      color: 'blue',
+    this.lugaresRender?.forEach( ({lngLat, provincia}) => {
+      const [lng, lat] = lngLat
+       const coords = new LngLat( lng, lat);
+
+     new Marker({
+      color: '#075e62',
       draggable: false
+     })
+     .setLngLat(coords)
+     .addTo(this.map!)
     })
-    .setLngLat(this.lugaresRender![0].lngLat)
-    .addTo(this.map)
-    console.log(this.lugaresRender)
   }
 
 
