@@ -9,6 +9,7 @@ import { MapFormPageComponent } from './pages/map-form-page/map-form-page.compon
 import { MapRoutingModule } from '../maps/maps-routing.module';
 import { HomeLayoutComponent } from './layout/home-layout/home-layout.component';
 import { SharedModule } from '../shared/shared.module';
+import { MapListComponent } from './pages/map-list/map-list/map-list.component';
 
 
 
@@ -21,6 +22,7 @@ import { SharedModule } from '../shared/shared.module';
   MiniMapsComponent,
   MapFormPageComponent,
   HomeLayoutComponent,
+  MapListComponent,
 
   
 
