@@ -23,6 +23,7 @@ import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component'
     SearchBarComponent,
     SearchResultComponent,
     MapsLayoutComponent,
+
     
   ],
   imports: [

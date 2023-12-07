@@ -34,7 +34,7 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
     title: ['', [Validators.required]],
     provincia: ['', Validators.required],
     description: ['', [Validators.required]],
-    lngLat: ['', [Validators.required]],
+    lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
 })
 
   ngAfterViewInit(): void {

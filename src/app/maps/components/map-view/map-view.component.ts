@@ -7,7 +7,7 @@ import {
   ElementRef,
 } from '@angular/core';
 import { MapService, PlacesService } from '../../services';
-import { Map, Popup, Marker, LngLat } from 'mapbox-gl';
+import { Map, Popup, Marker, LngLat, LngLatBounds } from 'mapbox-gl';
 import * as mapboxgl from 'mapbox-gl';
 import { RenderLocation } from 'src/app/home/pages/descripciones-mapas/descripciones-mapas.component';
 import { elementAt } from 'rxjs';
@@ -24,9 +24,12 @@ export class MapViewComponent implements OnInit, AfterViewInit {
   public ubicacion!: LngLat;
 
   public lugaresRender?: RenderLocation[];
+  public hidePlaces: Boolean = false;
 
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef;
+  
+  
 
   ngOnInit() {
     this.readFormLocalStorage();
@@ -40,7 +43,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
       container: this.mapDivElement.nativeElement, // container ID
       style: 'mapbox://styles/mapbox/streets-v12', // style URL
       center: this._placesService.userLocation, // starting position [lng, lat]
-      zoom: 14, // starting zoom
+      zoom: 8, // starting zoom
     });
 
     const popup = new Popup().setHTML(`
@@ -54,6 +57,10 @@ export class MapViewComponent implements OnInit, AfterViewInit {
       .addTo(this.map);
 
     this._mapService.setMap(this.map);
+  }
+
+  toogleLocations(){
+    this.hidePlaces =! this.hidePlaces
   }
 
   readFormLocalStorage() {
@@ -86,5 +93,9 @@ export class MapViewComponent implements OnInit, AfterViewInit {
         }
       }
     });
+
+
   }
+
+  
 }

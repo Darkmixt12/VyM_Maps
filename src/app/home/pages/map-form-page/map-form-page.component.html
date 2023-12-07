@@ -38,7 +38,7 @@
         <label for="exampleInputEmail1">Ubicacion</label>
         <div class="latitud_input">
           <input
-            
+            [readonly]="true"
             formControlName="lngLat"
             type="text"
             class="form-control"
@@ -47,9 +47,15 @@
           <button (click)="inputFormValue()" class="btn btn-primary ms-1">+</button>
         </div>
       </div>
-      <button (click)="formlog(myForm.value)" class="btn btn-primary mt-5 w-100">Guardar</button>
+      <button [disabled]="myForm.invalid" (click)="formlog(myForm.value)" class="btn btn-primary mt-5 w-100">Guardar</button>
     </form>
   </div>
+
+
+
+
+
+
 
   <div class="div-map mt-6">
     <div #mapDiv class="map-container"></div>
