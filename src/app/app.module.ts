@@ -11,6 +11,8 @@ import { MapsModule } from './maps/maps.module';
 import { HomeModule } from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { ConnectionServiceModule } from 'ng-connection-service';
+
 
 
 @NgModule({
@@ -26,8 +28,12 @@ import { SharedModule } from './shared/shared.module';
     MapsModule,
     HomeModule,
     
+    
+    
     HttpClientModule,
-         BrowserAnimationsModule
+    BrowserAnimationsModule,
+    
+         
   ],
   providers: [],
   bootstrap: [AppComponent]

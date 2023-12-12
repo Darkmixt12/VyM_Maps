@@ -29,7 +29,7 @@ import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component'
   imports: [
     CommonModule,
     BtnHomeComponent,
-    MapRoutingModule
+    MapRoutingModule,
   ]
 })
 export class MapsModule { }

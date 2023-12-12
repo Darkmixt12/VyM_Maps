@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ConnectionService, ConnectionState, ConnectionServiceOptions} from 'ng-connection-service'
+import { Subscription, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'maps';
+
+  status!: string;
+  currentState!: ConnectionState;
+  subscription = new Subscription();
+
 }
+
+

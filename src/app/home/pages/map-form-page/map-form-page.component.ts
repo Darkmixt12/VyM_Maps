@@ -51,9 +51,6 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
   }
 
   ngOnInit(){
-    console.log('hola')
-    const Ubicaciones = localStorage.getItem('locations')
-    console.log(Ubicaciones)
   }
 
 
@@ -95,7 +92,6 @@ inputFormValue(){
 }
 
 formlog(myForm : any){
-  console.log(myForm)
 
   // if(!myForm.value) return 
   if(!myForm) return 

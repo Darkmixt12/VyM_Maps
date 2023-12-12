@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConnectionService, ConnectionState, ConnectionServiceOptions} from 'ng-connection-service'
 
 @Component({
 
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-layout.component.css']
 })
 export class HomeLayoutComponent {
+
   public sidebarItems = [
     {
       label: 'Ubicaciones', icon: 'label', url: '/home/ubicaciones'
@@ -18,4 +20,9 @@ export class HomeLayoutComponent {
       label: 'Buscar', icon: 'search', url: '/map/fullview'
     },
   ]
+
 }
+
+
+
+

@@ -71,16 +71,25 @@ export class MapViewComponent implements OnInit, AfterViewInit {
 
   marksPorProvincia(provincias?: string, color?: string) {
     if (!this.map) return;
-    this.lugaresRender?.forEach(({ lngLat, provincia }) => {
-    
+ 
+    this.lugaresRender?.forEach(({ lngLat, provincia, title, description  }) => {
+      
+      const popup = new Popup().setHTML(`
+      <h3>${provincia}</h3>
+      <span>${title}</span>
+    `);
+
       if (provincia === provincias) {
-        console.log(this.lugaresRender)
+
+
         new Marker({
           color: color,
           draggable: false,
         })
           .setLngLat(lngLat)
-          .addTo(this.map!);
+          .setPopup(popup)
+          .addTo(this.map!)
+          
 
       } else {
         if (provincias === undefined) {
@@ -89,7 +98,9 @@ export class MapViewComponent implements OnInit, AfterViewInit {
             draggable: false,
           })
             .setLngLat(lngLat)
+            .setPopup(popup)
             .addTo(this.map!);
+            
         }
       }
     });
