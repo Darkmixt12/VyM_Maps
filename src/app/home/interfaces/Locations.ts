@@ -9,3 +9,8 @@ export interface LocationArray {
 	provincia: string,
 	title: string,
 }
+
+export interface Places {
+	provincia: string,
+	title: string,
+}
