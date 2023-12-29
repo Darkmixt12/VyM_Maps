@@ -30,6 +30,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
   private markers: Marker[] = [];
   public markersLocations!: string
   public places: Places[] = []
+  public selectLocation: string = ''
 
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef;
@@ -97,7 +98,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
           .addTo(this.map!)
 
           newMarkers.push(newMarker)
-          this.places.push({provincia, title})
+          this.places.push({provincia, title, lngLat})
       }
     });
     this.markers = newMarkers
@@ -109,6 +110,14 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     newMarkers.forEach(marker => bounds.extend(marker.getLngLat()));
     this.map.fitBounds(bounds, {padding: 200})
 
+  }
+
+  flyto( place:Places){
+    //this.selectLocation = place.id
+  
+    const [ lng, lat] = place.lngLat
+  
+    this._mapService.flyTo([ lng, lat])
   }
 
   

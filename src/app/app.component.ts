@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ConnectionService, ConnectionState, ConnectionServiceOptions} from 'ng-connection-service'
-import { Subscription, tap } from 'rxjs';
+import { Component, OnInit, computed, effect, inject } from '@angular/core';
+import { AuthService } from './auth/services/auth.service';
+import { AuthStatus } from './auth/interfaces/auth-status.enum';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -9,9 +11,37 @@ import { Subscription, tap } from 'rxjs';
 })
 export class AppComponent {
 
-  status!: string;
-  currentState!: ConnectionState;
-  subscription = new Subscription();
+  private authService = inject(AuthService);
+  private router = inject(Router);
+  
+  public finishedAuthCheck = computed<boolean>( () => {
+
+    if( this.authService.authStatus() === AuthStatus.checking ) {
+      return false;
+    }
+
+    return true;
+
+  })
+
+  public authStatusChangedEffect = effect( () => {
+
+    switch( this.authService.authStatus() ) {
+
+      case AuthStatus.checking:
+      return;
+
+      case AuthStatus.authenticated:
+        this.router.navigateByUrl('/home/inicio')
+        return;
+
+      case AuthStatus.notAuthenticated:
+        this.router.navigateByUrl('/auth/login')
+      return;
+      
+    }
+      
+  })
 
 }
 

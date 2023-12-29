@@ -13,4 +13,5 @@ export interface LocationArray {
 export interface Places {
 	provincia: string,
 	title: string,
+	lngLat: number[],
 }
