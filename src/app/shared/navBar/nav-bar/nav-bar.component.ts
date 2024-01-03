@@ -16,8 +16,12 @@ export class NavBarComponent {
 
     constructor(){
 
+      
 
 
+    }
 
+    onLogout(){
+      
     }
 }
