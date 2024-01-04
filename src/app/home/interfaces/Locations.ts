@@ -14,4 +14,5 @@ export interface Places {
 	provincia: string,
 	title: string,
 	lngLat: number[],
+	description: string,
 }

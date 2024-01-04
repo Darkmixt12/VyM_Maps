@@ -79,7 +79,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     if (!this.map) return;
     const newMarkers: any[] = [];
     this.places = [];
-    this.lugaresRender?.forEach(({ lngLat, provincia, title}) => {
+    this.lugaresRender?.forEach(({provincia, lngLat, title, description}) => {
      
       const popup = new Popup().setHTML(`
       <h3>${provincia}</h3>
@@ -98,7 +98,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
           .addTo(this.map!)
 
           newMarkers.push(newMarker)
-          this.places.push({provincia, title, lngLat})
+          this.places.push({provincia, title, lngLat, description})
       }
     });
     this.markers = newMarkers
