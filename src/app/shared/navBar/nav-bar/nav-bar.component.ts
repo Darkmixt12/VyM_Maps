@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../../../auth/services/auth.service';
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -6,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
 
+  private AuthService = inject(AuthService);
+
+  
   public navBarRoutes = [
     { label: 'Mapa', description: 'Mapa Completo', url: '/map/fullview'},
     { label: 'Lugares', description: 'Ubicaciones Añadidas', url: './ubicaciones'},
@@ -14,14 +19,11 @@ export class NavBarComponent {
   ]
 
 
-    constructor(){
-
-      
+    constructor(){}
 
 
+    logout(){
+      this.AuthService.onLogout()
     }
 
-    onLogout(){
-      
-    }
 }
