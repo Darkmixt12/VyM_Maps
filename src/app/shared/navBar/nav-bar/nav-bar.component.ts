@@ -12,10 +12,11 @@ export class NavBarComponent {
 
   
   public navBarRoutes = [
+    { label: 'Home', description: 'Informacion', url: './home/inicio'},
     { label: 'Mapa', description: 'Mapa Completo', url: '/map/fullview'},
-    { label: 'Lugares', description: 'Ubicaciones Añadidas', url: './ubicaciones'},
+    { label: 'Clientes', description: 'Lista', url: './map-list'},
     { label: 'Nuevo Lugar', description: 'Nueva Ubicacion', url: './form'},
-    { label: 'Lista de Ubicaciones', description: 'Lista', url: './map-list'},
+  
   ]
 
 
