@@ -14,6 +14,19 @@
         />
       </div>
       <div>
+        <label for="exampleInputEmail1">Agente</label>
+        <select class="form-select" aria-label="Default select example" formControlName="agente">
+          <option value="O10">O10</option>
+          <option value="23">23</option>
+          <option value="R12">R12</option>
+          <option value="V01">V01</option>
+          <option value="P10">P10</option>
+          <option value="W32">W32</option>
+          <option value="M33">M33</option>
+
+        </select>
+      </div>
+      <div>
         <label for="exampleInputEmail1">Provincia</label>
         <select class="form-select" aria-label="Default select example" formControlName="provincia">
           <option value="San Jose">San Jose</option>
@@ -26,6 +39,7 @@
 
         </select>
       </div>
+
       <div>
         <label for="exampleInputEmail1">Decripcion</label>
         <input
@@ -47,7 +61,7 @@
           <button (click)="inputFormValue()" class="btn btn-primary ms-1">+</button>
         </div>
       </div>
-      <button [disabled]="myForm.invalid" (click)="formlog(myForm.value)" class="btn btn-primary mt-5 w-100">Guardar</button>
+      <button [disabled]="myForm.invalid" (click)="saveNewLocation()" class="btn btn-primary mt-5 w-100">Guardar</button>
     </form>
   </div>
 

@@ -3,9 +3,9 @@ import { LngLat } from "mapbox-gl"
 export interface LocationArray {
 
 	agente: string,
-	cliente: string
+	cliente: string,
 	description: string,
-	lngLat: LngLat
+	lngLat: LngLat,
 	provincia: string,
 	title: string,
 }
@@ -16,3 +16,4 @@ export interface Places {
 	lngLat: number[],
 	description: string,
 }
+

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LngLat, Map, Marker, Popup } from 'mapbox-gl';
 import { MapService, PlacesService } from 'src/app/maps/services';
 import { LocationArray } from '../../interfaces/Locations';
+import { LocationService } from '../../services/locations.service';
 interface MarkerandColor {
   color: string;
   marker: Marker
@@ -18,6 +19,7 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
 
 
   private fb = inject(FormBuilder)
+  private locationService = inject(LocationService);
 
 
   public currentMarker: MarkerandColor[] = []
@@ -35,6 +37,7 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
     provincia: ['', Validators.required],
     description: ['', [Validators.required]],
     lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
+    agente: ['', Validators.required]
 })
 
   ngAfterViewInit(): void {
@@ -105,6 +108,10 @@ saveToLocalStorage(){
   localStorage.setItem('locations', JSON.stringify(this.locationsArray))
 }
 
+saveNewLocation(){
+  this.locationService.registerLocation(this.myForm.value).subscribe(console.log)
+  this.myForm.reset()
+}
 
 }    
 
