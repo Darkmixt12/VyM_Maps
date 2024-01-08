@@ -11,7 +11,9 @@ import { Map, Popup, Marker, LngLat, LngLatBounds } from 'mapbox-gl';
 import * as mapboxgl from 'mapbox-gl';
 import { RenderLocation } from 'src/app/home/pages/descripciones-mapas/descripciones-mapas.component';
 import { Feature } from '../../interfaces/places';
-import { Places } from 'src/app/home/interfaces/Locations';
+import { LocationList, Places } from 'src/app/home/interfaces/Locations';
+import { LocationService } from 'src/app/home/services/locations.service';
+import { pipe, map, from } from 'rxjs';
 
 
 @Component({
@@ -22,6 +24,7 @@ import { Places } from 'src/app/home/interfaces/Locations';
 export class MapViewComponent implements OnInit, AfterViewInit {
   private _placesService = inject(PlacesService);
   private _mapService = inject(MapService);
+  private locationService = inject(LocationService);
   public map?: Map;
   public ubicacion!: LngLat;
 
@@ -31,6 +34,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
   public markersLocations!: string
   public places: Places[] = []
   public selectLocation: string = ''
+  public listaLugares : Location[] = []
 
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef;
@@ -39,6 +43,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.readFormLocalStorage();
+    this.getAllLocations();
   }
 
   ngAfterViewInit(): void {
@@ -112,12 +117,26 @@ export class MapViewComponent implements OnInit, AfterViewInit {
 
   }
 
+  // lugaresXProvincia(){
+  //   if (!this.map) return;
+  //   const newMarkers: any[] = [];
+  //   this.places = [];
+  //   this.listaLugares.forEach(({ pro}))
+  // }
+
   flyto( place:Places){
     //this.selectLocation = place.id
   
-    const [ lng, lat] = place.lngLat
+    const [lng, lat] = place.lngLat
   
     this._mapService.flyTo([ lng, lat])
+  }
+
+
+  getAllLocations(){
+   this.locationService.getLocations().pipe(
+    from<Location>( listaFacturas)
+   ).subscribe();
   }
 
   

@@ -17,3 +17,13 @@ export interface Places {
 	description: string,
 }
 
+export interface LocationList {
+
+	title: string,
+	lngLat: LngLat,
+	provincia: string,
+	description: string,
+	agente: string,
+}
+
+

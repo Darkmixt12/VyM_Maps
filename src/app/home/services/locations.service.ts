@@ -12,7 +12,7 @@ import { Location } from "../interfaces/newLocation";
 
 
 	private readonly baseUrl: string = environment.baseUrl;
-	url = `${this.baseUrl}/locations/register`
+	url = `${this.baseUrl}/locations/`
 	private http = inject(HttpClient);
 
 
@@ -20,6 +20,13 @@ import { Location } from "../interfaces/newLocation";
 		const params = JSON.stringify(myForm)
 		const headers = new HttpHeaders().set('Content-Type', 'application/json')
 
-		return this.http.post<Location>(this.url, params, {headers})
+		return this.http.post<Location>(this.url+'register', params, {headers})
+	}
+
+	getLocations(): Observable<Location[]>{
+
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+
+		return	this.http.get<Location[]>(this.url+'list',{headers})
 	}
   }

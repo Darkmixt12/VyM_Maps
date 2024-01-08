@@ -1,9 +1,11 @@
 import { Component, ElementRef, Inject, ViewChild, inject, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LngLat, Map, Marker, Popup } from 'mapbox-gl';
-import { MapService, PlacesService } from 'src/app/maps/services';
-import { LocationArray } from '../../interfaces/Locations';
+import { LocationArray, LocationList } from '../../interfaces/Locations';
 import { LocationService } from '../../services/locations.service';
+
+
+
 interface MarkerandColor {
   color: string;
   marker: Marker
@@ -26,6 +28,7 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
   public test?: LngLat
   public map?: Map;
   public locationsArray : LocationArray[] = []
+
 
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef
