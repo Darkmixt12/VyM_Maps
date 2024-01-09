@@ -1,3 +1,5 @@
+import { LocationService } from './../../services/locations.service';
+
 import {
   Component,
   OnInit,
@@ -10,10 +12,8 @@ import { MapService, PlacesService } from '../../services';
 import { Map, Popup, Marker, LngLat, LngLatBounds } from 'mapbox-gl';
 import * as mapboxgl from 'mapbox-gl';
 import { RenderLocation } from 'src/app/home/pages/descripciones-mapas/descripciones-mapas.component';
-import { Feature } from '../../interfaces/places';
-import { LocationList, Places } from 'src/app/home/interfaces/Locations';
-import { LocationService } from 'src/app/home/services/locations.service';
-import { pipe, map, from } from 'rxjs';
+import {  Places } from 'src/app/home/interfaces/Locations';
+import { LocationsResponse } from '../../interfaces/locationsResponse';
 
 
 @Component({
@@ -34,7 +34,8 @@ export class MapViewComponent implements OnInit, AfterViewInit {
   public markersLocations!: string
   public places: Places[] = []
   public selectLocation: string = ''
-  public listaLugares : Location[] = []
+
+  public locationsList: LocationsResponse[] = []
 
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef;
@@ -43,7 +44,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.readFormLocalStorage();
-    this.getAllLocations();
+    this.getListLocations();
   }
 
   ngAfterViewInit(): void {
@@ -80,32 +81,34 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     this.lugaresRender = plainMarkers;
   }
 
-  marksPorProvincia(provincias?: string, color?: string) {
-    if (!this.map) return;
+  markersByProv(provincias?: string, color?: string){
+    if (!this.map) return
+
     const newMarkers: any[] = [];
     this.places = [];
-    this.lugaresRender?.forEach(({provincia, lngLat, title, description}) => {
-     
+    this.locationsList.forEach( (locationsList) => {
+      console.log('hola soy location,',locationsList)
+
       const popup = new Popup().setHTML(`
-      <h3>${provincia}</h3>
-      <span>${title}</span>
+      <h3>${locationsList.provincia}</h3>
+      <span>${locationsList.title}</span>
     `);
 
-      if (provincia === provincias) {
-        const [lng, lat] = lngLat
+    if (locationsList.provincia === provincias) {
+      const [lng, lat] = locationsList.lngLat
 
-        const newMarker = new Marker({
-          color: color,
-          draggable: false,
-        })
-          .setLngLat([lng, lat])
-          .setPopup(popup)
-          .addTo(this.map!)
+      const newMarker = new Marker({
+        color: color,
+        draggable: false,
+      })
+        .setLngLat([lng, lat])
+        .setPopup(popup)
+        .addTo(this.map!)
 
-          newMarkers.push(newMarker)
-          this.places.push({provincia, title, lngLat, description})
-      }
-    });
+        newMarkers.push(newMarker)
+        //this.places.push({locationsList.provincia, locationsList.title, locationsList.lngLat, locationsList.description})
+    }
+    })
     this.markers = newMarkers
     console.log(this.places)
     // Limites del mapa 
@@ -114,15 +117,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     const bounds = new LngLatBounds();
     newMarkers.forEach(marker => bounds.extend(marker.getLngLat()));
     this.map.fitBounds(bounds, {padding: 200})
-
   }
-
-  // lugaresXProvincia(){
-  //   if (!this.map) return;
-  //   const newMarkers: any[] = [];
-  //   this.places = [];
-  //   this.listaLugares.forEach(({ pro}))
-  // }
 
   flyto( place:Places){
     //this.selectLocation = place.id
@@ -132,12 +127,54 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     this._mapService.flyTo([ lng, lat])
   }
 
-
-  getAllLocations(){
-   this.locationService.getLocations().pipe(
-    from<Location>( listaFacturas)
-   ).subscribe();
+  getListLocations(){
+    this.locationService.getLocations().subscribe( locations => this.locationsList = locations)
   }
+
+
 
   
 }
+
+
+
+
+
+
+
+  // marksPorProvincia(provincias?: string, color?: string) {
+  //   if (!this.map) return;
+  //   const newMarkers: any[] = [];
+  //   this.places = [];
+  //   this.lugaresRender?.forEach(({provincia, lngLat, title, description}) => {
+     
+  //     const popup = new Popup().setHTML(`
+  //     <h3>${provincia}</h3>
+  //     <span>${title}</span>
+  //   `);
+
+  //     if (provincia === provincias) {
+  //       const [lng, lat] = lngLat
+
+  //       const newMarker = new Marker({
+  //         color: color,
+  //         draggable: false,
+  //       })
+  //         .setLngLat([lng, lat])
+  //         .setPopup(popup)
+  //         .addTo(this.map!)
+
+  //         newMarkers.push(newMarker)
+  //         this.places.push({provincia, title, lngLat, description})
+  //     }
+  //   });
+  //   this.markers = newMarkers
+  //   console.log(this.places)
+  //   // Limites del mapa 
+  //   if(this.markers.length === 0) return
+
+  //   const bounds = new LngLatBounds();
+  //   newMarkers.forEach(marker => bounds.extend(marker.getLngLat()));
+  //   this.map.fitBounds(bounds, {padding: 200})
+
+  // }
