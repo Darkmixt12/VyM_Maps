@@ -29,7 +29,7 @@ export class HomePageComponent implements OnInit {
       if (!locations) return;
 
       const puntoVenta = [
-        ...new Set(locations.map((puntoVenta) => puntoVenta.provincia)),
+        ...new Set(locations.map((puntoVenta) => puntoVenta.agente)),
       ];
 
       const data = {
@@ -39,7 +39,7 @@ export class HomePageComponent implements OnInit {
             data: puntoVenta.map(
               (currentModel) =>
                 locations!.filter(
-                  (puntoVenta) => puntoVenta.provincia === currentModel
+                  (puntoVenta) => puntoVenta.agente === currentModel
                 ).length
             ),
           },
