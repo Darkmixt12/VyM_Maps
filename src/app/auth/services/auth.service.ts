@@ -30,6 +30,7 @@ export class AuthService {
     this._currentUser.set ( user )
     this._authStatus.set( AuthStatus.authenticated)
     localStorage.setItem('token', token)
+    localStorage.setItem('user', user.name)
 
     return true
   }
@@ -68,6 +69,7 @@ export class AuthService {
 
   onLogout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     this._currentUser.set(null);
     this._authStatus.set( AuthStatus.notAuthenticated)
   }

@@ -1,3 +1,9 @@
 .btn-logout{
 	margin-top: 50px
 }
+
+.btn-logout:hover {
+	color: rgb(180, 2, 180);
+	transition: 0.9s;
+	
+}
