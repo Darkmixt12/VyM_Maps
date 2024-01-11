@@ -10,10 +10,11 @@ import { MapService, PlacesService } from '../../services';
 import { Map, Popup, Marker, LngLat, LngLatBounds } from 'mapbox-gl';
 import * as mapboxgl from 'mapbox-gl';
 import { RenderLocation } from 'src/app/home/pages/descripciones-mapas/descripciones-mapas.component';
-import { Feature } from '../../interfaces/places';
-import { LocationList, Places } from 'src/app/home/interfaces/Locations';
+import { Places } from 'src/app/home/interfaces/Locations';
+import { LocationsResponse } from 'src/app/home/interfaces/newLocation'
 import { LocationService } from 'src/app/home/services/locations.service';
-import { pipe, map, from } from 'rxjs';
+import { Observable, map } from 'rxjs';
+
 
 
 @Component({
@@ -34,7 +35,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
   public markersLocations!: string
   public places: Places[] = []
   public selectLocation: string = ''
-  public listaLugares : Location[] = []
+  public listaLugares? : LocationsResponse[] = []
 
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef;
@@ -43,10 +44,12 @@ export class MapViewComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.readFormLocalStorage();
-    this.getAllLocations();
+    
+    
   }
 
   ngAfterViewInit(): void {
+    this.getListaLugares();
     if (!this._placesService.userLocation)
       throw new Error('No hay placesService.userLocation');
 
@@ -117,12 +120,9 @@ export class MapViewComponent implements OnInit, AfterViewInit {
 
   }
 
-  // lugaresXProvincia(){
-  //   if (!this.map) return;
-  //   const newMarkers: any[] = [];
-  //   this.places = [];
-  //   this.listaLugares.forEach(({ pro}))
-  // }
+ lugaresXProvincia(){
+   if (!this.map) return;
+  }
 
   flyto( place:Places){
     //this.selectLocation = place.id
@@ -132,12 +132,16 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     this._mapService.flyTo([ lng, lat])
   }
 
+  getListaLugares(){
+     return this.locationService.getLocations().subscribe(listaLocations => {
+      const mapalugares = listaLocations
 
-  getAllLocations(){
-   this.locationService.getLocations().pipe(
-    from<Location>( listaFacturas)
-   ).subscribe();
+     });
+
+
+      
   }
 
+  
   
 }

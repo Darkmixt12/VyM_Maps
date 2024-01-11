@@ -18,12 +18,13 @@ export interface Places {
 }
 
 export interface LocationList {
-
+	_id?: string,
 	title: string,
-	lngLat: LngLat,
+	lngLat: number[],
 	provincia: string,
 	description: string,
 	agente: string,
+	__version?: string
 }
 
 

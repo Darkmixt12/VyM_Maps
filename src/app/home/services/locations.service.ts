@@ -2,7 +2,7 @@ import { Injectable, inject } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environments';
-import { Location } from "../interfaces/newLocation";
+import { LocationsResponse } from "../interfaces/newLocation";
 
 
 @Injectable({
@@ -16,17 +16,18 @@ import { Location } from "../interfaces/newLocation";
 	private http = inject(HttpClient);
 
 
-	registerLocation(myForm: Location ): Observable<Location>{
+	registerLocation(myForm: LocationsResponse ): Observable<LocationsResponse>{
 		const params = JSON.stringify(myForm)
 		const headers = new HttpHeaders().set('Content-Type', 'application/json')
 
-		return this.http.post<Location>(this.url+'register', params, {headers})
+		return this.http.post<LocationsResponse>(this.url+'register', params, {headers})
 	}
 
-	getLocations(): Observable<Location[]>{
+	getLocations(): Observable<LocationsResponse[]>{
 
 		let headers = new HttpHeaders().set('Content-Type', 'application/json')
 
-		return	this.http.get<Location[]>(this.url+'list',{headers})
+		return this.http.get<LocationsResponse[]>(this.url+'list',{headers})
+			
 	}
   }
