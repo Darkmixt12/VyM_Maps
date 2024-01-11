@@ -1,8 +1,9 @@
 import { Component, ElementRef, Inject, ViewChild, inject, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LngLat, Map, Marker, Popup } from 'mapbox-gl';
-import { LocationArray, LocationList } from '../../interfaces/Locations';
-import { LocationService } from '../../services/locations.service';
+import { LocationArray } from '../../interfaces/Locations';
+import { LocationService } from 'src/app/maps/services/locations.service';
+
 
 
 

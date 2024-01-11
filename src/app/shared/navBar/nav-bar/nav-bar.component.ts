@@ -9,7 +9,7 @@ import { AuthService } from '../../../auth/services/auth.service';
 export class NavBarComponent {
 
   private AuthService = inject(AuthService);
-
+  public userName = localStorage.getItem(`user`)
   
   public navBarRoutes = [
     { label: 'Home', description: 'Informacion', url: './home/inicio'},
