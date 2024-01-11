@@ -3,6 +3,8 @@ import Chart from 'chart.js/auto';
 import { RenderLocation } from '../descripciones-mapas/descripciones-mapas.component';
 import { LocationService } from 'src/app/maps/services/locations.service';
 import { LocationsResponse } from 'src/app/maps/interfaces/locationsResponse';
+import { GraphicsService } from '../../services/graphics.service';
+import { VentasResponse } from '../../interfaces/ventas.interface';
 
 @Component({
   selector: 'app-home-page',
@@ -12,11 +14,14 @@ import { LocationsResponse } from 'src/app/maps/interfaces/locationsResponse';
 export class HomePageComponent implements OnInit {
   public lugaresLocalStorage?: RenderLocation[];
   private locationService = inject(LocationService);
+  private ventasService = inject(GraphicsService);
   public locationList: LocationsResponse[] = [];
+  public VentasAlajuela : VentasResponse[] = [];
 
   ngOnInit(): void {
     this.donusGrap();
     this.linesGrap();
+    this.getVentas()
   }
   // readFormLocalStorage() {
   //   const plainMarkersString = localStorage.getItem('locations') ?? '[]';
@@ -97,6 +102,16 @@ export class HomePageComponent implements OnInit {
         },
       };
       new Chart('barsChart', { type: 'bar', data });
+    });
+  }
+
+  getVentas(){
+    this.ventasService.getVentas().subscribe(arrayVentas => { 
+      const ventasArray = arrayVentas
+
+      this.VentasAlajuela = ventasArray.filter( ventas => ventas.importe)
+
+      console.log(this.VentasAlajuela)
     });
   }
 }
