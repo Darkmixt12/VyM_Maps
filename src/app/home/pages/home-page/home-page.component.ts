@@ -253,7 +253,8 @@ export class HomePageComponent implements OnInit {
       const data = {
         labels: puntoVenta2,
 
-        datasets: [
+        datasets: 
+        [
           {
             label: 'Venta Semanal por Agente',
             borderColor: [
