@@ -30,7 +30,6 @@ export class MapViewComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.getListaLugares();
     if (!this._placesService.userLocation)
       throw new Error('No hay placesService.userLocation');
 

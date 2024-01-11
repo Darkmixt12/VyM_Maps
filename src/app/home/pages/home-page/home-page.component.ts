@@ -5,6 +5,7 @@ import { LocationService } from 'src/app/maps/services/locations.service';
 import { LocationsResponse } from 'src/app/maps/interfaces/locationsResponse';
 import { GraphicsService } from '../../services/graphics.service';
 import { VentasResponse } from '../../interfaces/ventas.interface';
+import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-home-page',
@@ -16,12 +17,12 @@ export class HomePageComponent implements OnInit {
   private locationService = inject(LocationService);
   private ventasService = inject(GraphicsService);
   public locationList: LocationsResponse[] = [];
-  public VentasAlajuela : VentasResponse[] = [];
+  public VentasAlajuela: VentasResponse[] = [];
 
   ngOnInit(): void {
     this.donusGrap();
     this.linesGrap();
-    this.getVentas()
+    this.getVentas();
   }
   // readFormLocalStorage() {
   //   const plainMarkersString = localStorage.getItem('locations') ?? '[]';
@@ -105,13 +106,29 @@ export class HomePageComponent implements OnInit {
     });
   }
 
-  getVentas(){
-    this.ventasService.getVentas().subscribe(arrayVentas => { 
-      const ventasArray = arrayVentas
+  getVentas() {
+    this.ventasService.getVentas().subscribe((arrayVentas) => {
+      const ventasArray = arrayVentas;
+      console.log(ventasArray.filter( x => x.provCliente === 'Alajuela'))
 
-      this.VentasAlajuela = ventasArray.filter( ventas => ventas.importe)
+      let provincias = {
+        'Limon': 0,
+        'Heredia': 0,
+        'Cartago': 0,
+        'Alajuela': 0,
+        'San Jose': 0,
+        'Guanacaste': 0,
+        'Puntarenas': 0,
+      };
 
-      console.log(this.VentasAlajuela)
+      const ventasArray2 = arrayVentas.map((x:any) => {
+        provincias[x.provCliente as keyof typeof provincias ] += parseInt(parseFloat(x.importe).toFixed(3))
+        
+        return ''
+      });
+      console.log(provincias)
+      // como filtrar por provincia
+      // como sumar todo el importe en base en a la pronvicia
     });
   }
 }
