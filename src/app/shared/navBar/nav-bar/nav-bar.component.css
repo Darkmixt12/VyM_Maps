@@ -7,3 +7,8 @@
 	transition: 0.9s;
 	
 }
+
+.itemscolor span:hover {
+	color: rgb(180, 2, 180);
+	transition: 0.9s;
+}
