@@ -17,17 +17,11 @@ import { VentasResponse } from "../interfaces/ventas.interface";
 	private http = inject(HttpClient);
 
 
-	// registerLocation(myForm: LocationsResponse ): Observable<LocationsResponse>{
-	// 	const params = JSON.stringify(myForm)
-	// 	const headers = new HttpHeaders().set('Content-Type', 'application/json')
-
-	// 	return this.http.post<LocationsResponse>(this.url+'register', params, {headers})
-	// }
-
 	getVentas(): Observable<VentasResponse[]>{
 
 		let headers = new HttpHeaders().set('Content-Type', 'application/json')
 
 		return	this.http.get<VentasResponse[]>(this.url+'list',{headers})
 	}
+
   }

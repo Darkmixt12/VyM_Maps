@@ -7,7 +7,7 @@ export interface VentasResponse {
 	codVendedor: string;
 	nomCliente:  string;
 	importe:     number;
-	fechaReg:    string;
+	regFecha:    string;
 }
 
 
