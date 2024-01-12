@@ -10,6 +10,7 @@ import { SearchResultComponent } from './components/search-result/search-result.
 import { BtnHomeComponent } from '../shared/btn-home/btn-home.component';
 import { MapRoutingModule } from './maps-routing.module';
 import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
+import { ClientCardComponent } from './components/client-card/client-card.component';
 
 
 
@@ -23,6 +24,8 @@ import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component'
     SearchBarComponent,
     SearchResultComponent,
     MapsLayoutComponent,
+    ClientCardComponent,
+    
 
     
   ],
@@ -30,6 +33,7 @@ import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component'
     CommonModule,
     BtnHomeComponent,
     MapRoutingModule,
+  
   ]
 })
 export class MapsModule { }

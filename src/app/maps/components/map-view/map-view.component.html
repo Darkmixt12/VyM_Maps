@@ -1,5 +1,4 @@
 <div #mapDiv class="map-container"></div>
-
 <div class="btnContainer">
   <button class="btnAll btn btn-primary" (click)="toogleLocations()">
     Provincias
@@ -56,20 +55,24 @@
     </button>
   </div>
 </div>
+<div>
+  <app-client-card></app-client-card>
 
-<div *ngIf="hidePlaces" class="locations-container">
-  <ul class="list-group mt-2">
-    <li
-      *ngFor="let place of places"
-      class="list-group-item list-group-item-action pointer"
-    >
-      <h6>{{ place.title }}</h6>
-      <hr>
-      <p>{{ place.description }}</p>
-
-      <button (click)="flyto(place)" class="btn btn-sm btn-outline-primary">Ir</button>
-
-      <button class="btn btn-sm btn-outline-primary">Direcciones</button>
-    </li>
-  </ul>
+  <div *ngIf="hidePlaces" class="locations-container">
+    <ul class="list-group mt-2">
+      <li
+        *ngFor="let place of places"
+        class="list-group-item list-group-item-action pointer"
+      >
+        <h6>{{ place.title }}</h6>
+        <hr>
+        <p>{{ place.description }}</p>
+        <button (click)="flyto(place)" class="btn btn-sm btn-outline-primary">Ir</button>
+  
+        <button class="btn btn-sm btn-outline-primary">Direcciones</button>
+      </li>
+    </ul>
+  </div>
 </div>
+
+
