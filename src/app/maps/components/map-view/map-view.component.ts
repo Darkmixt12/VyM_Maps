@@ -1,5 +1,5 @@
 import { LocationService } from './../../services/locations.service';
-import {Component,OnInit,inject,AfterViewInit,ViewChild, ElementRef} from '@angular/core';
+import {Component,OnInit,inject,AfterViewInit,ViewChild, ElementRef, Input} from '@angular/core';
 import { MapService, PlacesService } from '../../services';
 import { Map, Popup, Marker, LngLat, LngLatBounds } from 'mapbox-gl';
 import * as mapboxgl from 'mapbox-gl';
@@ -24,6 +24,8 @@ export class MapViewComponent implements OnInit, AfterViewInit {
 
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef;
+  
+  @Input() item = 26
 
   ngOnInit() {
     this.getListLocations();
