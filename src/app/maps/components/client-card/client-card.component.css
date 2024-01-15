@@ -1,9 +1,7 @@
 .containerClient{
 	background-color: #fff;
-	position: relative;
+	position: absolute;
 	width: 300px;
-	margin-top: 200px;
-	margin-left: 10px;
 	border-radius: 10px;
 	padding: 5px;
 
@@ -33,5 +31,23 @@ img{
 }
 
 li{
-	padding: 20px;
+	padding: 20px
 }
+
+
+/**  BTN MENUS*/
+
+.btnMenu{
+	display: flex;
+	padding: 10px 22px;
+	flex-wrap: wrap;
+}
+
+
+.btn1{
+	-webkit-box-flex:  1;
+	flex: 1 1 0px;
+	text-align: center;
+	padding: 4px;
+}
+
