@@ -1,5 +1,5 @@
 
-	<div class=" containerClient">
+	<div *ngIf="itemHijo?._id" class=" containerClient">
 		<img src="../../../../assets/images/HOJA 3Mesa de trabajo 1.png" alt="">
 		<section class="titles">
 			<h2 class="agenteTitle"> {{itemHijo?.agente}} </h2>
@@ -29,11 +29,11 @@
 					</li>
 					<li>
 						<span class="material-symbols-outlined">call</span>
-						<p> {{itemHijo?.lngLat}} </p>
+						<p> {{itemHijo?.telefono}} </p>
 					</li>
 					<li>
 						<span class="material-symbols-outlined">mail</span>
-						<p> {{itemHijo?._id}} </p>
+						<p> {{itemHijo?.email}} </p>
 					</li>
 					<li>
 						<span class="material-symbols-outlined">hallway</span>

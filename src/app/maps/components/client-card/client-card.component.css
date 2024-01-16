@@ -48,6 +48,10 @@ li p{
 	margin-left: 20px
 }
 
+ul span{
+	color: rgb(43, 167, 205);
+}
+
 /**  BTN MENUS*/
 
 .btnMenu{

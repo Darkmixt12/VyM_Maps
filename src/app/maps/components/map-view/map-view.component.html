@@ -65,10 +65,7 @@
         *ngFor="let place of places"
         class="list-group-item list-group-item-action pointer"
       >
-        <h6>{{ place.title }}</h6>
-        <hr>
-        <p>{{ place.description }}</p>
-        
+        <h6>{{ place.title }}</h6> 
         <button (click)="flyto(place)" (click)=" getByIdPlace(place._id)" class="btn btn-sm btn-outline-primary">Ir</button>
   
         <button class="btn btn-sm btn-outline-primary">Direcciones</button>

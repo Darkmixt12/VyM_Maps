@@ -1,17 +1,21 @@
-.container{
-	padding: 25px;
-	
+
+
+.container-form{
 	background-color: white;
+	padding: 25px;
 	border-radius: 5px;
-	width: 25vw;
-	height: 50vh;
 }
 
+
+
+
+/** FORM TITLE **/
 h3{
 	text-align: center;
 	padding: 15px;
 	color: black;
 	margin-top: 20px;
+	font-size: 30px;
 }
 
 label{
@@ -36,7 +40,7 @@ label{
 	top: 0px;
 	right: 0px;
 	width: 50vw;
-	height: 50vh;
+	height: 80vh;
 	margin-top: 20px;
 	border-radius: 10px;
 	
@@ -87,4 +91,9 @@ label{
 
 .label-lnglat{
 	margin-right: 20px;
+}
+
+::placeholder {
+	color: gray;
+	opacity:  0.4;
 }

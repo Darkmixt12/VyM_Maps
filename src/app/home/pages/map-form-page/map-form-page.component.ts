@@ -41,7 +41,9 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
     provincia: ['', Validators.required],
     description: ['', [Validators.required]],
     lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
-    agente: ['', Validators.required]
+    agente: ['', Validators.required],
+    email: ['', Validators.required, Validators.email],
+    telefono: ['', Validators.required, Validators.min(8)]
 })
 
   ngAfterViewInit(): void {
@@ -49,9 +51,9 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
 
     this.map = new Map({
       container: this.mapDivElement.nativeElement, // container ID
-      style: 'mapbox://styles/mapbox/streets-v12', // style URL
+      style: 'mapbox://styles/mapbox/outdoors-v12', // style URL
       center: [-84.0484498, 9.9495857], // starting position [lng, lat]
-      zoom: 12, // starting zoom
+      zoom: 7.5, // starting zoom
       });
     //this._mapService.setMap(this.map)
  

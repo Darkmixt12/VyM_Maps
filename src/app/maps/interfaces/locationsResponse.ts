@@ -7,5 +7,7 @@ export interface LocationsResponse {
 	provincia:   string;
 	description: string;
 	agente:      string;
+	telefono: number;
+	email: string
 	__v?:         number;
 }
