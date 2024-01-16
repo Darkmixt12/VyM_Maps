@@ -1,4 +1,6 @@
+
 import { Component, Input } from '@angular/core';
+import { LocationsResponse } from '../../interfaces/locationsResponse';
 
 @Component({
   selector: 'app-client-card',
@@ -7,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ClientCardComponent {
 
-  @Input() itemHijo?: number;
+  @Input() itemHijo?: LocationsResponse ;
 }

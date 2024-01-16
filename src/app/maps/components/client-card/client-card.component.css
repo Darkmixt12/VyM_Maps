@@ -4,17 +4,25 @@
 	width: 300px;
 	border-radius: 10px;
 	padding: 5px;
+	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.10);
 
 }
 
 .containerClient h1, h2{
+	display: flex;
 	padding: 15px;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 100;
 	text-align: center;
+	justify-content: space-around;
+	align-items: center;
 
 }
 
+.agenteTitle{
+	font-size: 18px;
+	color: #0c62c4
+}
 
 img{
 	width: 200%;
@@ -23,7 +31,9 @@ img{
 
 
 .descriptionList ul li{
-	padding-top: 5px 5px 5px
+	padding-top: 5px 5px 5px;
+	display: flex;
+	align-items: center;
 }
 
 .titles{
@@ -31,9 +41,12 @@ img{
 }
 
 li{
-	padding: 20px
+	padding: 10px
 }
 
+li p{
+	margin-left: 20px
+}
 
 /**  BTN MENUS*/
 
@@ -48,6 +61,14 @@ li{
 	-webkit-box-flex:  1;
 	flex: 1 1 0px;
 	text-align: center;
-	padding: 4px;
+	padding: 2px;
+	margin: 5px;
+	border-radius: 100px;
+	color: rgb(43, 167, 205);
+	justify-content: center;
+}
+
+.material-symbols-outlined{
+	font-size: 30px;
 }
 

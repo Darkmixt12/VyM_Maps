@@ -25,7 +25,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef;
   
-  @Input() item = 26
+  @Input() item?: LocationsResponse
 
   ngOnInit() {
     this.getListLocations();
@@ -65,7 +65,6 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     const newMarkers: any[] = [];
     this.places = [];
     this.locationsList.forEach((locationsList) => {
-      console.log('hola soy location,', locationsList);
 
       const popup = new Popup().setHTML(`
       <h3>${locationsList.provincia}</h3>
@@ -88,7 +87,6 @@ export class MapViewComponent implements OnInit, AfterViewInit {
       }
     });
     this.markers = newMarkers;
-    console.log(this.places);
     // Limites del mapa
     if (this.markers.length === 0) return;
 
@@ -108,4 +106,13 @@ export class MapViewComponent implements OnInit, AfterViewInit {
       .getLocations()
       .subscribe((locations) => (this.locationsList = locations));
   }
+
+  getByIdPlace(id?: string) {
+      if (!id) return
+      this.locationService.getLocationById(id).subscribe( result => {
+        this.item = result
+      })
+    
+  }
+    
 }

@@ -28,4 +28,10 @@ import { environment } from 'src/environments/environments';
 
 		return	this.http.get<LocationsResponse[]>(this.url+'list',{headers})
 	}
+
+	getLocationById(id: string): Observable<LocationsResponse>{
+
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+		return	this.http.get<LocationsResponse>(this.url+'place/'+id,{headers})
+	}
   }

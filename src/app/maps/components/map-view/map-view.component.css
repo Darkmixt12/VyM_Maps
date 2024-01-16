@@ -87,6 +87,10 @@ p{
 	font-size: 12px;
 }
 
+h6{
+	font-size: 15px;
+}
+
 .locations-container{
 	display: flex;
 	margin-left: auto;

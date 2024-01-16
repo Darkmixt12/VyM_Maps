@@ -2,39 +2,42 @@
 	<div class=" containerClient">
 		<img src="../../../../assets/images/HOJA 3Mesa de trabajo 1.png" alt="">
 		<section class="titles">
-			<h2> O10 </h2>
-			<h1> Titulo del cliente </h1>
+			<h2 class="agenteTitle"> {{itemHijo?.agente}} </h2>
+			<h1> {{itemHijo?.title}} </h1>
 		</section>
 		<hr>
 		<div class="btnMenu">
 			<div class="btn1">
-				<button> Eliminar</button>
+				<button class="material-symbols-outlined">edit</button>
+				
 			</div>
 			<div class="btn1">
-				<button> Agregar </button>
+				<button class="material-symbols-outlined">add_location_alt</button>
 			</div>
 			<div class="btn1">
-				<button> Añadir </button>
+				<button class="material-symbols-outlined">delete</button>
 			</div>
 		</div>
 			<hr>
 			<br>
+
 			<section class="descriptionList">
 				<ul >
 					<li>
-						<p> {{itemHijo}} </p>
+						<span class="material-symbols-outlined">location_on</span>
+						<p> {{itemHijo?.provincia}} </p>
 					</li>
 					<li>
-						<p> Telefono</p>
+						<span class="material-symbols-outlined">call</span>
+						<p> {{itemHijo?.lngLat}} </p>
 					</li>
 					<li>
-						<p> Correo</p>
+						<span class="material-symbols-outlined">mail</span>
+						<p> {{itemHijo?._id}} </p>
 					</li>
 					<li>
-						<p> Direccion</p>
-					</li>
-					<li>
-						<p> Como llegar</p>
+						<span class="material-symbols-outlined">hallway</span>
+						<p> {{itemHijo?.description}} </p>
 					</li>
 				</ul>
 			</section>
