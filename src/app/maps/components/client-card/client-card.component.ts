@@ -9,5 +9,11 @@ import { LocationsResponse } from '../../interfaces/locationsResponse';
 })
 export class ClientCardComponent {
 
+  @Input() hidePlaces: boolean = false
+
   @Input() itemHijo?: LocationsResponse ;
+  
+  toogleLocations() {
+    this.hidePlaces = !this.hidePlaces;
+  }
 }

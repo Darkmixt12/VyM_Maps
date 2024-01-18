@@ -34,4 +34,8 @@ import { environment } from 'src/environments/environments';
 		let headers = new HttpHeaders().set('Content-Type', 'application/json')
 		return	this.http.get<LocationsResponse>(this.url+'place/'+id,{headers})
 	}
+
+	deleteById(id: string | undefined): Observable<LocationsResponse>{
+		return this.http.delete<LocationsResponse>(this.url+'delete/'+id)
+	}
   }

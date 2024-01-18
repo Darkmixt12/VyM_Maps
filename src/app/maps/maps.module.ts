@@ -11,6 +11,7 @@ import { BtnHomeComponent } from '../shared/btn-home/btn-home.component';
 import { MapRoutingModule } from './maps-routing.module';
 import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
 import { ClientCardComponent } from './components/client-card/client-card.component';
+import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 
 
 
@@ -26,6 +27,7 @@ import { ClientCardComponent } from './components/client-card/client-card.compon
     SearchResultComponent,
     MapsLayoutComponent,
     ClientCardComponent,
+    DeleteDialogComponent,
     
 
     
