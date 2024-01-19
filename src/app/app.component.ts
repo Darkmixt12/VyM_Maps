@@ -2,6 +2,7 @@ import { Component, OnInit, computed, effect, inject } from '@angular/core';
 import { AuthService } from './auth/services/auth.service';
 import { AuthStatus } from './auth/interfaces/auth-status.enum';
 import { Router } from '@angular/router';
+import { PrimeNGConfig } from 'primeng/api';
 
 
 @Component({
@@ -9,7 +10,16 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+
+  constructor(private primengConfig: PrimeNGConfig) {}
+
+
+  ngOnInit() {
+    this.primengConfig.ripple = true;
+  }
+
 
   private authService = inject(AuthService);
   private router = inject(Router);

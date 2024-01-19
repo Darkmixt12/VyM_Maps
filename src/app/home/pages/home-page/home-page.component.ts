@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import Chart from 'chart.js/auto';
-import { RenderLocation } from '../descripciones-mapas/descripciones-mapas.component';
+
 import { LocationService } from 'src/app/maps/services/locations.service';
 import { LocationsResponse } from 'src/app/maps/interfaces/locationsResponse';
 import { GraphicsService } from '../../services/graphics.service';
@@ -13,7 +13,6 @@ import { provideNoopAnimations } from '@angular/platform-browser/animations';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
-  public lugaresLocalStorage?: RenderLocation[];
   private locationService = inject(LocationService);
   private ventasService = inject(GraphicsService);
   public locationList: LocationsResponse[] = [];
