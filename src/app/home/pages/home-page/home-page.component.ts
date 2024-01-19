@@ -65,7 +65,7 @@ export class HomePageComponent implements OnInit {
       const puntoVenta = [
         ...new Set(locations.map((puntoVenta) => puntoVenta.provincia)),  // crea un nuevo array con solo las provincias
       ];
-      console.log( puntoVenta)
+  
 
       const data = {
         labels: puntoVenta, 
@@ -112,7 +112,7 @@ export class HomePageComponent implements OnInit {
 
   getVentas() {
     this.ventasService.getVentas().subscribe((arrayVentas) => {
-      console.log(arrayVentas);
+
 
       //console.log(ventasArray.filter( x => x.provCliente))
 
@@ -133,13 +133,13 @@ export class HomePageComponent implements OnInit {
         return '';
       });
 
-      console.log('wenas', provincias);
+
 
       const puntoVenta2 = [
         ...new Set(arrayVentas.map((puntoVenta2) => puntoVenta2.provCliente)),
       ];
 
-      console.log(puntoVenta2)
+
       const data = {
         labels: puntoVenta2,
 

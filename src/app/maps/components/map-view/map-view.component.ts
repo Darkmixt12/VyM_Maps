@@ -43,8 +43,8 @@ export class MapViewComponent implements OnInit, AfterViewInit {
     });
 
     const popup = new Popup().setHTML(`
-          <h6>Aqui estoy</h6>
-          <span>Estoy en este lugar del Mundo</span>
+          <h3>Aqui estoy</h3>
+          <p>Estoy en este lugar del Mundo</p>
         `);
 
     new Marker({ color: 'red' })
@@ -68,7 +68,7 @@ export class MapViewComponent implements OnInit, AfterViewInit {
 
       const popup = new Popup().setHTML(`
       <h3>${locationsList.provincia}</h3>
-      <span>${locationsList.title}</span>
+      <p>${locationsList.title}</p>
     `);
 
       if (locationsList.provincia === provincias) {

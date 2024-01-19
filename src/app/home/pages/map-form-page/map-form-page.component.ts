@@ -39,11 +39,11 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
   public myForm: FormGroup = this.fb.group({
     title: ['', [Validators.required]],
     provincia: ['', Validators.required],
-    description: ['', [Validators.required]],
+    description: ['example location place', [Validators.required]],
     lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
     agente: ['', Validators.required],
-    email: ['', Validators.required, Validators.email],
-    telefono: ['', Validators.required, Validators.min(8)]
+    email: ['example@gmail.com', [Validators.required, Validators.email]],
+    telefono: ['98741532', [Validators.required, Validators.min(8)]]
 })
 
   ngAfterViewInit(): void {

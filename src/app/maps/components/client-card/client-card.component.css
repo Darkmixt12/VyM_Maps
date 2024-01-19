@@ -61,15 +61,27 @@ ul span{
 }
 
 
-.btn1{
+.btnDel, .btnAdd, .btnEdit{
 	-webkit-box-flex:  1;
 	flex: 1 1 0px;
 	text-align: center;
 	padding: 2px;
 	margin: 5px;
 	border-radius: 100px;
-	color: rgb(43, 167, 205);
+
 	justify-content: center;
+}
+
+.btnDel{
+	color :#ff0055
+}
+
+.btnAdd{
+	color: #06c34c
+}
+
+.btnEdit{
+	color: #0671c3
 }
 
 .material-symbols-outlined{

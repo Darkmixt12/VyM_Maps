@@ -59,16 +59,16 @@
       </button>
     </div>
   </div>
+  
   <div *ngIf="hidePlaces" class="locations-container">
     <ul class="list-group mt-2">
       <li
         *ngFor="let place of places"
         class="list-group-item list-group-item-action pointer"
+        (click)="flyto(place)"
+        (click)="getByIdPlace(place._id)"
       >
         <h6>{{ place.title }}</h6> 
-        <button (click)="flyto(place)" (click)=" getByIdPlace(place._id)" class="btn btn-sm btn-outline-primary">Ir</button>
-  
-        <button class="btn btn-sm btn-outline-primary">Direcciones</button>
       </li>
     </ul>
   </div>

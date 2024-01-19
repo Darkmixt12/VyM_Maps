@@ -1,6 +1,7 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { LocationsResponse } from '../../interfaces/locationsResponse';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-client-card',
@@ -10,10 +11,14 @@ import { LocationsResponse } from '../../interfaces/locationsResponse';
 export class ClientCardComponent {
 
   @Input() hidePlaces: boolean = false
-
   @Input() itemHijo?: LocationsResponse ;
+  private router = inject(Router)
   
   toogleLocations() {
     this.hidePlaces = !this.hidePlaces;
+  }
+
+  addNewLocation(){
+    this.router.navigateByUrl('home/form')
   }
 }

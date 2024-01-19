@@ -25,8 +25,9 @@ export class DeleteDialogComponent implements OnInit {
   }
 
   deleteLocation(id: string | undefined){
+    if(id === 'undefined') return
     this.locationService.deleteById(id).subscribe(console.log)
     this.changeValue();
-    this.locationService.getLocations()
+    location.reload();
   }
 }
