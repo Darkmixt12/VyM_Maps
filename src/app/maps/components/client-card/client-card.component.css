@@ -5,14 +5,14 @@
 	border-radius: 10px;
 	padding: 5px;
 	box-shadow: 0 7px 25px rgba(0, 0, 0, 0.10);
-
+	margin-top: -20px;
 }
 
 .containerClient h1, h2{
-	display: flex;
+
+	display: flex;	
 	padding: 15px;
 	font-size: 16px;
-	font-weight: 100;
 	text-align: center;
 	justify-content: space-around;
 	align-items: center;
@@ -25,7 +25,7 @@
 }
 
 img{
-	width: 200%;
+	width: 100%;
 	height: 200px;
 }
 
@@ -38,6 +38,7 @@ img{
 
 .titles{
 	display: flex;
+	padding-top: 10px;
 }
 
 li{
@@ -52,6 +53,10 @@ ul span{
 	color: rgb(43, 167, 205);
 }
 
+h1{
+	font-size: 20px;
+}
+
 /**  BTN MENUS*/
 
 .btnMenu{
@@ -60,6 +65,16 @@ ul span{
 	flex-wrap: wrap;
 }
 
+button{
+    color: #0671c3;
+	outline: none !important;
+    border: none;
+    background: transparent;
+  }
+
+  button:hover {
+    cursor: pointer;
+}
 
 .btnDel, .btnAdd, .btnEdit{
 	-webkit-box-flex:  1;
@@ -68,21 +83,11 @@ ul span{
 	padding: 2px;
 	margin: 5px;
 	border-radius: 100px;
+	border: none;
 
 	justify-content: center;
 }
 
-.btnDel{
-	color :#ff0055
-}
-
-.btnAdd{
-	color: #06c34c
-}
-
-.btnEdit{
-	color: #0671c3
-}
 
 .material-symbols-outlined{
 	font-size: 30px;

@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 
 .btn-logout{
 	margin-top: 50px
@@ -13,3 +18,4 @@
 	color: rgb(180, 2, 180);
 	transition: 0.9s;
 }
+

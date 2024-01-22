@@ -1,9 +1,14 @@
+
 th{
 	padding: 15px;
 	font-size: 20px;
-	text-align: center;
 	border-bottom: 1px solid #424b57;
 	;
+}
+
+
+td{
+	border-bottom: 1px solid #424b57
 }
 
 .container{
@@ -12,23 +17,4 @@ th{
 	background-color: #1f2937;
 }
 
-td{
-	padding: 10px;
-	border-bottom: 1px solid #424b57;
-}
 
-p-table{
-	padding: 20px!important;
-}
-
-.p-paginator-current {
-	padding: 20px;
-}
-
-p-dropdown {
-	padding: 10px;
-}
-
-.p-button-outlined{
-	color: white;
-}

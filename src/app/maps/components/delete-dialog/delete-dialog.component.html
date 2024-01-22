@@ -1,5 +1,5 @@
 <div *ngIf="hidePlacesChild" class="container"> 
-	<h1> ¿Esta seguro que desea a <h1 class="locationName">{{ChildLocation?.title}}</h1> definitivamente? </h1>
+	<h1> Eliminar <h1 class="locationName">{{ChildLocation?.title}}</h1>? </h1>
 	<section class="btn-container">
 		<button (click)="deleteLocation(ChildLocation?._id)" class="btn-delete"> Eliminar </button>
 		<button (click)="changeValue()" class="btn-cancel"> Cancelar </button>

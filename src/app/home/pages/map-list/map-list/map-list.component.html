@@ -7,7 +7,8 @@ dataKey="id"
 [paginator]="true"
 [rows]="10"
 [showCurrentPageReport]="true"
-[globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+[globalFilterFields]="['title', 'agente', 'email', 'status']"
 
 
 >
@@ -18,21 +19,28 @@ dataKey="id"
 
         </div>
         <tr>
-			<th style="min-width:15rem">
+			<th style="width:25rem">
 				<div class="flex align-items-center">
 					Name
-					<p-columnFilter type="text" field="locations.title" display="menu"></p-columnFilter>
+					<p-columnFilter type="text" field="title" display="menu"></p-columnFilter>
+				</div>
+			</th>
+
+			<th style="width:15rem">
+				<div class="flex align-items-center">
+					Provincia
+					<p-columnFilter type="text" field="provincia" display="menu"></p-columnFilter>
 				</div>
 			</th>
 
 
-			<th style="min-width:15rem">
+			<th style="width:10rem">
 				<div class="flex align-items-center">
 					Agente
 					<p-columnFilter field="agente" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
 						<ng-template pTemplate="header">
 							<div class="px-3 pt-3 pb-0">
-								<span class="font-bold">Agente Picker</span>
+								<span class="font-bold">Seleccione agenter</span>
 							</div>
 						</ng-template>
 						<ng-template pTemplate="filter" let-value let-filter="filterCallback">
@@ -50,18 +58,25 @@ dataKey="id"
 			<th style="min-width:15rem">
 				<div class="flex align-items-center">
 					Email
-					<p-columnFilter type="text" field="locations.email" display="menu"></p-columnFilter>
+					<p-columnFilter type="text" field="email" display="menu"></p-columnFilter>
 				</div>
 			</th>
-            <th>Telefono</th>
+			<th style="min-width:15rem">
+				<div class="flex align-items-center">
+					Telefono
+					<p-columnFilter type="text" field="telefono" display="menu"></p-columnFilter>
+				</div>
+			</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-locations>
         <tr>	
             <td>{{ locations.title }}</td>
+			<td>{{ locations.provincia }}</td>
             <td>{{ locations.agente }}</td>
             <td>{{ locations.email }}</td>
             <td>{{ locations.telefono }}</td>
+			
         </tr>
     </ng-template>
 </p-table>

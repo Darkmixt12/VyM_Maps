@@ -31,16 +31,16 @@ ngOnInit() {
 
 
  this.agentes = [
-  { agente: 'O10', image: 'amyelsner.png' },
-  { agente: 'Anna Fali', image: 'annafali.png' },
-  { agente: 'Asiya Javayant', image: 'asiyajavayant.png' },
-  { agente: 'Bernardo Dominic', image: 'bernardodominic.png' },
-  { agente: 'Elwin Sharvill', image: 'elwinsharvill.png' },
-  { agente: 'Ioni Bowcher', image: 'ionibowcher.png' },
-  { agente: 'Ivan Magalhaes', image: 'ivanmagalhaes.png' },
-  { agente: 'Onyama Limba', image: 'onyamalimba.png' },
-  { agente: 'Stephen Shaw', image: 'stephenshaw.png' },
-  { agente: 'Xuxue Feng', image: 'xuxuefeng.png' }
+  { agente: 'O10' },
+  { agente: 'Anna Fali'},
+  { agente: 'Asiya Javayant',},
+  { agente: 'Bernardo Dominic'},
+  { agente: 'Elwin Sharvill'},
+  { agente: 'Ioni Bowcher'},
+  { agente: 'Ivan Magalhaes'},
+  { agente: 'Onyama Limba' },
+  { agente: 'Stephen Shaw'},
+  { agente: 'Xuxue Feng'}
 ];
 }
 

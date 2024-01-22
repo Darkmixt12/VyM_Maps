@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
@@ -8,8 +8,10 @@ import { AuthService } from '../../../auth/services/auth.service';
 })
 export class NavBarComponent {
 
+  @ViewChild('sidebarRef') sidebarRef!: any;
   private AuthService = inject(AuthService);
   public userName = localStorage.getItem(`user`)
+  sidebarVisible: boolean = false;
   
   public navBarRoutes = [
     { label: 'Home', description: 'Informacion', url: './home/inicio'},
@@ -22,9 +24,15 @@ export class NavBarComponent {
 
     constructor(){}
 
+    closeCallback(e: any): void {
+      this.sidebarRef.close(e);
+  }
 
     logout(){
       this.AuthService.onLogout()
     }
+
+
+  
 
 }
