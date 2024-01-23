@@ -1,5 +1,4 @@
-
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
 
 
 .spacer{
@@ -16,7 +15,7 @@
   }
 
 .mapboxgl-popup-content {
-	font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+	font: 400 15px/22px 'Poppins', 'Helvetica Neue', sans-serif;
 	padding: 0;
 	width: 180px;
   }
@@ -29,6 +28,7 @@
 	border-radius: 3px 3px 0 0;
 	font-weight: 700;
 	margin-top: -15px;
+  font-size: 20px;
   }
 
   .mapboxgl-popup-content p {
@@ -62,67 +62,12 @@
 
 
 
+  
+  
   /*---------------------------------------------*/
-  a {
 
-    font-size: 14px;
-    line-height: 1.7;
-    color: #666666;
-    margin: 0px;
-    transition: all 0.4s;
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-  }
   
-  a:focus {
-    outline: none !important;
-  }
-  
-  a:hover {
-    text-decoration: none;
-    color: #a64bf4;
-  }
-  
-  /*---------------------------------------------*/
-  h1,h2,h3,h4,h5,h6 {
-    margin: 0px;
-  }
-  
-  p {
-    /* font-family: Poppins-Regular; */
-    font-size: 14px;
-    line-height: 1.7;
-    color: #666666;
-    margin: 0px;
-  }
-  
-  ul, li {
-    margin: 0px;
-    list-style-type: none;
-  }
-  
-  
-  /*---------------------------------------------*/
-  input {
-    outline: none;
-    border: none;
-  }
-  
-  textarea {
-    outline: none;
-    border: none;
-  }
-  
-  textarea:focus, input:focus {
-    border-color: transparent !important;
-  }
-  
-  /*---------------------------------------------*/
-  button{
-    border: none;
-  }
-  
+ 
 
   /*//////////////////////////////////////////////////////////////////
   [ Utility ]*/

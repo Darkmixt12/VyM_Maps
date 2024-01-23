@@ -16,6 +16,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 
+import { FileUploadModule } from 'primeng/fileupload';
 
 
 
@@ -46,7 +47,8 @@ import { ButtonModule } from 'primeng/button';
     MultiSelectModule,
     DropdownModule,
     TagModule,
-    ButtonModule
+    ButtonModule,
+    FileUploadModule
   
 
   ]

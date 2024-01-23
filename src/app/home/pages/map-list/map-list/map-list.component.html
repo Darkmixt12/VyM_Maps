@@ -8,16 +8,19 @@ dataKey="id"
 [rows]="10"
 [showCurrentPageReport]="true"
 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-[globalFilterFields]="['title', 'agente', 'email', 'status']"
+[globalFilterFields]="['title','provincia', 'agente', 'email', 'telefono']"
 
 
 >
     <ng-template pTemplate="header">
-		<div class="flex">
-			<button  (click)="clear(dt1)" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Eliminar filtro </button>
-			  
-
+		<div class="container-btn flex">
+			<button pButton label="Eliminar Filtro" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
         </div>
+		<br>
+		<span class="p-input-icon-right ml-5">
+			<i class="pi pi-search"></i>
+			<input pInputText type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder=" Global Search" />`
+		</span>
         <tr>
 			<th style="width:25rem">
 				<div class="flex align-items-center">
@@ -34,27 +37,16 @@ currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
 			</th>
 
 
+
 			<th style="width:10rem">
 				<div class="flex align-items-center">
 					Agente
-					<p-columnFilter field="agente" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
-						<ng-template pTemplate="header">
-							<div class="px-3 pt-3 pb-0">
-								<span class="font-bold">Seleccione agenter</span>
-							</div>
-						</ng-template>
-						<ng-template pTemplate="filter" let-value let-filter="filterCallback">
-							<p-multiSelect [ngModel]="value" [options]="agentes" placeholder="Any" (onChange)="filter($event.value)" optionLabel="agente">
-								<ng-template let-option pTemplate="item">
-									<div class="inline-block vertical-align-middle">
-										<span class="ml-2 mt-2">{{ option.agente }}</span>
-									</div>
-								</ng-template>
-							</p-multiSelect>
-						</ng-template>
-					</p-columnFilter>
+					<p-columnFilter field="agente" type="text" display="menu"></p-columnFilter>
 				</div>
 			</th>
+
+
+
 			<th style="min-width:15rem">
 				<div class="flex align-items-center">
 					Email
@@ -81,3 +73,10 @@ currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     </ng-template>
 </p-table>
 </div>
+
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>

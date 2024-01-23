@@ -17,4 +17,7 @@ td{
 	background-color: #1f2937;
 }
 
-
+.container-btn{
+	display: flex;
+	justify-content: space-between;
+}

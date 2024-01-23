@@ -31,16 +31,14 @@ ngOnInit() {
 
 
  this.agentes = [
-  { agente: 'O10' },
-  { agente: 'Anna Fali'},
-  { agente: 'Asiya Javayant',},
-  { agente: 'Bernardo Dominic'},
-  { agente: 'Elwin Sharvill'},
-  { agente: 'Ioni Bowcher'},
-  { agente: 'Ivan Magalhaes'},
-  { agente: 'Onyama Limba' },
-  { agente: 'Stephen Shaw'},
-  { agente: 'Xuxue Feng'}
+  { name: 'O10' },
+  { name: '13C'},
+  { name: 'TELJ',},
+  { name: 'TELA'},
+  { name: '8G'},
+  { name: '8F'},
+  { name: '28'},
+  { name: '23' },
 ];
 }
 
@@ -48,7 +46,9 @@ clear(table: Table) {
   table.clear();
 }
 
-  getFacturas(){
-    return this.locationService.getLocations().subscribe( (locations) => (this.locations = locations))
-  }
+getFacturas(){
+  return this.locationService.getLocations().subscribe( (locations) => (this.locations = locations))
+}
+
+
 }
