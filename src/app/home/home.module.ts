@@ -17,6 +17,7 @@ import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 
 import { FileUploadModule } from 'primeng/fileupload';
+import { ClientEditPageComponent } from './pages/client-edit-page/client-edit-page.component';
 
 
 
@@ -28,6 +29,7 @@ import { FileUploadModule } from 'primeng/fileupload';
   HomeLayoutComponent,
   MapListComponent,
   HomePageComponent,
+  ClientEditPageComponent,
 
   
 
