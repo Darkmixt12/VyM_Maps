@@ -18,7 +18,7 @@ import { ButtonModule } from 'primeng/button';
 
 import { FileUploadModule } from 'primeng/fileupload';
 import { ClientEditPageComponent } from './pages/client-edit-page/client-edit-page.component';
-
+import {ToastModule} from 'primeng/toast';
 
 
 
@@ -50,7 +50,8 @@ import { ClientEditPageComponent } from './pages/client-edit-page/client-edit-pa
     DropdownModule,
     TagModule,
     ButtonModule,
-    FileUploadModule
+    FileUploadModule,
+    ToastModule
   
 
   ]
