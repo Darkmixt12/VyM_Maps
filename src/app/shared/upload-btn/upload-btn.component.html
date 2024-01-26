@@ -1,5 +1,18 @@
 
-	<input type="file" class="BtnUpdated"(change)="uploadFile($event)">
-	<button (click)="upImage()" [disabled]="!file" class="btn btn-primary mt-5 w-100">Guardar</button>
 
-	<img src="{{imagenSubida}}" alt="">
+<h3>Imagen de Usuario</h3>
+<div class="img-center">
+  <img *ngIf="!imgTemporal" src="{{ test }}" class="img-avatar" alt="" />
+  <img *ngIf="imgTemporal" src="{{ imgTemporal }}" class="img-avatar" />
+</div>
+<br />
+<div>
+  <input type="file" class="BtnUpdated" (change)="uploadFile($event)" />
+  <button
+    (click)="upImage()"
+    [disabled]="!file"
+    class="btn btn-primary mt-5 w-100"
+  >
+    Guardar
+  </button>
+</div>

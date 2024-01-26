@@ -1,28 +1,38 @@
 <div class="container">
-	<div class="title">
-		<div>
-			<img src="https://res.cloudinary.com/dlsxaumhg/image/upload/v1706208422/locationsFolder/a6tdf3hmkuo3vpfyxqck.png" alt="">
-			<app-upload-btn></app-upload-btn>
-		</div>
-		
-		
-		<div class="title2">
-			<div class="borderTitle">
-				<h1> Aqui va el titulo del Cliente</h1>
-			</div>
-			
-			<button class="BtnUpdated1">Editar Cliente</button>
-		</div>
+	<h1 class="page-header">
+		Perfil de Usuario
+	</h1>
+  <div class="title">
+    <div>
+      <app-upload-btn [imagenSubida]="imgProfile"></app-upload-btn>
+    </div>
 
-		<div class="content">
+    <div class="">
+		<h3> Informacion de Usuario</h3>
+      <div class="title2">
 
-			<form action="">
+        <div class="borderTitle">
 
-				
-			</form>
-		</div>
+          <h1>Aqui va el titulo del Cliente</h1>
+		  <h2> Provincia </h2>
+		  <h2>Direccion del cliente</h2>
+        </div>
 		
+		<ul>
+
 		
-	</div>
+			<li> Nombre cliente</li>
+			<li> Telefono cliente</li>
+			<li> Correo Cliente</li>
+			<li> Identificacion</li>
+		</ul>
+        <button class="BtnUpdated1">Editar Cliente</button>
+      </div>
+
+    </div>
+
+    <div class="content">
+      <form action=""></form>
+    </div>
+  </div>
 </div>
-

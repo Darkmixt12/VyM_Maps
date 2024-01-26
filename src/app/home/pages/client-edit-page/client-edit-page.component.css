@@ -1,3 +1,9 @@
+.page-header{
+	font-size: 25px;
+	padding: 20px;
+	margin-bottom: 20px;
+	color: white;
+}
 
 .container{
 	background-color: #1f2937;
@@ -32,7 +38,7 @@
 
 }
 
-.title h1, p {
+.title h1, p, h2, h3 {
 	text-align: center;
 }
 
@@ -59,4 +65,10 @@
 .BtnUpdated1{
 	align-items: center;
 	background: #94a3b8;
+}
+
+h3{
+	font-size: 15px;
+	opacity: 0.5;
+	margin-bottom: 20px;
 }
