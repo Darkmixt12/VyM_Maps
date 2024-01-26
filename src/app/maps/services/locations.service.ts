@@ -43,10 +43,13 @@ import { CloudinaryResponse } from '../interfaces/cloyudinaryResponse';
 	}
 
 
-	uploadImage(img: any): Observable<CloudinaryResponse>  {
+
+
+
+	uploadImage(img: File): Observable<CloudinaryResponse>  {
 		console.log('wenas soy el service',img)
 		const formData = new FormData();
-		formData.append('file', img)
+		formData.append('file', img, img.name)
 		console.log('soy el formulario',formData)
 	
 		return this.http.post<CloudinaryResponse>(this.urlImg, formData)

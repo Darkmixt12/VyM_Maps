@@ -1,4 +1,5 @@
 
 	<input type="file" class="BtnUpdated"(change)="uploadFile($event)">
-	<button (click)="upImage()" [disabled]="!imagenSubir" class="btn btn-primary mt-5 w-100">Guardar</button>
+	<button (click)="upImage()" [disabled]="!file" class="btn btn-primary mt-5 w-100">Guardar</button>
 
+	<img src="{{imagenSubida}}" alt="">

@@ -9,25 +9,30 @@ import { LocationService } from 'src/app/maps/services/locations.service';
 export class UploadBtnComponent {
 
   private locationService = inject(LocationService);
-  public imagenSubir!: FileList;
 
 
+
+  public file?: File;
+  public imagenSubida?: string;
 
   uploadFile(event: Event) {
     const element = event.currentTarget as HTMLInputElement;
-    let fileList: FileList | null = element.files;
-    if (fileList) {
-      console.log("FileUpload -> files", fileList);
-      this.imagenSubir = fileList
+    let file: File = element.files![0];
+    if (file) {
+      console.log("FileUpload -> files", file);
+      this.file = file
     
+      console.log('Hola soy file', file)
     }
-    
-    
 }
 
+  
+
   upImage(){
-    console.log(this.imagenSubir)
-    this.locationService.uploadImage(this.imagenSubir).subscribe(console.log)
+    if(!this.file) return
+    this.locationService.uploadImage(this.file).subscribe( (response) => {
+      (this.imagenSubida = response.secure_url)
+    })
   }
 
 }
