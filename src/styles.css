@@ -1,6 +1,8 @@
 @import "primeicons/primeicons.css";
 
-
+body{
+  background: #424242
+}
 .spacer{
 	flex: 1 1 auto;
 }

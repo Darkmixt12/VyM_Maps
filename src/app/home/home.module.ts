@@ -15,6 +15,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 import { FileUploadModule } from 'primeng/fileupload';
 import { ClientEditPageComponent } from './pages/client-edit-page/client-edit-page.component';
@@ -51,7 +53,9 @@ import {ToastModule} from 'primeng/toast';
     TagModule,
     ButtonModule,
     FileUploadModule,
-    ToastModule
+    ToastModule,
+    DialogModule,
+    DynamicDialogModule
   
 
   ]

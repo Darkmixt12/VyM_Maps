@@ -1,3 +1,5 @@
+<body>
+	
 <div class="container">
 <p-table 
 #dt1
@@ -5,7 +7,7 @@ dataKey="id"
 [value]="locations" 
 [tableStyle]="{ 'min-width': '60rem' }" class="table1"
 [paginator]="true"
-[rows]="10"
+[rows]="8"
 [showCurrentPageReport]="true"
 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
 [globalFilterFields]="['title','provincia', 'agente', 'email', 'telefono']"
@@ -68,26 +70,27 @@ currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
             <td>{{ locations.agente }}</td>
             <td>{{ locations.email }}</td>
             <td>{{ locations.telefono }}</td>
-			
+			<td class="del-edit-btn">
+
+				<div class="card flex justify-content-center">
+					<p-dialog header="Editar Cliente" [(visible)]="visible">
+						<app-client-edit-page [itemHijo]="item"></app-client-edit-page>
+					</p-dialog>
+
+					<p-button (click)="getByIdPlace(locations._id)" (click)="showDialog()" icon="pi pi-file-edit"></p-button>
+				</div>
+
+				<button class="btndel"  type="button" pButton icon="pi pi-trash" severity="danger"></button>
+
+				<div class="card flex justify-content-center">
+					<p-toast></p-toast>
+					<p-button (click)="show()" (click)="getByIdPlace(locations._id)" icon="pi pi-search" label="Select a Product"></p-button>
+				</div>				
+
+            </td>
         </tr>
     </ng-template>
 </p-table>
 </div>
 
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-<app-client-edit-page></app-client-edit-page>
 
-<hr>
-<hr>
-<hr>
-<hr>
-<hr><hr>
-<hr>
-<hr>
-<hr>
-<hr>

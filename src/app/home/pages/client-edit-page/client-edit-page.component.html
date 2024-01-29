@@ -1,38 +1,100 @@
 <div class="container">
 	<h1 class="page-header">
-		Perfil de Usuario
+	{{itemHijo?.title}}
 	</h1>
   <div class="title">
     <div>
       <app-upload-btn [imagenSubida]="imgProfile"></app-upload-btn>
     </div>
+    <form action="" [formGroup]="myForm" class="formUpdated">
+		<h3> Informacion de Cliente</h3>
 
-    <div class="">
-		<h3> Informacion de Usuario</h3>
-      <div class="title2">
+    <div class="infClient">
 
-        <div class="borderTitle">
+      <div class="borderTitle">
 
-          <h1>Aqui va el titulo del Cliente</h1>
-		  <h2> Provincia </h2>
-		  <h2>Direccion del cliente</h2>
+        <div>
+          <label for="exampleInputEmail1">Nombre</label>
+          <input
+            formControlName="title"
+            class="form-control"
+            id="exampleInputEmail1"
+            placeholder="Ingrese el nombre de la Ubicacion"
+            value="John"
+          />
         </div>
-		
-		<ul>
+        <div>
+          <label for="exampleInputEmail1">Provincia</label>
+          <select class="form-select" aria-label="Default select example" formControlName="provincia">
+            <option value="San Jose">San Jose</option>
+            <option value="Heredia">Heredia</option>
+            <option value="Cartago">Cartago</option>
+            <option value="Alajuela">Alajuela</option>
+            <option value="Limon">Limón</option>
+            <option value="Guanacaste">Guanacaste</option>
+            <option value="Puntarenas">Puntarenas</option>
+  
+          </select>
+        </div>
+        <div>
+          <label for="exampleInputEmail1">Agente</label>
+          <select class="form-select" aria-label="Default select example" formControlName="agente">
+            <option value="25L">25L</option>
+            <option value="23">14</option>
+            <option value="19">19</option>
+            <option value="13F">13F</option>
+            <option value="13C">13C</option>
+            <option value="23">23</option>
+            <option value="P10">P10</option>
+            <option value="O10">O10</option>
+            <option value="28">28</option>
+            <option value="8F">8F</option>
+            <option value="8G">8G</option>
+            <option value="V1">V1</option>
+            <option value="TELJ">TELJ</option>
+            <option value="TELA">TELA</option>
+  
+          </select>
+        </div>
 
-		
-			<li> Nombre cliente</li>
-			<li> Telefono cliente</li>
-			<li> Correo Cliente</li>
-			<li> Identificacion</li>
-		</ul>
-        <button class="BtnUpdated1">Editar Cliente</button>
       </div>
-
     </div>
+        <h3> Detalles de Cliente</h3>   
 
-    <div class="content">
-      <form action=""></form>
-    </div>
+
+        <div class="infClient">
+
+          <div class="borderTitle">
+  
+            <div>
+              <label>Telefono</label>
+              <input
+                formControlName="telefono"
+                class="form-control"
+                placeholder="Ingrese su numero de Telefono"
+              />
+            </div>
+            <div>
+              <label>Email</label>
+              <input
+                formControlName="email"
+                class="form-control"
+                placeholder="Ingrese su direccion de Correo"
+              />
+            </div>
+            <div>
+              <label for="exampleInputEmail1">Decripción</label>
+              <input
+                formControlName="description"
+                class="form-control"
+                placeholder="Ingrese una descripcion"
+              />
+            </div>
+  
+          </div>
+        </div>
+        <button class="BtnUpdated1">Editar Cliente</button>
+
+    </form>
   </div>
 </div>
