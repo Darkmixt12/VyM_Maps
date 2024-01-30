@@ -6,6 +6,8 @@ import { SidebarModule } from 'primeng/sidebar';
 import { UploadBtnComponent } from './upload-btn/upload-btn.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { FileUploadModule } from 'primeng/fileupload';
+
 @NgModule({
 	declarations: [
   
@@ -17,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 		RouterModule,
 		SidebarModule,
 		ReactiveFormsModule,
-		FormsModule
+		FormsModule,
+		FileUploadModule
 	],
 	exports:[
 		NavBarComponent,

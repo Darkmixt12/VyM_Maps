@@ -21,6 +21,7 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ClientEditPageComponent } from './pages/client-edit-page/client-edit-page.component';
 import {ToastModule} from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 
@@ -55,7 +56,8 @@ import {ToastModule} from 'primeng/toast';
     FileUploadModule,
     ToastModule,
     DialogModule,
-    DynamicDialogModule
+    DynamicDialogModule,
+    ConfirmDialogModule
   
 
   ]

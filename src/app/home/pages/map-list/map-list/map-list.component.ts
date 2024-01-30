@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 import { LocationsResponse } from 'src/app/maps/interfaces/locationsResponse';
 import { LocationService } from 'src/app/maps/services/locations.service';
 import { Table } from 'primeng/table';
@@ -12,7 +12,7 @@ import { MessageService } from 'primeng/api';
   providers: [DialogService, MessageService],
   styleUrls: ['./map-list.component.css']
 })
-export class MapListComponent implements OnInit {
+export class MapListComponent implements OnInit, OnDestroy {
 
 
 public locations: LocationsResponse[] = []
@@ -25,10 +25,7 @@ private dialogService  = inject(DialogService)
 
 
 public item!: LocationsResponse
-
-statuses!: any[];
 loading: boolean = true;
-activityValues: number[] = [0, 100];
 visible: boolean = false;
 
 
@@ -61,9 +58,12 @@ getFacturas(){
 getByIdPlace(id?: string) {
   if (!id) return
   this.locationService.getLocationById(id).subscribe( result => {
-    this.item = result
-    localStorage.setItem('id', result._id!)
-    console.log(this.item)
+    this.ref = this.dialogService.open(ClientEditPageComponent, { 
+      data: {
+        id: result._id
+    },
+      header: `Editar Cliente`,
+      width: '50vw',});
   })
 
 }
@@ -72,20 +72,13 @@ showDialog() {
   this.visible = true;
 }
 
-show() {
-  this.ref = this.dialogService.open(ClientEditPageComponent, { 
-    data: {
-      id: this.item._id
-  },
-    header: 'Select a Product'});
 
-  
-}
 
 ngOnDestroy() {
   if (this.ref) {
       this.ref.close();
   }
-  
+
 }
+
 }

@@ -4,15 +4,18 @@
 <div class="img-center">
   <img *ngIf="!imgTemporal" src="{{ test }}" class="img-avatar" alt="" />
   <img *ngIf="imgTemporal" src="{{ imgTemporal }}" class="img-avatar" />
+  <input type="file" (change)="uploadFile($event)" id="selectedFile" style="display: none;" />
+  <input type="button" class="BtnUpdated" value="Cambiar Imagen" onclick="document.getElementById('selectedFile').click();" />
 </div>
-<br />
-<div>
-  <input type="file" class="BtnUpdated" (change)="uploadFile($event)" />
+
+
+
+<div class="btns-upload">
   <button
+    class="btn-upload"
     (click)="upImage()"
     [disabled]="!file"
-    class="btn btn-primary mt-5 w-100"
   >
-    Guardar
+    Guardar Imagen
   </button>
 </div>
