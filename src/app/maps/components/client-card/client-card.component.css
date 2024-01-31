@@ -33,7 +33,7 @@ img{
 .descriptionList ul li{
 	padding-top: 5px 5px 5px;
 	display: flex;
-	align-items: center;
+	align-items: stretch;
 }
 
 .titles{

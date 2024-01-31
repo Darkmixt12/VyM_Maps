@@ -26,20 +26,10 @@ td{
 	background-color: #1f2937;
 }
 
-.container-btn{
-	display: flex;
-	justify-content: space-around;
-}
+
 
 .del-edit-btn{
 	display: flex;
-}
-
-.btndel{
-	margin-left: 5px;
-	border-radius: 10px;
-	background-color: #f87171;
-	border-color: none;
 }
 
 .btnadd{

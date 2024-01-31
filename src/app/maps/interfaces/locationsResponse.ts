@@ -8,6 +8,7 @@ export interface LocationsResponse {
 	description: string;
 	agente:      string;
 	telefono: number;
-	email: string
+	email: string;
+	image: string
 	__v?:         number;
 }
