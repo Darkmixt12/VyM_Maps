@@ -7,6 +7,7 @@ import { UploadBtnComponent } from './upload-btn/upload-btn.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FileUploadModule } from 'primeng/fileupload';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
 	declarations: [
@@ -20,7 +21,8 @@ import { FileUploadModule } from 'primeng/fileupload';
 		SidebarModule,
 		ReactiveFormsModule,
 		FormsModule,
-		FileUploadModule
+		FileUploadModule,
+		ToastModule
 	],
 	exports:[
 		NavBarComponent,

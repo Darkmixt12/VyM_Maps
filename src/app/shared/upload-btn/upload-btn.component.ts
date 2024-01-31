@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { LocationService } from 'src/app/maps/services/locations.service';
 
@@ -13,6 +14,7 @@ export class UploadBtnComponent implements OnInit{
 
   private locationService = inject(LocationService);
   private dialogConfig = inject(DynamicDialogConfig)
+  private messageService = inject(MessageService);
 
   public imgTemporal: any
   public file?: File;
@@ -25,17 +27,14 @@ export class UploadBtnComponent implements OnInit{
     const element = event.currentTarget as HTMLInputElement;
     let file: File = element.files![0];
     if (file) {
-      console.log("FileUpload -> files", file);
       this.file = file
-    
-      console.log('Hola soy file', file)
     }
 
     //* CREA IMAGEN TEMPORAL A LA HORA DE GUARDAR
     if(!event) return
 
     const reader = new FileReader();
-    const url64 = reader.readAsDataURL(file)
+    reader.readAsDataURL(file)
 
     reader.onloadend = () => {
       this.imgTemporal = reader.result
@@ -47,24 +46,34 @@ export class UploadBtnComponent implements OnInit{
 
   upImage(){
 
+
     if(!this.file) return
+    const id = this.dialogConfig.data.id._id
     this.locationService.uploadImage(this.file).subscribe( (response) => {
-      (this.imagenSubida = response.secure_url)
-      this.locationService.updatedLocation()
-      console.log(this.imagenSubida)
+      const objectTest = {image: response.secure_url}
+      this.deleteImageBeforeUpdate(id);
+      if(!id) return
+    this.locationService.updatedLocationImage(id, objectTest).subscribe( ()=> {
+      })
+      
     })
 
   }
 
-  saveImage(){
-    if(!this.imagenSubida) return 
-    const id = this.dialogConfig.data.id
-    this.locationService.updatedLocation(id, this.imagenSubida).subscribe()
+  deleteImageBeforeUpdate(id: string){
+    this.locationService.getLocationById(id).subscribe( result =>{
+      const SecretUrl = result.image
+      const SecretUrlArray = SecretUrl.split('/')
+      const SecretUrlKeyCut = SecretUrlArray[SecretUrlArray.length-1]
+      const publicName = SecretUrlKeyCut.split('.')[0]
+      this.locationService.deleteOldImage(publicName).subscribe()
+    })
   }
+
 
   getImage(){
     const id = this.dialogConfig.data.id
-    this.locationService.getLocationById(id!).subscribe( result => {
+    this.locationService.getLocationById(id._id).subscribe( result => {
 
       if( result.image ) {
         this.secretUrl = result.image
@@ -78,6 +87,10 @@ export class UploadBtnComponent implements OnInit{
 
   ngOnInit(): void {
     this.getImage();
+  }
+
+  show(){
+    this.messageService.add({ severity: 'success', summary: 'Completado', detail: 'imagen Actualizada Correctamente' });
   }
 
 

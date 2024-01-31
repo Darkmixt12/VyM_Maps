@@ -60,7 +60,7 @@ getByIdPlace(id?: string) {
   this.locationService.getLocationById(id).subscribe( result => {
     this.ref = this.dialogService.open(ClientEditPageComponent, { 
       data: {
-        id: result._id
+        id: result
     },
       header: `Editar Cliente`,
       width: '50vw',});

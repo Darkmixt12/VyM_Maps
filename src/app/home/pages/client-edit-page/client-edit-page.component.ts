@@ -41,7 +41,7 @@ ngOnInit(): void {
 patchForm(): void {
 
   const id = this.dialogConfig.data.id
-  this.locationService.getLocationById(id!).subscribe( result => {
+  this.locationService.getLocationById(id._id).subscribe( result => {
    this.myForm.patchValue({ 
     title: result.title,
     provincia: result.provincia,

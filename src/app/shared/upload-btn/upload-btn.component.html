@@ -11,12 +11,8 @@
 
 
 <div class="btns-upload">
-  <button
-    class="btn-upload"
-    (click)="upImage()" 
-    (click)="saveImage()"
-    [disabled]="!file"
-  >
+  <p-toast></p-toast>
+  <button class="btn-upload" (click)="upImage()" (click)="show()" [disabled]="!file">
     Guardar Imagen
   </button>
 </div>

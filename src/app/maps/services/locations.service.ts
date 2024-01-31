@@ -43,15 +43,18 @@ import { CloudinaryResponse } from '../interfaces/cloyudinaryResponse';
 	}
 
 	uploadImage(img: File): Observable<CloudinaryResponse>  {
-		console.log('wenas soy el service',img)
 		const formData = new FormData();
 		formData.append('file', img, img.name)
-		console.log('soy el formulario',formData)
-	
 		return this.http.post<CloudinaryResponse>(this.urlImg, formData)
 	}
 
-	updatedLocation(id: string, myForm : string): Observable<LocationsResponse>{
-		return this.http.patch<LocationsResponse>(this.url+'update/'+id, myForm)
+	updatedLocationImage(id: string, myForm : Object | LocationsResponse ) : Observable<Object | LocationsResponse>{
+		let params = JSON.stringify(myForm);
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+		return this.http.patch<Object | LocationsResponse>(this.url+'update/'+id, params, {headers})
+	}
+
+	deleteOldImage(imagePublicName : string){
+		return this.http.post(this.urlImg+'/delete/'+imagePublicName, imagePublicName )
 	}
   }
