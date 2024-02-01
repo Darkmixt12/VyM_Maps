@@ -1,9 +1,12 @@
 <div class="container-map">
-  <div class="container-form mt-6">
-    <h3>Agregar Ubicación</h3>
+
+
+  <div class="container-form">
+    <h3> NUEVO CLIENTE </h3>
     <br>
     <form action="" [formGroup]="myForm">
-      <div>
+      <p>Datos del cliente</p>
+      <div class="inputPosition">
         <label for="exampleInputEmail1">Nombre</label>
         <input
           formControlName="title"
@@ -14,7 +17,19 @@
           placeholder="Ingrese el nombre de la Ubicacion"
         />
       </div>
-      <div>
+
+      <div class="inputPosition">
+        <label for="exampleInputEmail1">Decripción</label>
+        <input
+          formControlName="description"
+          class="form-control"
+          placeholder="Ingrese una descripcion"
+        />
+      </div>
+
+  
+    <div class="flex-agente-provincia">
+      <div class="selectAgente">
         <label for="exampleInputEmail1">Agente</label>
         <select class="form-select" aria-label="Default select example" formControlName="agente">
           <option value="25L">25L</option>
@@ -47,46 +62,53 @@
 
         </select>
       </div>
-      <!--TODO: CORREO ELECTRONICO --> 
-      <div>
-        <label>Email</label>
+
+    </div>
+
+    <div class="flexTelEmail">
+      
+            <!--TODO: CORREO ELECTRONICO --> 
+            <div>
+              <label>Email</label>
+              <input
+                formControlName="email"
+                class="form-control"
+                placeholder="Ingrese su direccion de Correo"
+              />
+            </div>
+            <!--TODO: NUMERO DE TELEFONO --> 
+            <div>
+              <label>Telefono</label>
+              <input
+                formControlName="telefono"
+                class="form-control"
+                placeholder="Ingrese su numero de Telefono"
+              />
+            </div>
+      
+
+    </div>
+
+    
+    <div class="inputPosition">
+      <label for="exampleInputEmail1">Ubicacion</label>
+
         <input
-          formControlName="email"
+          [readonly]="true"
+          formControlName="lngLat"
+          type="text"
           class="form-control"
-          placeholder="Ingrese su direccion de Correo"
+          placeholder="Latitud y Logitud"
         />
+    </div>
+
+      <div class="btnsForm">
+
+        <button class="btnFormSubmit" [disabled]="myForm.invalid" (click)="saveNewLocation()">GUARDAR CLIENTE</button>
+        <button (click)="inputFormValue()" class="btnFormMarker material-symbols-outlined">share_location</button>
+
       </div>
-      <!--TODO: NUMERO DE TELEFONO --> 
-      <div>
-        <label>Telefono</label>
-        <input
-          formControlName="telefono"
-          class="form-control"
-          placeholder="Ingrese su numero de Telefono"
-        />
-      </div>
-      <div>
-        <label for="exampleInputEmail1">Decripción</label>
-        <input
-          formControlName="description"
-          class="form-control"
-          placeholder="Ingrese una descripcion"
-        />
-      </div>
-      <div>
-        <label for="exampleInputEmail1">Ubicacion</label>
-        <div class="latitud_input">
-          <input
-            [readonly]="true"
-            formControlName="lngLat"
-            type="text"
-            class="form-control"
-            placeholder="Latitud y Logitud"
-          />
-          <button (click)="inputFormValue()" class="btn btn-primary ms-1">+</button>
-        </div>
-      </div>
-      <button [disabled]="myForm.invalid" (click)="saveNewLocation()" class="btn btn-primary mt-5 w-100">Guardar</button>
+
     </form>
   </div>
 

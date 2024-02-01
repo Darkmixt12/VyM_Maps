@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, inject } from '@angular/core';
 import { LocationsResponse } from 'src/app/maps/interfaces/locationsResponse';
 import { LocationService } from 'src/app/maps/services/locations.service';
 import { Table } from 'primeng/table';
@@ -29,7 +29,6 @@ loading: boolean = true;
 visible: boolean = false;
 
 
-
 ngOnInit() {
  this.getFacturas();
  this.loading = false;
@@ -51,6 +50,19 @@ clear(table: Table) {
   table.clear();
 }
 
+updateTable(){
+  setTimeout(() => {
+    this.locationService.getLocations().subscribe(
+      response => {
+        if(response){
+          this.locations = response
+      
+        }
+      }
+    )
+  },500)
+}
+
 getFacturas(){
   return this.locationService.getLocations().subscribe( (locations) => (this.locations = locations))
 }
@@ -65,7 +77,9 @@ getByIdPlace(id?: string) {
       header: `Editar Cliente`,
       width: '50vw',});
   })
+  
 
+  
 }
 
 showDialog() {

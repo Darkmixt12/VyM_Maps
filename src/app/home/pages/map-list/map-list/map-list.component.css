@@ -1,6 +1,6 @@
-
 body{
-	padding: 50px;
+	padding-top: 30px;
+	margin-left: 250px; /*! para que no choque con el fixed del navbar */
 }
 th{
 	padding: 15px;
@@ -36,4 +36,18 @@ td{
 	border-radius: 5px;
 	background-color: #38bdf8;
 	border-color: none;
+}
+
+.container-btn{
+	display: flex;
+	justify-content: space-around;
+}
+
+input{
+	padding: 10px;
+
+}
+
+.inputList{
+margin-left: 10px;
 }

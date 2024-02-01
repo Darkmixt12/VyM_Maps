@@ -2,39 +2,128 @@
 
 
 .container-form{
-	background-color: white;
-	padding: 25px;
-	border-radius: 5px;
+	background-color: #1f2937;
+	padding: 15px;
+	border-radius: 20px;
+	margin-left: 250px; /*! para que no pegue con el navbar fixed */
+	width: 60%;
+	
+	
 }
 
+.form-control{
+	width: 80%;
+}
 
+.inputPosition{
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	flex-wrap: wrap;
+}
+
+p{
+	color: whitesmoke;
+	opacity: 0.9;
+	font-weight: 600;
+}
 
 
 /** FORM TITLE **/
 h3{
 	text-align: center;
-	padding: 15px;
-	color: black;
+
+	color: white;
 	margin-top: 20px;
 	font-size: 30px;
+	font-weight: 500;
 }
 
 label{
-	color: black;
+	color: white;
 	margin-bottom:10px;
-	margin-top: 10px
+	margin-top: 10px;
+	margin-left: 10px;
+	font-weight: 600;
+	opacity: 0.9;
 }
 
-.latitud_input{
+
+::placeholder {
+	color: gray;
+	opacity:  0.4;
+}
+
+
+
+
+
+.btnFormSubmit, .btnFormMarker{
+	padding: 14px;
+	background: #38bdf8;
+	color: black;
+	border-radius: 10px;
+	border: none;
+	width: 50%;
+	font-weight: 600;
+	margin-top: 40px;
+	transition: 1.5s
+}
+
+.btnFormSubmit[disabled]{
+	opacity: 0.3;
+	cursor: not-allowed;
+	background: #94a3b8;
+	
+}
+
+.btnFormMarker{
+	width: 90px;
+	font-size: 50px;
+	font-weight: 300;
+	background-color: #fb923c;
+}
+
+
+.flex-agente-provincia{
 	display: flex;
+
 }
 
+.flexTelEmail{
+	display: flex;
+	justify-content: space-around;
+}
+
+.selectAgente{
+
+	margin-right: 20px;
+}
+
+
+.btnsForm{
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 20px;
+	
+}
+
+
+
+
+
+
+
+/*! SECCION MAPA */
 
 .container-map{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 30px;
 	grid-auto-rows: minmax(100px, auto);
+	align-items: center;
+	margin-top: 45px;
+	
 }
 
 .map-container{
@@ -45,6 +134,7 @@ label{
 	margin-top: 20px;
 	border-radius: 10px;
 	font-family: 'Poppins';
+
 	
 
 }
@@ -54,9 +144,10 @@ label{
 	padding-right: 20px;
 	padding-left: 20px;
 	padding-bottom: 60px;
-	background-color: white	;
 	border-radius: 10px;
+	background-color: #1f2937;
 }
+
 
 .btn-map{
 	position: fixed;
@@ -87,15 +178,18 @@ label{
 	margin-top: 10px;
 	width: 300px;
 	margin-left: 200px;
+}
 
-	
+
+.latitud_input{
+	display: flex;
+}
+
+
+.latitud_input{
+	display: flex;
 }
 
 .label-lnglat{
 	margin-right: 20px;
-}
-
-::placeholder {
-	color: gray;
-	opacity:  0.4;
 }

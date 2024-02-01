@@ -89,7 +89,7 @@ export class UploadBtnComponent implements OnInit{
     this.getImage();
   }
 
-  show(){
+  clientImageUpdateMessage(){
     this.messageService.add({ severity: 'success', summary: 'Completado', detail: 'imagen Actualizada Correctamente' });
   }
 

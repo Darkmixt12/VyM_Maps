@@ -1,4 +1,6 @@
-
+.spacer{
+	margin-left: 250px; /*! para que no pegue con el navbar fixed */
+}
 
 
 h2, h1, p {

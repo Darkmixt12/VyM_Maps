@@ -19,3 +19,9 @@
 	transition: 0.9s;
 }
 
+#menu{
+	position: fixed;
+	height: 100vh;
+}
+
+

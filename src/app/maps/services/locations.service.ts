@@ -49,9 +49,9 @@ import { CloudinaryResponse } from '../interfaces/cloyudinaryResponse';
 	}
 
 	updatedLocationImage(id: string, myForm : Object | LocationsResponse ) : Observable<Object | LocationsResponse>{
-		let params = JSON.stringify(myForm);
+	
 		let headers = new HttpHeaders().set('Content-Type', 'application/json')
-		return this.http.patch<Object | LocationsResponse>(this.url+'update/'+id, params, {headers})
+		return this.http.patch<Object | LocationsResponse>(this.url+'update/'+id, myForm, {headers})
 	}
 
 	deleteOldImage(imagePublicName : string){

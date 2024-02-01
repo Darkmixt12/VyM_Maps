@@ -94,9 +94,10 @@
           </div>
         
         <!--TODO: BOTONES DE ELIMINADO Y EDITADO -->
-        <div class="btn-edit-client">
-        <button class="btnUpdated">Editar Cliente </button>
-        <button class="btnDelete">Eliminar Cliente</button>
+        <div class="btn-edit-client ">
+        <button class="btnUpdated" (click)="updateClient()" (click)="clientDataUpdateMessage()">Editar Cliente </button>
+        <p-confirmPopup></p-confirmPopup>
+        <button class="btnDelete" (click)="confirm2($event)">Eliminar Cliente</button>
         </div>
     </form>
   </div>
