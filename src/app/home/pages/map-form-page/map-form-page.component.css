@@ -3,24 +3,19 @@
 
 .container-form{
 	background-color: #1f2937;
-	padding: 15px;
 	border-radius: 20px;
 	margin-left: 250px; /*! para que no pegue con el navbar fixed */
-	width: 60%;
-	
-	
+	width: 55%;
+	padding-right: 50px;
+	padding-left:  50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 .form-control{
-	width: 80%;
+	width: 100%;
 }
 
-.inputPosition{
-	display: flex;
-	flex-direction: column;
-	align-content: space-around;
-	flex-wrap: wrap;
-}
 
 p{
 	color: whitesmoke;
@@ -28,11 +23,9 @@ p{
 	font-weight: 600;
 }
 
-
 /** FORM TITLE **/
 h3{
 	text-align: center;
-
 	color: white;
 	margin-top: 20px;
 	font-size: 30px;
@@ -48,18 +41,13 @@ label{
 	opacity: 0.9;
 }
 
-
 ::placeholder {
 	color: gray;
 	opacity:  0.4;
 }
 
-
-
-
-
 .btnFormSubmit, .btnFormMarker{
-	padding: 14px;
+	padding: 9px;
 	background: #38bdf8;
 	color: black;
 	border-radius: 10px;
@@ -84,34 +72,31 @@ label{
 	background-color: #fb923c;
 }
 
-
 .flex-agente-provincia{
 	display: flex;
+	justify-content: space-between;
 
 }
 
-.flexTelEmail{
+.flex-email-tel{
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between
 }
 
-.selectAgente{
-
-	margin-right: 20px;
+.select-agente-input{
+	width: 100%;
 }
-
 
 .btnsForm{
 	display: flex;
-	justify-content: space-around;
-	padding-bottom: 20px;
+	justify-content: space-between;
+	padding-bottom: 10px;
 	
 }
 
-
-
-
-
+.spacer{
+	padding: 20px;
+}
 
 
 /*! SECCION MAPA */
@@ -123,6 +108,7 @@ label{
 	grid-auto-rows: minmax(100px, auto);
 	align-items: center;
 	margin-top: 45px;
+	padding: 20px;
 	
 }
 
@@ -134,62 +120,36 @@ label{
 	margin-top: 20px;
 	border-radius: 10px;
 	font-family: 'Poppins';
-
-	
-
 }
 
 .div-map{
-	padding-top: 20;
+	
 	padding-right: 20px;
 	padding-left: 20px;
-	padding-bottom: 60px;
 	border-radius: 10px;
 	background-color: #1f2937;
 }
 
+.btnsMapInput{
+	display: flex;
+	padding: 20px;
+	justify-content: space-between;
+}
+
+.input-Lng, .input-Lat{
+	display: flex;
+	justify-content: space-around;
+}
+
+.input-lnglat{
+	width: 70%
+}
 
 .btn-map{
-	position: fixed;
-	margin-top: 10px;
-}
-
-.input-map{
-	position: fixed;
-	margin-top: 10px;
-	width: 300px;
-	margin-left: 40px;
-
-}
-
-.input-Lat{
-	
-	position: fixed;
-	display: flex;
-	margin-top: 10px;
-	width: 300px;
-	margin-left: 550px;
-	
-}
-
-.input-Lng{
-	position: fixed;
-	display: flex;
-	margin-top: 10px;
-	width: 300px;
-	margin-left: 200px;
-}
-
-
-.latitud_input{
-	display: flex;
-}
-
-
-.latitud_input{
-	display: flex;
-}
-
-.label-lnglat{
-	margin-right: 20px;
+	font-weight: 300;
+	background-color: #fb923c;
+	border-radius: 10px;
+	border: none;
+	color: black;
+	font-weight: 600;
 }

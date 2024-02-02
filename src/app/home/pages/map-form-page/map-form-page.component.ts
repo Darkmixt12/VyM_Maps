@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LngLat, Map, Marker, Popup } from 'mapbox-gl';
 import { LocationArray } from '../../interfaces/Locations';
 import { LocationService } from 'src/app/maps/services/locations.service';
+import { MessageService } from 'primeng/api';
 
 
 
@@ -16,6 +17,7 @@ interface MarkerandColor {
 @Component({
   selector: 'app-map-form-page',
   templateUrl: './map-form-page.component.html',
+  providers: [MessageService],
   styleUrls: ['./map-form-page.component.css']
 })
 export class MapFormPageComponent implements AfterViewInit, OnInit{
@@ -34,16 +36,17 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
   @ViewChild('mapDiv')
   mapDivElement!: ElementRef
 
-
+  private messageService = inject(MessageService);
 
   public myForm: FormGroup = this.fb.group({
     title: ['', [Validators.required]],
     provincia: ['', Validators.required],
-    description: ['example location place', [Validators.required]],
+    description: ['', [Validators.required]],
     lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
     agente: ['', Validators.required],
-    email: ['example@gmail.com', [Validators.required, Validators.email]],
-    telefono: ['98741532', [Validators.required, Validators.min(8)]]
+    email: ['', [Validators.required, Validators.email]],
+    telefono: ['', [Validators.required, Validators.min(8)]],
+    image: [' ']
 })
 
   ngAfterViewInit(): void {
@@ -117,6 +120,17 @@ saveToLocalStorage(){
 saveNewLocation(){
   this.locationService.registerLocation(this.myForm.value).subscribe(console.log)
   this.myForm.reset()
+}
+
+
+clientDataUpdateMessage(){
+  if(!this.test) {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Recuerde añadir un marcador y moverlo antes de precionarme' });
+  } else{
+    this.messageService.add({ severity: 'success', summary: 'Completado', detail: 'Latitud y Longitudes añadidas' });
+  }
+ 
+
 }
 
 }    

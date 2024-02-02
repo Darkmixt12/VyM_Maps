@@ -18,7 +18,7 @@
         />
       </div>
 
-      <div class="inputPosition">
+      <div>
         <label for="exampleInputEmail1">Decripción</label>
         <input
           formControlName="description"
@@ -29,9 +29,9 @@
 
   
     <div class="flex-agente-provincia">
-      <div class="selectAgente">
+      <div>
         <label for="exampleInputEmail1">Agente</label>
-        <select class="form-select" aria-label="Default select example" formControlName="agente">
+        <select class="form-select select-agente-input" aria-label="Default select example" formControlName="agente">
           <option value="25L">25L</option>
           <option value="23">14</option>
           <option value="19">19</option>
@@ -49,6 +49,7 @@
 
         </select>
       </div>
+      <section class="spacer"></section>
       <div>
         <label for="exampleInputEmail1">Provincia</label>
         <select class="form-select" aria-label="Default select example" formControlName="provincia">
@@ -65,32 +66,31 @@
 
     </div>
 
-    <div class="flexTelEmail">
-      
-            <!--TODO: CORREO ELECTRONICO --> 
+    <div class="flex-email-tel">
             <div>
               <label>Email</label>
               <input
                 formControlName="email"
-                class="form-control"
+                class=" form-control"
                 placeholder="Ingrese su direccion de Correo"
               />
             </div>
+            <span class="spacer"></span>
             <!--TODO: NUMERO DE TELEFONO --> 
             <div>
               <label>Telefono</label>
               <input
                 formControlName="telefono"
-                class="form-control"
+                class=" form-control"
                 placeholder="Ingrese su numero de Telefono"
               />
             </div>
-      
+    </div> 
 
-    </div>
+ 
 
     
-    <div class="inputPosition">
+    <div>
       <label for="exampleInputEmail1">Ubicacion</label>
 
         <input
@@ -105,7 +105,8 @@
       <div class="btnsForm">
 
         <button class="btnFormSubmit" [disabled]="myForm.invalid" (click)="saveNewLocation()">GUARDAR CLIENTE</button>
-        <button (click)="inputFormValue()" class="btnFormMarker material-symbols-outlined">share_location</button>
+        <p-toast></p-toast>
+        <button (click)="inputFormValue()" (click)="clientDataUpdateMessage()" class="btnFormMarker material-symbols-outlined" label="Top Left">share_location</button>
 
       </div>
 
@@ -120,18 +121,24 @@
 
   <div class="div-map mt-6">
     <div #mapDiv class="map-container"></div>
-    <button (click)="createMarker()" class="btn-map btn btn-primary"> Añadir Marcador </button>
+
+    <div class="btnsMapInput">
+
+
+    <button (click)="createMarker()" class="btn-map"> Añadir Marcador </button>
   
     <div class="input-Lng">
       <label class="label-lnglat"> Longitud </label>
-      <input class=" form-control" type="text" [value]="test?.lng">
+      <input class="input-lnglat form-control" type="text" [value]="test?.lng">
       </div>
 
     <div class="input-Lat">
     <label class="label-lnglat"> Latitud </label>
-    <input class=" form-control" type="text" [value]="test?.lat">
+    <input class="input-lnglat form-control" type="text" [value]="test?.lat">
       
     </div>
+
+  </div>
 
 
   </div>
