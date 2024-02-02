@@ -104,9 +104,9 @@
 
       <div class="btnsForm">
 
-        <button class="btnFormSubmit" [disabled]="myForm.invalid" (click)="saveNewLocation()">GUARDAR CLIENTE</button>
         <p-toast></p-toast>
-        <button (click)="inputFormValue()" (click)="clientDataUpdateMessage()" class="btnFormMarker material-symbols-outlined" label="Top Left">share_location</button>
+        <button class="btnFormSubmit" [disabled]="myForm.invalid" (click)="saveNewLocation()" (click)="clientDataUpdateMessage('Cliente creado con exitosamente')">GUARDAR CLIENTE</button>
+        <button (click)="inputFormValue()" (click)="clientDataUpdateMessage('Latitud y Longitudes añadidas')" class="btnFormMarker material-symbols-outlined" label="Top Left">share_location</button>
 
       </div>
 

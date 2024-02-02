@@ -123,15 +123,17 @@ saveNewLocation(){
 }
 
 
-clientDataUpdateMessage(){
+clientDataUpdateMessage( message: string){
   if(!this.test) {
-    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Recuerde añadir un marcador y moverlo antes de precionarme' });
+    this.messageService.add({ severity: 'error', summary: 'Recuerde añadir un marcador y moverlo antes de precionarme', detail: message });
   } else{
-    this.messageService.add({ severity: 'success', summary: 'Completado', detail: 'Latitud y Longitudes añadidas' });
+    this.messageService.add({ severity: 'success', summary: 'Completado', detail: message });
   }
  
 
 }
+
+
 
 }    
 
