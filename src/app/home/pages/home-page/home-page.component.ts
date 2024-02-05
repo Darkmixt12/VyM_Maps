@@ -25,6 +25,7 @@ export class HomePageComponent implements OnInit {
     this.getVentas();
     //this.ventaSemanal();
     this.ventaSemanal();
+    this.chartjs();
   }
   // readFormLocalStorage() {
   //   const plainMarkersString = localStorage.getItem('locations') ?? '[]';
@@ -168,6 +169,7 @@ export class HomePageComponent implements OnInit {
           },
         ],
         options: {
+          maintainAspectRatio: false,
           plugins: {
             legend: { position: 'left', align: 'center' },
           },
@@ -212,11 +214,105 @@ export class HomePageComponent implements OnInit {
       });
     });
   }
+
+
+
+
+  data: any;
+
+    options: any;
+
+    basicData: any;
+
+    basicOptions: any;
+
+    chartjs() {
+        const documentStyle = getComputedStyle(document.documentElement);
+        const textColor = documentStyle.getPropertyValue('--text-color');
+        const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
+        const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
+
+
+      this.ventasService.getVentas().subscribe( ventas => {
+
+        let provincias = {
+          Limon: 0,
+          Heredia: 0,
+          Cartago: 0,
+          Alajuela: 0,
+          'San Jose': 0,
+          Guanacaste: 0,
+          Puntarenas: 0,
+        };
+  
+        ventas.map((x: any) => {
+          provincias[x.provCliente as keyof typeof provincias] += parseFloat(
+            x.importe.toFixed(3)
+          );
+          return '';
+        });
+
+        const puntoVenta2 = [
+          ...new Set(ventas.map((puntoVenta2) => puntoVenta2.provCliente)),
+        ];
+  
+
+        
+        this.basicData = {
+          labels: puntoVenta2,
+          datasets: [
+              {
+                  label: 'Sales',
+                  data: provincias,
+                  backgroundColor: ['rgba(255, 159, 64, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(153, 102, 255, 0.2)'],
+                  borderColor: ['rgb(255, 159, 64)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)', 'rgb(153, 102, 255)'],
+                  borderWidth: 1
+              }
+          ]
+      };
+
+
+      this.basicOptions = {
+        plugins: {
+            legend: {
+                labels: {
+                    color: textColor
+                }
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    color: textColorSecondary
+                },
+                grid: {
+                    color: surfaceBorder,
+                    drawBorder: false
+                }
+            },
+            x: {
+                ticks: {
+                    color: textColorSecondary
+                },
+                grid: {
+                    color: surfaceBorder,
+                    drawBorder: false
+                }
+            }
+        }
+    };
+
+
+      })
+        
 }
+  
 
-//  getgetArrayexample(array:VentasResponse[], fecha:string, result:number): number {
 
-//     array.forEach( n => {
+
+
+}
 //       if( n.regFecha === fecha){
 //         result += n.importe
 //       }

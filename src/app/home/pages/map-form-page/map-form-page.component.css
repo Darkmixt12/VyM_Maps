@@ -153,3 +153,47 @@ label{
 	color: black;
 	font-weight: 600;
 }
+
+
+@media only screen and (max-width: 1110px) {
+
+	.container-map{
+		display: grid;
+		grid-template-columns: 100%;
+		grid-gap: 30px;
+		grid-auto-rows: minmax(100px, auto);
+		align-items: center;
+		margin-top: 45px;
+		padding: 20px;
+		
+	}
+
+	.container-form{
+		margin-left: 0px;
+		width: 100%;
+		height: 100%;
+	}
+
+	.btnsMapInput{
+		display: flex;
+		flex-direction: column;
+	
+
+	}
+
+	.btnsMapInput, .input-Lng, .input-Lat{
+		margin-top: 20px;
+
+	
+	}
+
+	.map-container{
+		top: 0px;
+		right: 0px;
+		width: 50vw;
+		height: 50vh;
+		margin-top: 20px;
+		border-radius: 10px;
+		font-family: 'Poppins';
+	}
+}

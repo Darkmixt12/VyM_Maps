@@ -23,6 +23,7 @@ import { ClientEditPageComponent } from './pages/client-edit-page/client-edit-pa
 import {ToastModule} from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
+import { ChartModule } from 'primeng/chart';
 
 
 
@@ -59,7 +60,8 @@ import { ConfirmPopupModule } from 'primeng/confirmpopup';
     DialogModule,
     DynamicDialogModule,
     ConfirmDialogModule,
-    ConfirmPopupModule
+    ConfirmPopupModule,
+    ChartModule
   
 
   ]
