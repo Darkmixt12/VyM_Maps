@@ -2,17 +2,18 @@
 	margin-left: 250px; /*! para que no pegue con el navbar fixed */
 }
 
-@media only screen and (max-width: 1110px) {
-	.spacer {
-		margin-left: 0px;
-
-	}
-	.graphbox2{
-		display: grid;
-		grid-template-columns: 100%;
-		min-height: 500px;
-	}
+.graphContainer{
+	display: flex;
+	padding: 20px;
+	justify-content: space-evenly
 }
+
+.card{
+	color: rgb(255, 255, 255);
+	background: rgba(24, 23, 23, 0.668);
+	padding: 20px;
+}
+
 
 h2, h1, p {
 	text-align: center;
@@ -24,28 +25,32 @@ h2, h1, p {
 
 .graphbox {
 	position: relative;
-	width: 100%;
+	width: 30%;
+	height: 40%;
 	padding: 20px;
 	display: grid;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: 100%;
 	grid-gap: 20px;
 	min-height: 30px;
+	margin-top: 200px;
 }
 
 .graphbox2 {
 	position: relative;
-	width: 100%;
+	width: 60%;
 	padding: 20px;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 100%;
+	grid-gap: 20px;
 	min-height: 200px;
 }
 
-.graphbox .box3, .box4{
+.graphbox .box4{
 position: relative;
 background-color: #fff;
 padding: 20px;
-width: 90%;
+width: 100%;
+height: 50%;
 box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
 border-radius: 20px;
 }
@@ -61,21 +66,56 @@ border-radius: 20px;
 }
 
 
+
+
+
+/*! MEDIA SIZE */
+
+@media only screen and (max-width: 1110px) {
+	.spacer {
+		margin-left: 0px;
+
+		
+	}
+
+	.graphbox2{
+		display: grid;
+		grid-template-columns: 100%;
+		min-height: 500px;
+	}
+}
+
+
 @media only screen and (max-width: 700px) {
 	
+	.graphContainer{
+		flex-direction: column;
+	}
+
 	.graphbox2 {
 		position: relative;
 		width: 100%;
-		padding: 20px;
 		display: grid;
 		grid-template-columns: 100%;
 		min-height: 200px;
+		padding: 0px;
+	}
+
+	.graphbox {
+		position: relative;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 100%;
+		min-height: 200px;
+		padding: 0px;
+		margin-top: 20px;
 	}
 
 	.box2 {
 		width: 100%;
 		height: 110%;
 	}
+
 }
 
 
@@ -89,10 +129,13 @@ border-radius: 20px;
 		width: 300px;
 		height: 300px;
 	}
+
+	.graphbox2{
+		padding: 0px;
+	}
+	
+	.graphbox{
+		width: 100%;
+	}
 }
 
-
-.card{
-	color: black;
-	background: rgb(12, 9, 35);
-}

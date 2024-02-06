@@ -40,6 +40,10 @@
 	backdrop-filter: blur(1rem);
   }
 
+  .mobile-nav-toggle{
+	background: red;
+}
+
 
 @supports (backdrop-filter: blur(1rem)) {
 	.primary-navigation {
@@ -50,7 +54,7 @@
 @media only screen and (max-width: 1110px) {
 	header .primary-navigation {
 	  position: fixed;
-	  inset: 0 0 0 80%;
+	  inset: 0 0 0 78%;
 	  background-color: steelblue;
 	  flex-direction: column;
 	  padding: min(30vh, 10rem) 2em;
@@ -79,6 +83,88 @@
 	}
   }
 
-.mobile-nav-toggle{
-	background: red;
-}
+
+
+
+
+@media only screen and (max-width: 1000px) {
+	header .primary-navigation {
+	  position: fixed;
+	  inset: 0 0 0 76%;
+	  background-color: steelblue;
+	  flex-direction: column;
+	  padding: min(30vh, 10rem) 2em;
+	  z-index: 1000;
+  
+	  background: hsl(0 0% 100% / 0.1);
+	  backdrop-filter: blur(2rem);
+  
+	  transform: translateX(180%);
+	}
+  
+	header [data-visible='true'] {
+	  transform: translateX(0%);
+	}
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*! media para el SIDENAV al cambio de resolucion */
+
+@media only screen and (max-width: 1000px) {
+	header .primary-navigation {
+	  inset: 0 0 0 70%;
+	  }
+	}
+
+@media only screen and (max-width: 800px) {
+	header .primary-navigation {
+	  inset: 0 0 0 67%;
+	  }
+	}
+
+@media only screen and (max-width: 700px) {
+	header .primary-navigation {
+	  inset: 0 0 0 65%;
+	  }
+	}
+  
+@media only screen and (max-width: 600px) {
+		header .primary-navigation {
+		  inset: 0 0 0 59%;
+		}
+	}
+
+@media only screen and (max-width: 500px) {
+		header .primary-navigation {
+		  inset: 0 0 0 50%;
+		}
+	}
+
+
+@media only screen and (max-width: 400px) {
+		header .primary-navigation {
+		  inset: 0 0 0 30%;
+		}
+	}
+
+@media only screen and (max-width: 300px) {
+		header .primary-navigation {
+		  inset: 0 0 0 20%;
+		}
+	}
+  

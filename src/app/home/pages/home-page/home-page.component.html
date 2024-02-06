@@ -1,24 +1,30 @@
 <div class="spacer">
-<div class="graphbox2">
 
-	<div class="card">
-		<p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
-	</div> 
-	<div class="box2">
-		<canvas id="ventCharts"> </canvas>	
+<div class="graphContainer">
+
+
+	<div class="graphbox2">
+
+		<div class="card">
+			<p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+		</div> 
+	
+		<div class="card">
+			<p-chart type="bar" [data]="data" [options]="basicOptions"></p-chart>
+		</div>
 	</div>
+	
+	
+	<div class="graphbox">
+	
+		
+		<div class="card">
+			<p> Clientes por Agente </p>
+			<canvas id="modelsChart"> </canvas>	 	
+			
+		</div>
+	</div>
+	</div>
+	
 </div>
 
-
-<div class="graphbox">
-
-	<div class="box3">
-		<canvas id="modelsChart"> </canvas>	 
-	</div>
-	<div class="box4">
-		<canvas id="barsChart"> </canvas>	
-	</div>
-</div>
-</div>
-
-<p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
