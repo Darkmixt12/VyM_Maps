@@ -12,11 +12,12 @@
 	padding-bottom: 20px;
 }
 
+/* tamaño de los impu */
 .form-control{
 	width: 100%;
 }
 
-
+/* parrafo */
 p{
 	color: whitesmoke;
 	opacity: 0.9;
@@ -112,6 +113,8 @@ label{
 	
 }
 
+/*! como se ve el mapa */
+
 .map-container{
 	top: 0px;
 	right: 0px;
@@ -172,6 +175,8 @@ label{
 		margin-left: 0px;
 		width: 100%;
 		height: 100%;
+		justify-content: center;
+		
 	}
 
 	.btnsMapInput{
@@ -188,12 +193,12 @@ label{
 	}
 
 	.map-container{
-		top: 0px;
-		right: 0px;
-		width: 50vw;
-		height: 50vh;
-		margin-top: 20px;
-		border-radius: 10px;
-		font-family: 'Poppins';
+		width: 88vw;
+		height: 60vh;
+	}
+
+	.btn-map{
+		width: 20%;
+		padding: 20px;
 	}
 }

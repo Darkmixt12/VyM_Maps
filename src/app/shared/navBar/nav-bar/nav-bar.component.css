@@ -33,10 +33,10 @@
 .primary-header {
 	align-items: center;
 	justify-content: space-between;
+	
   }
   
   .primary-navigation {
-	background: hsl(0 0% 0% / 0.75);
 	backdrop-filter: blur(1rem);
   }
 
@@ -57,7 +57,7 @@
 	  inset: 0 0 0 78%;
 	  background-color: steelblue;
 	  flex-direction: column;
-	  padding: min(30vh, 10rem) 2em;
+	  padding: min(30vh, 0rem) 2em;
 	  z-index: 1000;
   
 	  background: hsl(0 0% 100% / 0.1);
@@ -87,43 +87,19 @@
 
 
 
+
+
+  
+
+
+  /*! media para el SIDENAV al cambio de resolucion */
+
 @media only screen and (max-width: 1000px) {
 	header .primary-navigation {
-	  position: fixed;
 	  inset: 0 0 0 76%;
-	  background-color: steelblue;
-	  flex-direction: column;
-	  padding: min(30vh, 10rem) 2em;
-	  z-index: 1000;
-  
-	  background: hsl(0 0% 100% / 0.1);
-	  backdrop-filter: blur(2rem);
-  
-	  transform: translateX(180%);
+	  padding: min(30vh, 0rem) 2em;
 	}
-  
-	header [data-visible='true'] {
-	  transform: translateX(0%);
-	}
-  
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*! media para el SIDENAV al cambio de resolucion */
 
 @media only screen and (max-width: 1000px) {
 	header .primary-navigation {
