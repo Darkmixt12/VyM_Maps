@@ -16,18 +16,17 @@
 	
 }
 
-.btn-delete{
+.btn-delete,.btn-cancel{
 	background: #ff0055;
 	color: #fff;
 	padding: 10px;
 	border-radius: 5px;
+	border: none;
 }
 
 .btn-cancel{
 	background: #0f75e9;
-	color: #fff;
-	padding: 10px;
-	border-radius: 5px;
+
 }
 
 .locationName{

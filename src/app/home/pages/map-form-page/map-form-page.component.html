@@ -18,6 +18,8 @@
         />
       </div>
 
+      <span *ngIf="isValidField('title')" class="form-text text-danger"> {{ getFieldError('title') }} </span>
+
       <div>
         <label for="exampleInputEmail1">Decripción</label>
         <input
@@ -38,6 +40,7 @@
           <option value="13F">13F</option>
           <option value="13C">13C</option>
           <option value="23">23</option>
+          <option value="26">26</option>
           <option value="P10">P10</option>
           <option value="O10">O10</option>
           <option value="28">28</option>

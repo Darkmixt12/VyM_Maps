@@ -61,7 +61,6 @@ h1{
 
 .btnMenu{
 	display: flex;
-	padding: 10px 22px;
 	flex-wrap: wrap;
 }
 
@@ -80,7 +79,6 @@ button{
 	-webkit-box-flex:  1;
 	flex: 1 1 0px;
 	text-align: center;
-	padding: 2px;
 	margin: 5px;
 	border-radius: 100px;
 	border: none;
@@ -93,3 +91,17 @@ button{
 	font-size: 30px;
 }
 
+.closeCard{
+	color: #E91E63;
+	border-radius: 5px;
+	padding: 3px;
+	margin-left: 268px;
+}
+
+.deletebtn{
+	color: #E91E63;
+}
+
+.newLocationbtn{
+	color: #58D68D;
+}

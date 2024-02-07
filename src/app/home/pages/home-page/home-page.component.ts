@@ -22,14 +22,16 @@ export class HomePageComponent implements OnInit {
   public options: any;
   public basicData: any;
   public basicOptions: any;
+  public dataDonut: any
 
   ngOnInit(): void {
-    this.donusGrap();
     this.linesGrap();
     this.chartjs();
+    this.AgentxClient();
   }
 
-  donusGrap() {
+
+  AgentxClient(){
     this.locationService.getLocations().subscribe((locations) => {
       if (!locations) return;
 
@@ -37,25 +39,55 @@ export class HomePageComponent implements OnInit {
         ...new Set(locations.map((puntoVenta) => puntoVenta.agente)),
       ];
 
-      const data = {
-        labels: puntoVenta,
-        borderColor: [
-          'rgb(24, 23, 23, 0.668)',
-        ],
-        datasets: [
-          {
-            data: puntoVenta.map(
-              (currentModel) =>
-                locations!.filter(
-                  (puntoVenta) => puntoVenta.agente === currentModel
-                ).length
-            ),
-          },
-        ],
-      };
-      new Chart('modelsChart', { type: 'doughnut', data });
-    });
-  }
+
+    this.dataDonut = {
+      labels: puntoVenta,
+      datasets: [
+        {
+          data: puntoVenta.map(
+            (currentModel) =>
+              locations!.filter(
+                (puntoVenta) => puntoVenta.agente === currentModel
+              ).length
+          ),
+          borderColor: [
+            'rgb(255, 99, 132)',
+            'rgb(255, 159, 64)',
+            'rgb(255, 205, 86)',
+            'rgb(75, 192, 192)',
+            'rgb(54, 162, 235)',
+            'rgb(153, 102, 255)',
+            'rgb(201, 203, 207)',
+          ],
+          borderWidth: 1,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 205, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(201, 203, 207, 0.2)',
+          ],
+        },
+      ]
+  };
+
+
+  this.options = {
+      cutout: '60%',
+      plugins: {
+          legend: {
+              labels: {
+              
+              }
+          }
+      }
+  };
+
+  })
+}
+
 
 
   /*  ESTE ES EL GRAFICO DE CLIENTES POR PROVINCIA */

@@ -1,5 +1,6 @@
-
+	
 	<div *ngIf="itemHijo?._id" class=" containerClient">
+		<button class="closeCard pi pi-times" (click)="hideCardClient()"></button>
 		<img src="{{itemHijo?.image}}" alt="">
 		<section class="titles">
 			<h2 class="agenteTitle"> {{itemHijo?.agente}} </h2>
@@ -8,14 +9,14 @@
 		<hr>
 		<div class="btnMenu">
 			<div class="btnEdit">
-				<button class="material-symbols-outlined">edit</button>
+				<button class="material-symbols-outlined">directions_car</button>
 				
 			</div>
 			<div class="btnAdd">
-				<button class="material-symbols-outlined" (click)="addNewLocation()">add_location_alt</button>
+				<button class="newLocationbtn material-symbols-outlined" (click)="addNewLocation()">add_location_alt</button>
 			</div>
 			<div class="btnDel">
-				<button class="material-symbols-outlined" (click)="toogleLocations()">delete</button>
+				<button class="deletebtn material-symbols-outlined" (click)="toogleLocations()">delete</button>
 			</div>
 		</div>
 			<hr>

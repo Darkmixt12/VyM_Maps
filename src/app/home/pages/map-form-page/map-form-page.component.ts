@@ -133,7 +133,31 @@ clientDataUpdateMessage( message: string){
 
 }
 
+isValidField(field: string): boolean | null{
+  return this.myForm.controls[field].errors && this.myForm.controls[field].touched;
+}
 
+getFieldError(field: string): string | null{
+
+    if( !this.myForm.controls[field] ) return null
+
+    const errores = this.myForm.controls[field].errors || {};
+
+
+    for (const key of Object.keys(errores)) {
+      
+      switch( key ) {
+
+        case 'required': 
+          return 'Este campo es requerido'
+
+        case 'minlength': 
+          return `Minimo ${ errores['minlength'].requiredLength } caracters`
+      }
+    }
+
+    return null
+}
 
 }    
 

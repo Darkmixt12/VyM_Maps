@@ -201,4 +201,73 @@ label{
 		width: 20%;
 		padding: 20px;
 	}
+
+	#menu{
+		display: none;
+	}
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+	.map-container{
+		width: 86vw;
+		height: 60vh;
+	}
+
+}
+
+@media only screen and (max-width: 800px) {
+
+	.map-container{
+		width: 84vw;
+		height: 60vh;
+	}
+
+}
+
+@media only screen and (max-width: 700px) {
+
+	.map-container{
+		width: 82vw;
+		height: 60vh;
+	}
+
+}
+
+@media only screen and (max-width: 700px) {
+
+	.map-container{
+		width: 80vw;
+		height: 60vh;
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+
+	.map-container{
+		width: 78vw;
+		height: 60vh;
+	}
+
+}
+
+
+@media only screen and (max-width: 600px) {
+
+	.map-container{
+		width: 72vw;
+		height: 45vh;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+
+	.map-container{
+		width: 76vw;
+		height: 40vh;
+	}
+
 }

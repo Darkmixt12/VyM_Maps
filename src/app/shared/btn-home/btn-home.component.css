@@ -4,3 +4,14 @@ button{
 	left: 300px;
 	color: white;
 }
+
+
+
+@media only screen and (max-width: 1110px) {
+
+	button{
+	    top: 75px;
+    	left: 20px;
+	}
+
+}

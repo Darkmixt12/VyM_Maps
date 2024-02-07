@@ -41,3 +41,12 @@ button{
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
 	border-bottom-color: #91c949;
   }
+
+
+  @media only screen and (max-width: 1110px) {
+
+	app-vym-logo{
+		display: none;
+	}
+
+  }
