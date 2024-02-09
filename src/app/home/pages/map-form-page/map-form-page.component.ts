@@ -4,6 +4,7 @@ import { LngLat, Map, Marker, Popup } from 'mapbox-gl';
 import { LocationArray } from '../../interfaces/Locations';
 import { LocationService } from 'src/app/maps/services/locations.service';
 import { MessageService } from 'primeng/api';
+import * as customValidators from '../../interfaces/Validators'
 
 
 
@@ -44,8 +45,8 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
     description: ['', [Validators.required]],
     lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
     agente: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    telefono: ['', [Validators.required, Validators.min(8)]],
+    email: ['', [Validators.required, Validators.email, Validators.pattern(customValidators.emailPattern)]],
+    telefono: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8),  Validators.pattern('^[0-9]*$')]],
     image: [' ']
 })
 
@@ -118,6 +119,7 @@ saveToLocalStorage(){
 }
 
 saveNewLocation(){
+  if(this.myForm.invalid) return
   this.locationService.registerLocation(this.myForm.value).subscribe(console.log)
   this.myForm.reset()
 }
@@ -153,6 +155,12 @@ getFieldError(field: string): string | null{
 
         case 'minlength': 
           return `Minimo ${ errores['minlength'].requiredLength } caracters`
+        
+        case 'maxlength': 
+          return `Maximo ${ errores['maxlength'].requiredLength } caracters`
+
+          case 'pattern': 
+          return `El numero de telefono solo puede contener numeros`
       }
     }
 

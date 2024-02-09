@@ -29,9 +29,10 @@
         />
       </div>
 
+      <span *ngIf="isValidField('description')" class="form-text text-danger"> {{ getFieldError('description') }} </span>
   
     <div class="flex-agente-provincia">
-      <div>
+      <div class="validatorMessage">
         <label for="exampleInputEmail1">Agente</label>
         <select class="form-select select-agente-input" aria-label="Default select example" formControlName="agente">
           <option value="25L">25L</option>
@@ -51,6 +52,7 @@
           <option value="TELA">TELA</option>
 
         </select>
+        <span *ngIf="isValidField('agente')" class="form-text text-danger"> {{ getFieldError('agente') }} </span>
       </div>
       <section class="spacer"></section>
       <div>
@@ -80,14 +82,17 @@
             </div>
             <span class="spacer"></span>
             <!--TODO: NUMERO DE TELEFONO --> 
-            <div>
+            <div class="validatorMessage">
               <label>Telefono</label>
               <input
                 formControlName="telefono"
                 class=" form-control"
                 placeholder="Ingrese su numero de Telefono"
               />
+              <span *ngIf="isValidField('telefono')" class="form-text text-danger"> {{ getFieldError('telefono') }} </span>
             </div>
+
+           
     </div> 
 
  

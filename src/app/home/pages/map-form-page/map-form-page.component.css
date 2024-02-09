@@ -99,7 +99,12 @@ label{
 	padding: 20px;
 }
 
+/*! FORMULARIO */
 
+.validatorMessage{
+	display: flex;
+	flex-direction: column;
+}
 /*! SECCION MAPA */
 
 .container-map{
