@@ -46,7 +46,7 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
     lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
     agente: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    telefono: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8),  Validators.pattern('^[0-9]*$')]],
+    telefono: ['', [Validators.required, Validators.minLength(8),]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
     image: ['vacio']
 })
 

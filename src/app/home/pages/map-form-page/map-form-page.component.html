@@ -18,7 +18,6 @@
         />
       </div>
 
-      <span *ngIf="isValidField('title')" class="form-text text-danger"> {{ getFieldError('title') }} </span>
 
       <div>
         <label for="exampleInputEmail1">Decripción</label>
@@ -29,7 +28,6 @@
         />
       </div>
 
-      <span *ngIf="isValidField('description')" class="form-text text-danger"> {{ getFieldError('description') }} </span>
   
     <div class="flex-agente-provincia">
       <div class="validatorMessage">
@@ -52,7 +50,7 @@
           <option value="TELA">TELA</option>
 
         </select>
-        <span *ngIf="isValidField('agente')" class="form-text text-danger"> {{ getFieldError('agente') }} </span>
+
       </div>
       <section class="spacer"></section>
       <div>
@@ -89,7 +87,7 @@
                 class=" form-control"
                 placeholder="Ingrese su numero de Telefono"
               />
-              <span *ngIf="isValidField('telefono')" class="form-text text-danger"> {{ getFieldError('telefono') }} </span>
+
             </div>
 
            
