@@ -24,6 +24,7 @@ import {ToastModule} from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ChartModule } from 'primeng/chart';
+import { UserPageComponent } from './pages/user-page/user-page.component';
 
 
 
@@ -35,6 +36,7 @@ import { ChartModule } from 'primeng/chart';
   MapListComponent,
   HomePageComponent,
   ClientEditPageComponent,
+  UserPageComponent,
 
   
 

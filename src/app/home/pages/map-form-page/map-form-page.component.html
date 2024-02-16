@@ -31,25 +31,12 @@
   
     <div class="flex-agente-provincia">
       <div class="validatorMessage">
-        <label for="exampleInputEmail1">Agente</label>
-        <select class="form-select select-agente-input" aria-label="Default select example" formControlName="agente">
-          <option value="25L">25L</option>
-          <option value="23">14</option>
-          <option value="19">19</option>
-          <option value="13F">13F</option>
-          <option value="13C">13C</option>
-          <option value="23">23</option>
-          <option value="26">26</option>
-          <option value="P10">P10</option>
-          <option value="O10">O10</option>
-          <option value="28">28</option>
-          <option value="8F">8F</option>
-          <option value="8G">8G</option>
-          <option value="V1">V1</option>
-          <option value="TELJ">TELJ</option>
-          <option value="TELA">TELA</option>
-
-        </select>
+        <label>Telefono</label>
+        <input
+          formControlName="telefono"
+          class=" form-control"
+          placeholder="Ingrese su numero de Telefono"
+        />
 
       </div>
       <section class="spacer"></section>
@@ -80,16 +67,29 @@
             </div>
             <span class="spacer"></span>
             <!--TODO: NUMERO DE TELEFONO --> 
+
             <div class="validatorMessage">
-              <label>Telefono</label>
-              <input
-                formControlName="telefono"
-                class=" form-control"
-                placeholder="Ingrese su numero de Telefono"
-              />
-
+              <label for="exampleInputEmail1">Agente</label>
+              <select class="form-select select-agente-input" aria-label="Default select example" formControlName="agente">
+                <option value="25L">25L</option>
+                <option value="23">14</option>
+                <option value="19">19</option>
+                <option value="13F">13F</option>
+                <option value="13C">13C</option>
+                <option value="23">23</option>
+                <option value="26">26</option>
+                <option value="P10">P10</option>
+                <option value="O10">O10</option>
+                <option value="28">28</option>
+                <option value="8F">8F</option>
+                <option value="8G">8G</option>
+                <option value="V1">V1</option>
+                <option value="TELJ">TELJ</option>
+                <option value="TELA">TELA</option>
+      
+              </select>
+      
             </div>
-
            
     </div> 
 
