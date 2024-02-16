@@ -40,15 +40,15 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
   private messageService = inject(MessageService);
 
   public myForm: FormGroup = this.fb.group({
-    title: ['', [Validators.required]],
-    provincia: ['', Validators.required],
-    description: ['', [Validators.required]],
-    lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
-    agente: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    telefono: ['', [Validators.required, Validators.minLength(8),]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
-    image: ['vacio']
-})
+    title: ['testeo', [Validators.required]],
+    provincia: ['Alajuela', Validators.required],
+    description: ['ninguna', [Validators.required]],
+    lngLat: ['-84.17663016743874,9.857752791289585', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
+    agente: ['O10', Validators.required],
+    email: ['munozste@hotmail.com', [Validators.required, Validators.email]],
+    telefono: ['98564578', [Validators.required, Validators.minLength(8),]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
+    image: ['https://res.cloudinary.com/dlsxaumhg/image/upload/v1708115007/locationsFolder/qbik2dqebs3ahafpzf0o.jpg']
+  })
 
   ngAfterViewInit(): void {
 
@@ -120,8 +120,15 @@ saveToLocalStorage(){
 
 saveNewLocation(){
   if(this.myForm.invalid) return
-  this.locationService.registerLocation(this.myForm.value).subscribe(console.log)
-  this.myForm.reset()
+  this.locationService.registerLocation(this.myForm.value).subscribe(result=> {
+    if (result) {
+      //this.myForm.reset()
+    } else{
+      console.log('error al registrar la nueva ubicacion')
+    }
+    
+  })
+
 }
 
 

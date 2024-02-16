@@ -84,14 +84,14 @@ confirm2(event: Event) {
       icon: 'pi pi-info-circle',
       acceptButtonStyleClass: 'p-button-danger p-button-sm',
       accept: () => {
-          this.messageService.add({ severity: 'info', summary: 'Confirmed', detail: 'Elemento Eliminado', life: 3000 });
+          this.messageService.add({ severity: 'info', summary: 'Confirmado', detail: 'Elemento Eliminado', life: 3000 });
           this.locationService.deleteById(this.dialogDataId._id).subscribe()
 
           
       },
       reject: () => {
         
-          this.messageService.add({ severity: 'error', summary: 'Rejected', detail: 'Elemento no Eliminado', life: 3000 });
+          this.messageService.add({ severity: 'error', summary: 'Rechazado', detail: 'Elemento no Eliminado', life: 3000 });
       }
   });
 }
