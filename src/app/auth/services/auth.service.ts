@@ -4,6 +4,7 @@ import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import { environment } from 'src/environments/environments';
 
 import { AuthStatus, LoginResponse, User, CheckTokenResponse } from '../interfaces';
+import { UpdatePassword } from '../interfaces/updatePassword';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,7 @@ export class AuthService {
     this._authStatus.set( AuthStatus.authenticated)
     localStorage.setItem('token', token)
     localStorage.setItem('user', user.name)
+    localStorage.setItem('email', user.email)
 
     return true
   }
@@ -70,8 +72,18 @@ export class AuthService {
   onLogout(){
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('email');
     this._currentUser.set(null);
     this._authStatus.set( AuthStatus.notAuthenticated)
+  }
+
+
+  changePassword(changePassword: UpdatePassword){
+    const headers = new HttpHeaders().set('Content-Type', 'application/json')
+    const url = `${this.baseUrl}/auth/updatedPassword`;
+    const params = JSON.stringify(changePassword)
+
+    return this.http.post(url, params, {headers} )
   }
 
 

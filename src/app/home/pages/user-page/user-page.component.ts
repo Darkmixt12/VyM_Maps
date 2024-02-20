@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UpdatePassword } from 'src/app/auth/interfaces/updatePassword';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-user-page',
@@ -10,12 +12,13 @@ export class UserPageComponent {
 
   public readonly image: string = 'https://res.cloudinary.com/dlsxaumhg/image/upload/v1708126079/userFolder/fgxftnesgdhutkavyhba.jpg'
   private fb = inject(FormBuilder)
+  private authService = inject(AuthService)
 
 
 
 
   public updateFormPassword: FormGroup = this.fb.group({
-    oldPassword: ['', [Validators.required]],
+    password: ['', [Validators.required]],
     newPassword: ['', [Validators.required]],
     newPassword2: ['', [Validators.required]],
   })
@@ -24,6 +27,24 @@ export class UserPageComponent {
 
 
   changePassword(){
-    console.log(this.updateFormPassword.value)
+
+    const { password,newPassword, newPassword2} = this.updateFormPassword.value
+    const email = localStorage.getItem('email')
+
+
+    if( newPassword === newPassword2){
+      const updatePassword : UpdatePassword ={
+        email,
+        password,
+        newPassword,
+        newPassword2
+      }
+
+      console.log(updatePassword)
+      this.authService.changePassword(updatePassword).subscribe()
+    } else{
+    console.log('Las contraseñas son distintas.')
+    }
+
   }
 }
