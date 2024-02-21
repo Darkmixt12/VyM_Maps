@@ -17,6 +17,7 @@ export class AuthService {
 
   private _currentUser = signal<User | null>(null)
   private _authStatus = signal<AuthStatus>( AuthStatus.checking)
+  public userId?: string 
 
   // todo en el mundo exterior de esta manera nadie podra cambiar los valores de current y auth
   
@@ -27,12 +28,16 @@ export class AuthService {
     this.checkAuthStatus().subscribe();
   }
 
+
+
   private setAuthentication( user: User, token: string): boolean{
     this._currentUser.set ( user )
+    this.userId = user._id
     this._authStatus.set( AuthStatus.authenticated)
     localStorage.setItem('token', token)
     localStorage.setItem('user', user.name)
     localStorage.setItem('email', user.email)
+    localStorage.setItem('id', user._id)
 
     return true
   }
@@ -86,9 +91,12 @@ export class AuthService {
     return this.http.post(url, params, {headers} )
   }
 
-  getUserInfo(){
-    
+
+  getUserInfo(userId: string): Observable<User>{
+    const url = `${this.baseUrl}/auth/user/`;
+    return this.http.get<User>(url+userId)
   }
+
 
 
 

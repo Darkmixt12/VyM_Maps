@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UpdatePassword } from 'src/app/auth/interfaces/updatePassword';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -8,7 +8,10 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   templateUrl: './user-page.component.html',
   styleUrls: ['./user-page.component.css']
 })
-export class UserPageComponent {
+export class UserPageComponent implements OnInit {
+  ngOnInit(): void {
+    this.getUserInfo()
+  }
 
   public readonly image: string = 'https://res.cloudinary.com/dlsxaumhg/image/upload/v1708126079/userFolder/fgxftnesgdhutkavyhba.jpg'
   private fb = inject(FormBuilder)
@@ -24,8 +27,8 @@ export class UserPageComponent {
   })
 
   public updateFormUserInfo: FormGroup = this.fb.group({
-    name: ['Steven Muñoz', [Validators.required]],
-    email: ['munozsteven@hotmail.com', [Validators.required]],
+    name: ['', [Validators.required]],
+    email: ['', [Validators.required]],
   })
 
 
@@ -54,7 +57,16 @@ export class UserPageComponent {
   }
 
   getUserInfo(){
-  
+    const userId = localStorage.getItem('id')
+    if(!userId) return
+    this.authService.getUserInfo(userId).subscribe(result => {
+      this.updateFormUserInfo.patchValue({
+        name: result.name,
+        email: result.email
+      })
+
+
+    })
   }
 
 
