@@ -23,6 +23,11 @@ export class UserPageComponent {
     newPassword2: ['', [Validators.required]],
   })
 
+  public updateFormUserInfo: FormGroup = this.fb.group({
+    name: ['Steven Muñoz', [Validators.required]],
+    email: ['munozsteven@hotmail.com', [Validators.required]],
+  })
+
 
 
 
@@ -47,4 +52,10 @@ export class UserPageComponent {
     }
 
   }
+
+  getUserInfo(){
+  
+  }
+
+
 }

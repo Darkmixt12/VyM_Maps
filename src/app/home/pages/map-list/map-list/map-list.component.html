@@ -22,7 +22,7 @@ currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
 		<br>
 		<div class="inputList p-input-icon-right ml-5">
 			
-			<input type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder=" Global Search" />`
+			<input class="form-control" type="text" (input)="dt1.filterGlobal($any($event.target).value, 'contains')" placeholder=" Global Search" />`
 		</div>
         <tr>
 			<th style="min-width:10rem">

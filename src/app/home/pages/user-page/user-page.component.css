@@ -3,81 +3,21 @@ body{
 	color: white;
 
 	}
-/* 
-.container{
-	background-color:#1f2937;
-	border-radius: 5px;
-	width: 70%;
-}
 
-.info-container{
+.flex{
 	display: flex;
-	justify-content: space-around
+	justify-content: space-around;
 }
-.container-UserInfo{
-	display: flex;
-	flex-direction: column;
-	padding: 25px;
-}
-
-h6{
-	margin-bottom: 20px;
-}
-
-.title{
-	padding: 25px;
-}
-
-.container-image{
-	width: 300px;
-	padding: 20px;
-	border: 1px solid #646e7c;
-	display: flex;
-	justify-content: center;
-}
-
-.userImagebtn{
-	
-	border: none;
-	padding: 20px;
-	width: 100%;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-
-img{
-	width: 100%;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	
-}
-
-.userbtn{
-	border: none;
-	border-radius: 5px;
-	padding: 14px;
-	margin-top: 20px
-}
-
-input{
-	margin: 5px;
-}
-
-.container-image{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-	margin: 25px;
-} */
-
 
 .container{
 	display: flex;
+	
 }
 
 .info-container p{
 	color: whitesmoke;
 	opacity: 0.5;
+	
 }
 
 .info-container, .password-container{
@@ -88,17 +28,87 @@ input{
 	font-weight: 100;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0,1);
-
+	box-shadow: 10px 10px 5px rgb(44, 45, 46);
 }
 
-.changeEmailNameContainer{
+.changeEmailNameContainer, .changeImageContainer{
 	display: flex;
 	flex-direction: column;
 }
 
-.changeEmailNameContainer label{
+.changeEmailNameContainer input {
+	width: 250px;
+}
+
+.changeEmailNameContainer button {
+	padding: 15px;
+	border: none;
+	border-radius: 5px;
+	margin-top: 100px;
+	background: #38bdf8;
+	color: black;
+	font-weight: 700;
+}
+
+.changeImageContainer button{
+	padding: 15px;
+	border: none;
+	border-radius: 5px;
+	margin-top: 40px;
+	background: #38bdf8;
+	color: black;
+	font-weight: 700;
+}
+
+label{
 	margin: 20px 0px 20px;
 }
 
-.changeEmailNameContainer input{
+img{
+	width: 200px;
+	border-radius: 5px;
+}
+
+.changePasswordContainer button{
+	padding: 15px;
+	border: none;
+	border-radius: 5px;
+	margin-top: 40px;
+	background: #38bdf8;
+	color: black;
+	font-weight: 700;
+}
+
+
+.inputPasswordReset{
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (max-width: 1400px) {
+
+.container{
+	flex-direction: column;
+	align-items: center;
+}
+
+.info-container, .password-container{
+	width: 500px;
+	background-color: #1f2937;
+	padding: 20px;
+	margin: 20px;
+	font-weight: 100;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,1);
+
+}
+
+
+
+body{
+
+	color: white;
+
+	}
+
 }
