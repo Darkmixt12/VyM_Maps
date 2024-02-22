@@ -1,5 +1,6 @@
-import { Component, ViewChild, inject } from '@angular/core';
+import { Component, Input, ViewChild, computed, inject } from '@angular/core';
 import { AuthService } from '../../../auth/services/auth.service';
+import { User } from 'src/app/auth/interfaces';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,6 +8,8 @@ import { AuthService } from '../../../auth/services/auth.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
+
+
   atributo() {
     const primaryNav = document.querySelector('.primary-navigation');
     const visibility = primaryNav?.getAttribute('data-visible');
@@ -26,7 +29,8 @@ export class NavBarComponent {
 
   @ViewChild('sidebarRef') sidebarRef!: any;
   private AuthService = inject(AuthService);
-  public userName = localStorage.getItem(`user`)
+  public currentUser= computed( () => this.AuthService.currentUser())
+  
   sidebarVisible: boolean = false;
   
   public navBarRoutes = [
@@ -39,8 +43,7 @@ export class NavBarComponent {
   ]
 
 
-    constructor(){}
-
+    constructor(){ }
     closeCallback(e: any): void {
       this.sidebarRef.close(e);
   }
@@ -49,6 +52,11 @@ export class NavBarComponent {
       this.AuthService.onLogout()
     }
 
+  
+
+    consoleIMg(){
+      console.log('click')
+    }
 
 
 
