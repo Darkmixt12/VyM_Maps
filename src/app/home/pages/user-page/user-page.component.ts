@@ -142,7 +142,8 @@ deleteImageBeforeUpdate(id: string){
     const SecretUrlKeyCut = SecretUrlArray[SecretUrlArray.length-1]
     console.log(SecretUrlKeyCut)
     const publicName = SecretUrlKeyCut.split('.')[0]
-    this.locationService.deleteOldImageUser(publicName).subscribe()
+    const imageObject = {image: publicName, name: 'usuario'}
+    this.locationService.deleteOldImageFact(imageObject).subscribe()
   })
 }
 

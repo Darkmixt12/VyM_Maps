@@ -46,6 +46,8 @@ import { ImageUpdate } from '../interfaces/imageUpdate';
 	}
 
 
+		//TODO: SERVICIOS PARA SUBIDA DE IMAGENES CLIENTE Y USUARIO
+
 	//TODO: REFACTORIZAR TODO ESTO
 
 	updatedLocationImage(id: string, myForm : Object | LocationsResponse ) : Observable<Object | LocationsResponse>{
@@ -53,23 +55,10 @@ import { ImageUpdate } from '../interfaces/imageUpdate';
 		let headers = new HttpHeaders().set('Content-Type', 'application/json')
 		return this.http.patch<Object | LocationsResponse>(this.url+'update/'+id, myForm, {headers})
 	}
-
-	deleteOldImage(imagePublicName : string){
-		return this.http.post(this.urlImg+'cloudinary/delete/'+imagePublicName, imagePublicName )
-	}
-
-	//TODO: REFACTORIZAR TODO ESTO
-
-
 	updatedLocationImageUser(id: string, myForm : Object | User ) : Observable<Object | User>{
 	
 		let headers = new HttpHeaders().set('Content-Type', 'application/json')
 		return this.http.patch<Object | User>(this.urlUser+'updateUser/'+id, myForm, {headers})
-	}
-
-
-	deleteOldImageUser(imagePublicName : string){
-		return this.http.post(this.urlImg+'cloudinaryUser/delete/'+imagePublicName, imagePublicName )
 	}
 
 
@@ -101,4 +90,11 @@ import { ImageUpdate } from '../interfaces/imageUpdate';
 	}
 
 
+	deleteOldImageFact(imagePublicName : ImageUpdate){
+		const {name, image} = imagePublicName
+		if(name){
+			return this.http.post(this.urlImg+'cloudinaryUser/delete/'+image, image )
+		}
+		return this.http.post(this.urlImg+'cloudinary/delete/'+image, image )
+	}
   }

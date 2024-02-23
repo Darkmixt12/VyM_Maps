@@ -66,7 +66,8 @@ upImage(){
       const SecretUrlArray = SecretUrl.split('/')
       const SecretUrlKeyCut = SecretUrlArray[SecretUrlArray.length-1]
       const publicName = SecretUrlKeyCut.split('.')[0]
-      this.locationService.deleteOldImage(publicName).subscribe()
+      const imageObject = {image: publicName}
+      this.locationService.deleteOldImageFact(imageObject).subscribe()
     })
   }
 
