@@ -49,11 +49,11 @@ export class UploadBtnComponent implements OnInit{
 
     if(!this.file) return
     const id = this.dialogConfig.data.id._id
-    this.locationService.uploadImage(this.file).subscribe( (response) => {
+    this.locationService.uploadImageFacto(this.file).subscribe( (response) => {
       const objectTest = {image: response.secure_url}
       this.deleteImageBeforeUpdate(id);
       if(!id) return
-    this.locationService.updatedLocationImage(id, objectTest).subscribe( ()=> {
+    this.locationService.updatedLocationImageUserRefact(id, objectTest).subscribe( ()=> {
       })
       
     })

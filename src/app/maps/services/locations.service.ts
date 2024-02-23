@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environments';
 import { CloudinaryResponse } from '../interfaces/cloyudinaryResponse';
 import { User } from 'src/app/auth/interfaces';
+import { ImageUpdate } from '../interfaces/imageUpdate';
 
 
 @Injectable({
@@ -47,12 +48,6 @@ import { User } from 'src/app/auth/interfaces';
 
 	//TODO: REFACTORIZAR TODO ESTO
 
-	uploadImage(img: File): Observable<CloudinaryResponse>  {
-		const formData = new FormData();
-		formData.append('file', img, img.name)
-		return this.http.post<CloudinaryResponse>(this.urlImg+'cloudinary', formData)
-	}
-
 	updatedLocationImage(id: string, myForm : Object | LocationsResponse ) : Observable<Object | LocationsResponse>{
 	
 		let headers = new HttpHeaders().set('Content-Type', 'application/json')
@@ -65,12 +60,6 @@ import { User } from 'src/app/auth/interfaces';
 
 	//TODO: REFACTORIZAR TODO ESTO
 
-	uploadImageUser(img: File): Observable<CloudinaryResponse>  {
-		const formData = new FormData();
-		formData.append('file', img, img.name)
-		return this.http.post<CloudinaryResponse>(this.urlImg+'cloudinaryUser', formData)
-	}
-
 
 	updatedLocationImageUser(id: string, myForm : Object | User ) : Observable<Object | User>{
 	
@@ -82,4 +71,34 @@ import { User } from 'src/app/auth/interfaces';
 	deleteOldImageUser(imagePublicName : string){
 		return this.http.post(this.urlImg+'cloudinaryUser/delete/'+imagePublicName, imagePublicName )
 	}
+
+
+	//! RE FACTORIZACION DE LA 6 FUNCIONES 
+
+	uploadImageFacto(img: File, nombre?: string): Observable<CloudinaryResponse>  {
+		const formData = new FormData();
+		formData.append('file', img, img.name)
+
+		if(nombre) {
+			return this.http.post<CloudinaryResponse>(this.urlImg+'cloudinaryUser', formData)
+		}
+			return this.http.post<CloudinaryResponse>(this.urlImg+'cloudinary', formData)
+
+
+	}
+
+	updatedLocationImageUserRefact(id: string, myForm : ImageUpdate ) : Observable<User | LocationsResponse>{
+		
+		const {name, image} = myForm
+		const formImage = { image: image}
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+
+
+		if(name){
+			return this.http.patch<User>(this.urlUser+'updateUser/'+id, formImage, {headers})
+		}
+			return this.http.patch<LocationsResponse>(this.url+'update/'+id, formImage, {headers})
+	}
+
+
   }
