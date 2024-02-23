@@ -42,6 +42,9 @@ import { CloudinaryResponse } from '../interfaces/cloyudinaryResponse';
 		return this.http.delete<LocationsResponse>(this.url+'delete/'+id)
 	}
 
+
+	//TODO: REFACTORIZAR TODO ESTO
+
 	uploadImage(img: File): Observable<CloudinaryResponse>  {
 		const formData = new FormData();
 		formData.append('file', img, img.name)

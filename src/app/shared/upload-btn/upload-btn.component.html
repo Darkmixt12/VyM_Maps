@@ -1,11 +1,11 @@
 
 
-<h3>Imagen de Usuario</h3>
+<h3>Imagen de Cliente</h3>
 <div class="img-center">
   <img *ngIf="!imgTemporal" src="{{ secretUrl }}" class="img-avatar" alt="" />
   <img *ngIf="imgTemporal" src="{{ imgTemporal }}" class="img-avatar" />
   <input type="file" (change)="uploadFile($event)" id="selectedFile" style="display: none;" />
-  <input type="button" class="BtnUpdated" value="Cambiar Imagen" onclick="document.getElementById('selectedFile').click();" />
+  <input type="button" class="BtnUpdated" value="Cambiar Imagen" onclick="document.getElementById('selectedFile').click();"  />
 </div>
 
 

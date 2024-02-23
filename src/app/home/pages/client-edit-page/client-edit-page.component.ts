@@ -19,7 +19,6 @@ export class ClientEditPageComponent implements OnInit {
   private locationService = inject(LocationService);
   private dialogConfig = inject(DynamicDialogConfig)
   private confirmationService = inject(ConfirmationService)
-  private router = inject(Router);
   private dialogDataId = this.dialogConfig.data.id
 
   @Input() imgProfile?: string;

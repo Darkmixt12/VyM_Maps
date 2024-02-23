@@ -60,13 +60,28 @@ body{
 	font-weight: 700;
 }
 
+.changeImageContainer .btn-upload{
+	background: #2dd4bf;
+}
+
+.BtnUpdated{
+	padding: 15px;
+	border: none;
+	border-radius: 5px;
+	margin-top: 40px;
+	background: #38bdf8;
+	color: black;
+	font-weight: 700
+}
+
 label{
 	margin: 20px 0px 20px;
 }
 
-img{
+img, .img-avatar{
 	width: 200px;
 	border-radius: 5px;
+	height: 200px;
 }
 
 .changePasswordContainer button{
@@ -79,6 +94,13 @@ img{
 	font-weight: 700;
 }
 
+.btn-upload:disabled{
+	opacity: 0;
+	cursor: not-allowed;
+  }
+.btns-upload{
+	margin: 0 auto;
+}
 
 .inputPasswordReset{
 	display: flex;

@@ -14,8 +14,17 @@
 
 			<div class="changeImageContainer">
 				<label for="">Mi foto de perfil</label>
-				<img src="{{image}}" alt="">
-				<button>Actualizar Imagen</button>
+				<img *ngIf="!imgTemporal" src="{{ image }}" class="img-avatar" alt="" />
+				<img *ngIf="imgTemporal" src="{{ imgTemporal }}" class="img-avatar" />
+				<input type="file" (change)="uploadFile($event)" id="selectedFile" style="display: none;" />
+				<input type="button" class="BtnUpdated" value="Actualizar Imagen" onclick="document.getElementById('selectedFile').click();"/>
+				
+					<div class="btns-upload">
+						
+						<button class="btn-upload" (click)="upImage()" [disabled]="!file">
+						  Guardar Imagen
+						</button>
+					  </div>
 			</div>
 
 			<form action="" [formGroup]="updateFormUserInfo">
@@ -52,19 +61,19 @@
 				<input
 				formControlName="password"
 				class="form-control"
-				type="text">
+				type="password">
 
 				<label for="">Nueva contraseña</label>
 				<input
 				formControlName="newPassword"
 				class="form-control"
-				type="text">
+				type="password">
 
 				<label for="">Repita contraseña</label>
 				<input
 				formControlName="newPassword2"
 				class="form-control"
-				type="text">
+				type="password">
 
 				<button (click)="changePassword()">Modificar contraseña</button>
 			</div>
