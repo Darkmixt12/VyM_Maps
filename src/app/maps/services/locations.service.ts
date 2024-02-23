@@ -75,7 +75,7 @@ import { ImageUpdate } from '../interfaces/imageUpdate';
 
 	//! RE FACTORIZACION DE LA 6 FUNCIONES 
 
-	uploadImageFacto(img: File, nombre?: string): Observable<CloudinaryResponse>  {
+	upImage(img: File, nombre?: string): Observable<CloudinaryResponse>  {
 		const formData = new FormData();
 		formData.append('file', img, img.name)
 
@@ -87,7 +87,7 @@ import { ImageUpdate } from '../interfaces/imageUpdate';
 
 	}
 
-	updatedLocationImageUserRefact(id: string, myForm : ImageUpdate ) : Observable<User | LocationsResponse>{
+	updateImage(id: string, myForm : ImageUpdate ) : Observable<User | LocationsResponse>{
 		
 		const {name, image} = myForm
 		const formImage = { image: image}

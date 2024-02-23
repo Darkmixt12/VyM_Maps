@@ -114,22 +114,17 @@ export class UserPageComponent implements OnInit {
 
 }
 
-
 upImage(){
-
-}
-
-UploadImageFacto(){
   if(!this.file) return
   if(!this.currentUser) return
   const id = this.currentUser?._id
   const nombre = this.currentUser?.name
   console.log(id)
-  this.locationService.uploadImageFacto(this.file, nombre).subscribe( (response) => {
+  this.locationService.upImage(this.file, nombre).subscribe( (response) => {
     const objectTest = {image: response.secure_url, name: 'usuario'}
     if(!id) return
     this.deleteImageBeforeUpdate(id);
-  this.locationService.updatedLocationImageUserRefact(id, objectTest).subscribe( ()=> {
+  this.locationService.updateImage(id, objectTest).subscribe( ()=> {
     if(!this.currentUser?.image) return
       this.currentUser.image = objectTest.image
     })

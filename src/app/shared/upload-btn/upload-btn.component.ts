@@ -44,16 +44,16 @@ export class UploadBtnComponent implements OnInit{
 
   
 
-  upImage(){
+upImage(){
 
 
     if(!this.file) return
     const id = this.dialogConfig.data.id._id
-    this.locationService.uploadImageFacto(this.file).subscribe( (response) => {
+    this.locationService.upImage(this.file).subscribe( (response) => {
       const objectTest = {image: response.secure_url}
       this.deleteImageBeforeUpdate(id);
       if(!id) return
-    this.locationService.updatedLocationImageUserRefact(id, objectTest).subscribe( ()=> {
+    this.locationService.updateImage(id, objectTest).subscribe( ()=> {
       })
       
     })
