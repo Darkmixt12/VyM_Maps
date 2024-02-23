@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environments';
 import { CloudinaryResponse } from '../interfaces/cloyudinaryResponse';
+import { User } from 'src/app/auth/interfaces';
 
 
 @Injectable({
@@ -15,7 +16,8 @@ import { CloudinaryResponse } from '../interfaces/cloyudinaryResponse';
 	url = `${this.baseUrl}/locations/`
 	private http = inject(HttpClient);
 
-	urlImg = `${this.baseUrl}/files/cloudinary`
+	urlImg = `${this.baseUrl}/files/`
+	urlUser = `${this.baseUrl}/auth/`
 
 
 	registerLocation(myForm: LocationsResponse ): Observable<LocationsResponse>{
@@ -48,7 +50,7 @@ import { CloudinaryResponse } from '../interfaces/cloyudinaryResponse';
 	uploadImage(img: File): Observable<CloudinaryResponse>  {
 		const formData = new FormData();
 		formData.append('file', img, img.name)
-		return this.http.post<CloudinaryResponse>(this.urlImg, formData)
+		return this.http.post<CloudinaryResponse>(this.urlImg+'cloudinary', formData)
 	}
 
 	updatedLocationImage(id: string, myForm : Object | LocationsResponse ) : Observable<Object | LocationsResponse>{
@@ -58,6 +60,26 @@ import { CloudinaryResponse } from '../interfaces/cloyudinaryResponse';
 	}
 
 	deleteOldImage(imagePublicName : string){
-		return this.http.post(this.urlImg+'/delete/'+imagePublicName, imagePublicName )
+		return this.http.post(this.urlImg+'cloudinary/delete/'+imagePublicName, imagePublicName )
+	}
+
+	//TODO: REFACTORIZAR TODO ESTO
+
+	uploadImageUser(img: File): Observable<CloudinaryResponse>  {
+		const formData = new FormData();
+		formData.append('file', img, img.name)
+		return this.http.post<CloudinaryResponse>(this.urlImg+'cloudinaryUser', formData)
+	}
+
+
+	updatedLocationImageUser(id: string, myForm : Object | User ) : Observable<Object | User>{
+	
+		let headers = new HttpHeaders().set('Content-Type', 'application/json')
+		return this.http.patch<Object | User>(this.urlUser+'updateUser/'+id, myForm, {headers})
+	}
+
+
+	deleteOldImageUser(imagePublicName : string){
+		return this.http.post(this.urlImg+'cloudinaryUser/delete/'+imagePublicName, imagePublicName )
 	}
   }

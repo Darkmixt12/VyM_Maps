@@ -118,11 +118,14 @@ export class UserPageComponent implements OnInit {
 upImage(){
   if(!this.file) return
   const id = this.currentUser?._id
-  this.locationService.uploadImage(this.file).subscribe( (response) => {
-    const objectTest = {image: response.secure_url, estado: 'usuario'}
+  console.log(id)
+  this.locationService.uploadImageUser(this.file).subscribe( (response) => {
+    const objectTest = {image: response.secure_url}
     if(!id) return
     this.deleteImageBeforeUpdate(id);
-  this.locationService.updatedLocationImage(id, objectTest).subscribe( ()=> {
+  this.locationService.updatedLocationImageUser(id, objectTest).subscribe( ()=> {
+    if(!this.currentUser?.image) return
+    this.currentUser.image = objectTest.image
     })
     
   })
@@ -130,12 +133,15 @@ upImage(){
 }
 
 deleteImageBeforeUpdate(id: string){
-  this.locationService.getLocationById(id).subscribe( result =>{
+  this.authService.getUserInfo(id).subscribe( result =>{
     const SecretUrl = result.image
+    console.log(SecretUrl)
     const SecretUrlArray = SecretUrl.split('/')
+    console.log(SecretUrlArray)
     const SecretUrlKeyCut = SecretUrlArray[SecretUrlArray.length-1]
+    console.log(SecretUrlKeyCut)
     const publicName = SecretUrlKeyCut.split('.')[0]
-    this.locationService.deleteOldImage(publicName).subscribe()
+    this.locationService.deleteOldImageUser(publicName).subscribe()
   })
 }
 

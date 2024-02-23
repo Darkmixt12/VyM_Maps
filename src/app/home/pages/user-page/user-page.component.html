@@ -14,7 +14,7 @@
 
 			<div class="changeImageContainer">
 				<label for="">Mi foto de perfil</label>
-				<img *ngIf="!imgTemporal" src="{{ image }}" class="img-avatar" alt="" />
+				<img *ngIf="!imgTemporal" src="{{ currentUser!.image }}" class="img-avatar" alt="" />
 				<img *ngIf="imgTemporal" src="{{ imgTemporal }}" class="img-avatar" />
 				<input type="file" (change)="uploadFile($event)" id="selectedFile" style="display: none;" />
 				<input type="button" class="BtnUpdated" value="Actualizar Imagen" onclick="document.getElementById('selectedFile').click();"/>

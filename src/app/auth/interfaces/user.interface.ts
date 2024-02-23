@@ -4,4 +4,5 @@ export interface User {
 	name:     string;
 	isActive: boolean;
 	roles:    any[];
+	image: string
 }
