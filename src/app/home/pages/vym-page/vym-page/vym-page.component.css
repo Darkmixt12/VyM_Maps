@@ -1,0 +1,66 @@
+body{
+	margin-left: 250px;
+	color: white;
+
+	}
+
+.container{
+	background-color: #1f2937;
+	padding: 30px;
+	border-radius: 5px;
+}
+
+img{
+	width: 500px;
+	margin-bottom: 50px;
+}
+.containerBody{
+	background-color: #1f2937;
+}
+
+
+.info{
+	display: flex;
+	justify-content: space-around;
+
+}
+
+.infoVym1, .infoVym2{
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	width: 350px;
+	border: 1px solid #646e7c;
+	border-radius: 5px;
+}
+
+
+
+label{
+	margin: 10px 0px;
+	color: #747f8f;
+	font-weight: 700;
+}
+
+span{
+	margin-left: 20px;
+}
+
+
+@media only screen and (max-width: 1110px) {
+	.body {
+		margin-left: 0px;
+
+		
+	}
+
+	.graphbox2{
+		display: grid;
+		grid-template-columns: 100%;
+		min-height: 500px;
+	}
+}
+
+.container{
+	padding: 100px;
+}

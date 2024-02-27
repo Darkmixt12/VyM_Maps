@@ -1,104 +1,173 @@
 <div class="container">
-	<h1 class="page-header">
-	{{title}}
-	</h1>
+  <h1 class="page-header">
+    {{ title }}
+  </h1>
   <div class="title">
     <div>
       <app-upload-btn [imagenSubida]="imgProfile"></app-upload-btn>
     </div>
-    <form action="" [formGroup]="myForm" class="formUpdated">
-		<h3> Informacion de Cliente</h3>
 
-    <div class="infClient">
+    <form action="" [formGroup]="myForm" class="formUpdated">
+      <div>
+
+            <h3>Informacion de Cliente</h3>
+
+            <div class="infClient">
+              <div class="borderTitle">
+                <div>
+                  <label for="exampleInputEmail1">Nombre</label>
+                  <input
+                    formControlName="title"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="Ingrese el nombre de la Ubicacion"
+                    value="John"
+                  />
+                </div>
+                <div>
+                  <label for="exampleInputEmail1">Provincia</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="provincia"
+                  >
+                    <option value="San Jose">San Jose</option>
+                    <option value="Heredia">Heredia</option>
+                    <option value="Cartago">Cartago</option>
+                    <option value="Alajuela">Alajuela</option>
+                    <option value="Limon">Limón</option>
+                    <option value="Guanacaste">Guanacaste</option>
+                    <option value="Puntarenas">Puntarenas</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="exampleInputEmail1">Agente</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="agente"
+                  >
+                    <option value="25L">25L</option>
+                    <option value="23">14</option>
+                    <option value="19">19</option>
+                    <option value="13F">13F</option>
+                    <option value="13C">13C</option>
+                    <option value="23">23</option>
+                    <option value="P10">P10</option>
+                    <option value="O10">O10</option>
+                    <option value="28">28</option>
+                    <option value="8F">8F</option>
+                    <option value="8G">8G</option>
+                    <option value="V1">V1</option>
+                    <option value="TELJ">TELJ</option>
+                    <option value="TELA">TELA</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <h3>Detalles de Cliente</h3>
+
+            <div class="borderTitle">
+              <div>
+                <label>Telefono</label>
+                <input
+                  formControlName="telefono"
+                  class="form-control"
+                  placeholder="Ingrese su numero de Telefono"
+                />
+              </div>
+              <div>
+                <label>Email</label>
+                <input
+                  formControlName="email"
+                  class="form-control"
+                  placeholder="Ingrese su direccion de Correo"
+                />
+              </div>
+              <div>
+                <label for="exampleInputEmail1">Decripción</label>
+                <input
+                  formControlName="description"
+                  class="form-control"
+                  placeholder="Ingrese una descripcion"
+                />
+              </div>
+            </div>
+
+        </div>
+ 
+
+      <!--TODO: BOTONES DE ELIMINADO Y EDITADO -->
+      <div class="btn-edit-client">
+        <button
+          class="btnUpdated"
+          (click)="updateClient()"
+          (click)="clientDataUpdateMessage()"
+        >
+          Editar Cliente
+        </button>
+        <p-confirmPopup></p-confirmPopup>
+        <button class="btnDelete" (click)="confirm2($event)">
+          Eliminar Cliente
+        </button>
+      </div>
+    </form>
+
+    <form action="" [formGroup]="myForm" class="formUpdated">
+      <h3>Redes Sociales</h3>
 
       <div class="borderTitle">
-
         <div>
-          <label for="exampleInputEmail1">Nombre</label>
+          <label>WhatsApp</label>
           <input
-            formControlName="title"
+            formControlName="whatsApp"
             class="form-control"
-            id="exampleInputEmail1"
-            placeholder="Ingrese el nombre de la Ubicacion"
-            value="John"
+            placeholder="Ingrese su numero de Telefono"
           />
         </div>
+
         <div>
-          <label for="exampleInputEmail1">Provincia</label>
-          <select class="form-select" aria-label="Default select example" formControlName="provincia">
-            <option value="San Jose">San Jose</option>
-            <option value="Heredia">Heredia</option>
-            <option value="Cartago">Cartago</option>
-            <option value="Alajuela">Alajuela</option>
-            <option value="Limon">Limón</option>
-            <option value="Guanacaste">Guanacaste</option>
-            <option value="Puntarenas">Puntarenas</option>
-  
-          </select>
-        </div>
-        <div>
-          <label for="exampleInputEmail1">Agente</label>
-          <select class="form-select" aria-label="Default select example" formControlName="agente">
-            <option value="25L">25L</option>
-            <option value="23">14</option>
-            <option value="19">19</option>
-            <option value="13F">13F</option>
-            <option value="13C">13C</option>
-            <option value="23">23</option>
-            <option value="P10">P10</option>
-            <option value="O10">O10</option>
-            <option value="28">28</option>
-            <option value="8F">8F</option>
-            <option value="8G">8G</option>
-            <option value="V1">V1</option>
-            <option value="TELJ">TELJ</option>
-            <option value="TELA">TELA</option>
-  
-          </select>
+          <label>Facebook</label>
+          <input
+            formControlName="facebook"
+            class="form-control"
+            placeholder="Ingrese su numero de Telefono"
+          />
         </div>
 
+        <div>
+          <label>Instagram</label>
+          <input
+            formControlName="instagram"
+            class="form-control"
+            placeholder="Ingrese su numero de Telefono"
+          />
+        </div>
       </div>
-    </div>
-        <h3> Detalles de Cliente</h3>   
 
+      <h3>Informacion Adicional</h3>
 
-       
-
-          <div class="borderTitle">
-  
-            <div>
-              <label>Telefono</label>
-              <input
-                formControlName="telefono"
-                class="form-control"
-                placeholder="Ingrese su numero de Telefono"
-              />
-            </div>
-            <div>
-              <label>Email</label>
-              <input
-                formControlName="email"
-                class="form-control"
-                placeholder="Ingrese su direccion de Correo"
-              />
-            </div>
-            <div>
-              <label for="exampleInputEmail1">Decripción</label>
-              <input
-                formControlName="description"
-                class="form-control"
-                placeholder="Ingrese una descripcion"
-              />
-            </div>
-  
-          </div>
-        
-        <!--TODO: BOTONES DE ELIMINADO Y EDITADO -->
-        <div class="btn-edit-client ">
-        <button class="btnUpdated" (click)="updateClient()" (click)="clientDataUpdateMessage()">Editar Cliente </button>
-        <p-confirmPopup></p-confirmPopup>
-        <button class="btnDelete" (click)="confirm2($event)">Eliminar Cliente</button>
+      <div class="borderTitle">
+        <div>
+          <label>Sitio Web</label>
+          <input
+            formControlName="webPage"
+            class="form-control"
+            placeholder="Ingrese su numero de Telefono"
+          />
         </div>
+
+        <div>
+          <label>Google maps</label>
+          <input
+            formControlName="driveToLocation"
+            class="form-control"
+            placeholder="Ingrese su numero de Telefono"
+          />
+        </div>
+      </div>
+      
     </form>
   </div>
 </div>

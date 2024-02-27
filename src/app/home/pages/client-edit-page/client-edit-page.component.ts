@@ -37,7 +37,12 @@ export class ClientEditPageComponent implements OnInit {
     description: ['example location place', [Validators.required]],
     agente: ['', Validators.required],
     email: ['example@gmail.com', [Validators.required, Validators.email]],
-    telefono: ['98741532', [Validators.required, Validators.min(8)]]
+    telefono: ['98741532', [Validators.required, Validators.min(8)]],
+    whatsApp: ['', [Validators.required, Validators.min(8)]],
+    driveToLocation: ['', [Validators.required, Validators.min(8)]],
+    facebook: ['', [Validators.required, Validators.min(8)]],
+    instagram: ['', [Validators.required, Validators.min(8)]],
+    webPage: ['', [Validators.required, Validators.min(8)]],
 })
 
 ngOnInit(): void {
@@ -53,7 +58,12 @@ patchForm(): void {
     description: result.description,
     email: result.email,
     telefono: result.telefono,
-    agente: result.agente
+    agente: result.agente,
+    facebook: result.facebook,
+    whatsApp: result.whatsApp,
+    instagram: result.instagram,
+    webPage: result.webPage,
+    driveToLocation: result.driveToLocation
    })
    this.title = result.title
 

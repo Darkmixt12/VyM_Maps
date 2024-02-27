@@ -1,3 +1,4 @@
+import { VymPageComponent } from './pages/vym-page/vym-page/vym-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MapFormPageComponent } from './pages/map-form-page/map-form-page.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
          {path: 'form',  component: MapFormPageComponent },
          {path: 'map-list', component: MapListComponent},
          {path: 'user', component: UserPageComponent},
+         {path: 'information', component: VymPageComponent},
          {path: '**', redirectTo: 'inicio'},
 
         // {path: '', component: },

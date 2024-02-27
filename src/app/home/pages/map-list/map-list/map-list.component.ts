@@ -75,7 +75,7 @@ getByIdPlace(id?: string) {
         id: result
     },
       header: `Editar Cliente`,
-      width: '50vw',});
+      width: '70vw',});
   })
   
 

@@ -25,6 +25,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ChartModule } from 'primeng/chart';
 import { UserPageComponent } from './pages/user-page/user-page.component';
+import { VymPageComponent } from './pages/vym-page/vym-page/vym-page.component';
 
 
 
@@ -37,6 +38,7 @@ import { UserPageComponent } from './pages/user-page/user-page.component';
   HomePageComponent,
   ClientEditPageComponent,
   UserPageComponent,
+  VymPageComponent,
 
   
 
