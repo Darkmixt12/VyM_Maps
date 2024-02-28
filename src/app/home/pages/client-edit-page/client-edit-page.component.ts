@@ -38,11 +38,11 @@ export class ClientEditPageComponent implements OnInit {
     agente: ['', Validators.required],
     email: ['example@gmail.com', [Validators.required, Validators.email]],
     telefono: ['98741532', [Validators.required, Validators.min(8)]],
-    whatsApp: ['', [Validators.required, Validators.min(8)]],
-    driveToLocation: ['', [Validators.required, Validators.min(8)]],
-    facebook: ['', [Validators.required, Validators.min(8)]],
-    instagram: ['', [Validators.required, Validators.min(8)]],
-    webPage: ['', [Validators.required, Validators.min(8)]],
+    whatsApp: [''],
+    driveToLocation: [''],
+    facebook: [''],
+    instagram: [''],
+    webPage: [''],
 })
 
 ngOnInit(): void {
@@ -74,14 +74,15 @@ patchForm(): void {
 
 
 updateClient(){
-  if(!this.myForm.valid) return
-  this.locationService.updatedLocationImage(this.dialogDataId._id, this.myForm.value).subscribe(console.log)
+  if(!this.myForm.valid) return this.clientDataUpdateMessage('error', 'Error', 'Formulario Incorrecto, no se ha podido actualizar el cliente');
+  this.locationService.updatedLocationImage(this.dialogDataId._id, this.myForm.value).subscribe();
+  this.clientDataUpdateMessage('success', 'Completado', 'Cliente actualizado correctamente')
 
 }
 
 
-clientDataUpdateMessage(){
-  this.messageService.add({ severity: 'success', summary: 'Completado', detail: 'Datos del Cliente Actualizados' });
+clientDataUpdateMessage(estado: string, resumen: string, mensaje: string){
+  this.messageService.add({ severity: estado, summary: resumen, detail: mensaje });
 
 }
 

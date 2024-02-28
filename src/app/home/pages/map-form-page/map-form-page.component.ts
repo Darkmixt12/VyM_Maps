@@ -47,7 +47,7 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
     agente: ['O10', Validators.required],
     email: ['munozste@hotmail.com', [Validators.required, Validators.email]],
     telefono: ['98564578', [Validators.required, Validators.minLength(8),]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
-    image: ['https://res.cloudinary.com/dlsxaumhg/image/upload/v1708115007/locationsFolder/qbik2dqebs3ahafpzf0o.jpg'],
+    image: ['https://res.cloudinary.com/dlsxaumhg/image/upload/v1708463020/locationsFolder/huqfmwgbwppicvavscxn.jpg'],
     whatsApp: [''],
     facebook: [''],
     instagram: [''],

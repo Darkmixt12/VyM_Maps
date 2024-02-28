@@ -62,12 +62,12 @@ currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
 					<p-columnFilter type="text" field="telefono" display="menu"></p-columnFilter>
 				</div>
 			</th>
-			<th style="min-width:10rem">
+			<!-- <th style="min-width:10rem">
 				<div class="flex align-items-center">
 					Detalles
 					<p-columnFilter type="text" field="descripcion" display="menu"></p-columnFilter>
 				</div>
-			</th>
+			</th> -->
 			<th style="min-width:5rem">
 				<div class="flex align-items-center">
 				</div>
@@ -81,7 +81,7 @@ currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
             <td>{{ locations.agente }}</td>
             <td>{{ locations.email }}</td>
             <td>{{ locations.telefono }}</td>
-			<td>{{ locations.description }}</td>
+			<!-- <td>{{ locations.description }}</td> -->
 			<td>
 					<button class="btn-info p-button-outlined" (click)="getByIdPlace(locations._id)" type="button" pButton icon="pi pi-search"></button>
             </td>
