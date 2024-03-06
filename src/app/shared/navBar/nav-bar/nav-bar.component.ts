@@ -38,7 +38,6 @@ export class NavBarComponent {
     { label: 'Mapa', description: 'Mapa Completo', url: '/map/fullview'},
     { label: 'Clientes', description: 'Lista', url: './map-list'},
     { label: 'Nuevo Lugar', description: 'Nueva Ubicacion', url: './form'},
-    { label: 'Usuario', description: 'Configuracion', url: './user'},
   
   ]
 

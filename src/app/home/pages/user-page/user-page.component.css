@@ -94,10 +94,6 @@ img, .img-avatar{
 	font-weight: 700;
 }
 
-.btn-upload:disabled{
-	opacity: 0;
-	cursor: not-allowed;
-  }
 .btns-upload{
 	margin: 0 auto;
 }
@@ -107,7 +103,17 @@ img, .img-avatar{
 	align-items: center;
 }
 
+
+/*! ESTILO TELEFONO */
+
+
+
 @media only screen and (max-width: 1400px) {
+	
+body{
+	margin-left: 0px;
+	color: white;
+}
 
 .container{
 	flex-direction: column;
@@ -115,7 +121,7 @@ img, .img-avatar{
 }
 
 .info-container, .password-container{
-	width: 500px;
+	width: 50%;
 	background-color: #1f2937;
 	padding: 20px;
 	margin: 20px;
@@ -125,12 +131,36 @@ img, .img-avatar{
 
 }
 
+.principalTitle{
+    display: none
+  }
 
 
-body{
+.flex{
+	display: flex;
+	flex-direction: column;
+}
 
-	color: white;
+.changeEmailNameContainer button {
 
+	margin-top: 50px;
+	width: 100%;
+
+}
+
+.changeEmailNameContainer input {
+
+	width: 100%;
+
+}
+
+}
+
+@media only screen and (max-width: 1000px) { 
+	
+	.info-container, .password-container{
+		width: 100%;
+
+	
 	}
-
 }

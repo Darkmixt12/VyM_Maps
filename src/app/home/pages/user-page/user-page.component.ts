@@ -128,7 +128,7 @@ upImage(){
     if(!this.currentUser?.image) return
       this.currentUser.image = objectTest.image
     })
-    
+
   })
 
 }

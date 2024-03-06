@@ -1,4 +1,7 @@
-
+*{
+  margin: 0;
+  padding: 0px;
+}
 
 .container{
 	margin-top: 50px;
@@ -24,6 +27,7 @@ alone-side-menu{
       max-width: 1850px;
     }
   }
+
 
 
   .container2{

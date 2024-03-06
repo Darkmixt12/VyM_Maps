@@ -1,6 +1,6 @@
 
 <body>
-	<h1>Perfil de Usuario</h1>
+	<h1 class="principalTitle">Perfil de Usuario</h1>
 
 	<div class="container">
 
@@ -21,7 +21,7 @@
 				
 					<div class="btns-upload">
 						
-						<button class="btn-upload" (click)="upImage()" [disabled]="!file">
+						<button *ngIf="file" class="btn-upload" (click)="upImage()">
 						  Guardar Imagen
 						</button>
 					  </div>
