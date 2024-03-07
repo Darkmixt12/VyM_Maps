@@ -4,7 +4,6 @@
 
 .graphContainer{
 	display: flex;
-	padding: 20px;
 	justify-content: space-evenly
 }
 
@@ -12,6 +11,7 @@
 	color: rgb(255, 255, 255);
 	background: rgba(24, 23, 23, 0.668);
 	padding: 20px;
+	box-shadow: 20px 0px 20px rgb(44, 45, 46)
 }
 
 
@@ -33,6 +33,7 @@ h2, h1, p {
 	grid-gap: 20px;
 	min-height: 30px;
 	margin-top: 200px;
+	
 }
 
 .graphbox2 {
@@ -85,11 +86,12 @@ border-radius: 20px;
 	}
 }
 
+@media only screen and (max-width: 1110px) {
 
-@media only screen and (max-width: 700px) {
 	
 	.graphContainer{
 		flex-direction: column;
+		padding: 50px;
 	}
 
 	.graphbox2 {
@@ -116,6 +118,14 @@ border-radius: 20px;
 		height: 110%;
 	}
 
+
+}
+
+@media only screen and (max-width: 500px) {
+
+	.graphContainer{
+		padding: 0px;
+	}
 }
 
 

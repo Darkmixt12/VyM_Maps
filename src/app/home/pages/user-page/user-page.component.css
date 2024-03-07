@@ -27,8 +27,7 @@ body{
 	margin: 20px;
 	font-weight: 100;
 	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0,1);
-	box-shadow: 10px 10px 5px rgb(44, 45, 46);
+	box-shadow: 20px 10px 20px rgb(44, 45, 46)
 }
 
 .changeEmailNameContainer, .changeImageContainer{

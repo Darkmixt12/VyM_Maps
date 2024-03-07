@@ -52,7 +52,8 @@
   }
 
   .mobile-nav-toggle{
-	background: red;
+	color: white;
+	background-color: aquamarine;
 }
 
 
@@ -83,7 +84,7 @@
   
 	.mobile-nav-toggle {
 	  display: block;
-	  position: absolute;
+	  position: fixed;
 	  z-index: 9999;
 	  background-repeat: no-repeat;
 	  width: 2rem;

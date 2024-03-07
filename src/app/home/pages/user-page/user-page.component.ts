@@ -38,7 +38,7 @@ export class UserPageComponent implements OnInit {
   })
 
   public updateFormUserInfo: FormGroup = this.fb.group({
-    name: ['', [Validators.required, Validators.maxLength(20)]],
+    name: ['', [Validators.required, Validators.maxLength(13), Validators.pattern('^[a-zA-Z]*$')]],
     email: ['', [Validators.required]],
   })
 
