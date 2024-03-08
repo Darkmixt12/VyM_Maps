@@ -104,5 +104,39 @@ h6{
 	z-index: 10000;
 }
 
+
+
+@media only screen and (width >= 500px) {
+	app-client-card-mobile{
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+
+	.locations-container{
+		display: grid;
+		position: absolute;
+		left: 50%;
+		bottom: 10px;
+		transform: translate(-50%, -50%);
+		margin: 0px auto;
+		color: white;
+		width: 96%;
+		height: 169px;
+		z-index: 2;
+		border: none;
+		border-radius: 10px;
+		overflow-y: scroll;
+	
+	}
+
+	app-client-card{
+		display: none;
+	}
+	
+}
+
+
 /*! POPUPS de los marcadores */
 

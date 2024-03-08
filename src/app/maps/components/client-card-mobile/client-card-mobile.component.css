@@ -18,17 +18,33 @@
 	  }
 
 .info-container{
+	position: absolute; /*! hijo */
 	display: grid;
 	grid-template-columns: 3fr 3fr 1fr;
 	justify-items: center;
+	top: 0;
 }
+
+.name{
+	position: absolute;
+	bottom: 0;
+}
+
+.name p{
+	font-size: 15px;
+	margin-top: 10px;
+}
+
 
 .info-container p{
 	padding-top: 2px;
-	
+	font-size: 12px;
+	font-weight: 500;
+
 }
 
 .container-info{
+	position: relative;  /*! aqui */
 	display: grid;
 	margin: 0;
     margin-top: 5px;
