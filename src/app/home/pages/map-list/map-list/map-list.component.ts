@@ -75,8 +75,16 @@ getByIdPlace(id?: string) {
         id: result
     },
       header: `Editar Cliente`,
-      width: '70vw',});
-  })
+      width: '70vw',
+      baseZIndex: 10000,
+      maximizable: true});
+
+    this.ref.onClose.subscribe( () => {
+      this.getFacturas();
+  })  
+      
+  });
+
   
 
   

@@ -24,6 +24,8 @@ export class ClientEditPageComponent implements OnInit {
   @Input() imgProfile?: string;
   @Input() itemHijo?: LocationsResponse ;
   public title?: string
+
+
   
   ref: DynamicDialogRef | undefined;
 
@@ -32,12 +34,12 @@ export class ClientEditPageComponent implements OnInit {
 
 
   public myForm: FormGroup = this.fb.group({
-    title: ['', [Validators.required]],
+    title: ['', [Validators.required, Validators.maxLength(36)]],
     provincia: ['', Validators.required],
     description: ['example location place', [Validators.required]],
     agente: ['', Validators.required],
     email: ['example@gmail.com', [Validators.required, Validators.email]],
-    telefono: ['98741532', [Validators.required, Validators.min(8)]],
+    telefono: ['98741532', [Validators.required, Validators.minLength(8)]],
     whatsApp: [''],
     driveToLocation: [''],
     facebook: [''],

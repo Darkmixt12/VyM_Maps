@@ -1,0 +1,30 @@
+<div class="mobile-container">
+
+
+	<div *ngIf="itemHijo?.image"  class="image-container">
+		<img src="{{itemHijo?.image}}" alt="">
+	</div>
+
+<div class="container-info">
+
+	<div  class="info-container">
+		<div>
+			<p>{{itemHijo?.provincia}} </p>
+		</div>
+		<section>
+			<p> TEL: {{itemHijo?.telefono}} </p>
+		</section>
+
+		<section class="closeTab">
+			<button class="pi pi-times"></button>
+		</section>
+
+	</div>
+
+	<div  class="name">
+			<p> {{itemHijo?.title}} </p>
+	</div>
+
+</div>
+
+</div>
