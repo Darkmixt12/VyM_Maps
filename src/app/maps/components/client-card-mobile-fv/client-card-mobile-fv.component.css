@@ -1,0 +1,92 @@
+.container {
+	position: absolute;
+    top: 0%;
+    left: 0%;
+    color: white;
+    background-color: rgba(24, 23, 23, 0.95);
+    width: 100%;
+    height: 100%;
+	z-index: 3;
+    padding: 0px;
+    margin: 0px;
+}
+
+.title{
+    width: 100%;
+    margin: 0  auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*! flecha para cerrar el tab*/
+.closeTab{
+    font-size: 35px;
+    border: none;
+    background: transparent;
+}
+
+/*! Controlador de la imagen y titulo y agente cod*/
+.imageContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.grid{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 3fr;
+    justify-content: space-around;
+    align-items: baseline;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+img{
+    width: 100vw;
+    height: 30vh;
+}
+
+
+/* OCIAL MEDIA CONTAINER */
+
+.socialMedia-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    margin-top: 10px;
+    font-size: 33px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #515151;
+
+}
+
+.socialMedia-container button{
+    background: transparent;
+    border: none;
+    color: #959393
+}
+
+
+/* Informacion general  */
+
+.descriptionList ul li{
+	padding-top: 5px 5px 5px;
+	display: flex;
+	align-items: stretch;
+}
+
+.descriptionList li {
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.descriptionList{
+    padding-top:20px
+  
+}
+
+span{
+    font-size: 22px;
+    padding-right: 38px
+}

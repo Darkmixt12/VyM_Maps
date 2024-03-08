@@ -13,6 +13,8 @@ import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component'
 import { ClientCardComponent } from './components/client-card/client-card.component';
 import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 import { ClientCardMobileComponent } from './components/client-card-mobile/client-card-mobile.component';
+import { ClientCardMobileFvComponent } from './components/client-card-mobile-fv/client-card-mobile-fv.component';
+
 
 
 
@@ -30,6 +32,7 @@ import { ClientCardMobileComponent } from './components/client-card-mobile/clien
     ClientCardComponent,
     DeleteDialogComponent,
     ClientCardMobileComponent,
+    ClientCardMobileFvComponent
 
     
   ],

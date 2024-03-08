@@ -1,3 +1,6 @@
+
+<app-client-card-mobile-fv [itemHijo]="itemHijo" *ngIf="hidePlaces"></app-client-card-mobile-fv>
+
 <div class="mobile-container">
 
 
@@ -5,9 +8,9 @@
 		<img src="{{itemHijo?.image}}" alt="">
 	</div>
 
-<div class="container-info">
+<div  (click)="toogleLocations()" class="container-info">
 
-	<div  class="info-container">
+	<div class="info-container">
 		<div>
 			<p>{{itemHijo?.provincia}} </p>
 		</div>

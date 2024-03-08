@@ -2,8 +2,10 @@
   <div #mapDiv class="map-container"></div>
 
 <div>
+
   <app-client-card-mobile [itemHijo]="item" *ngIf="item"></app-client-card-mobile>
   <app-client-card [itemHijo]="item"></app-client-card>
+  
   <div class="btnContainer">
     <button class="btnAll btn btn-primary" (click)="toogleLocations()">
       Provincias
@@ -62,7 +64,7 @@
   </div>
   
   <div *ngIf="hidePlaces" class="locations-container">
-    <ul class="list-group mt-2">
+    <ul class="listaColor list-group">
       <li
         *ngFor="let place of places"
         class="list-group-item list-group-item-action pointer"
