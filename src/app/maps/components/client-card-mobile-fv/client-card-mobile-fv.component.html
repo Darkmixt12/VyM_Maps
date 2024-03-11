@@ -1,11 +1,11 @@
-<div class="container">
+<div  *ngIf="itemHijo" class="container">
 
 <div class="title ">
-	<button class="closeTab pi pi-angle-down" (click)="hideCardClient()"> </button>
+	<button class="closeTab pi pi-angle-down"> </button>
 </div>
 
 <div class="imageContainer">
-	<img src="{{itemHijo?.image}} " alt="">
+	<img src="{{itemHijo.image}} " alt="">
 	<div class="grid">
 		<h2> O10 </h2>
 		<h2> Nombre del cliente</h2>

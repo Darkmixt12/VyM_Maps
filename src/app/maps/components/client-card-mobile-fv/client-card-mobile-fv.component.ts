@@ -9,8 +9,4 @@ import { LocationsResponse } from '../../interfaces/locationsResponse';
 export class ClientCardMobileFvComponent {
   @Input() itemHijo?: LocationsResponse
 
-
-  hideCardClient(){
-    this.itemHijo = undefined
-  }
 }

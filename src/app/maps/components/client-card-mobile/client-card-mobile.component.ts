@@ -9,11 +9,14 @@ import { LocationsResponse } from '../../interfaces/locationsResponse';
 export class ClientCardMobileComponent {
 
   @Input() itemHijo?: LocationsResponse
+
   public hidePlaces: Boolean = false;
 
   toogleLocations(){
     this.hidePlaces = !this.hidePlaces;
     console.log(this.hidePlaces)
   }
+
+
 }
 
