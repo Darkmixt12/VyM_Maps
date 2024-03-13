@@ -35,9 +35,10 @@
 .grid{
     display: grid;
     justify-items: center;
+    
     grid-template-columns: 1fr 3fr;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
     padding: 10px;
     margin-top: 10px;
 }
@@ -89,4 +90,9 @@ img{
 span{
     font-size: 22px;
     padding-right: 38px
+}
+
+.titleName{
+    font-size: 20px;
+    font-weight: 200;
 }

@@ -1,14 +1,14 @@
-<div  *ngIf="itemHijo" class="container">
+<div  *ngIf="size" class="container">
 
 <div class="title ">
-	<button class="closeTab pi pi-angle-down"> </button>
+	<button class="closeTab pi pi-angle-down" (click)="resize()"> </button>
 </div>
 
 <div class="imageContainer">
-	<img src="{{itemHijo.image}} " alt="">
+	<img src="{{itemHijo?.image}} " alt="">
 	<div class="grid">
-		<h2> O10 </h2>
-		<h2> Nombre del cliente</h2>
+		<h2> {{itemHijo?.agente}} </h2>
+		<h2 class="titleName"> {{itemHijo?.title}}</h2>
 	</div>
 </div>
 
@@ -22,28 +22,29 @@
 <div>
 	<section class="descriptionList">
 		<ul >
-			<li>
+			<li *ngIf="itemHijo?.driveToLocation">
 				<span class="pi pi-car"></span>
-				<p> Ir a la Ubicacion </p>
+				<p> {{itemHijo?.driveToLocation}} </p>
 			</li>
 			<li>
 				<span class="pi pi-map-marker"></span>
-				<p> Provincia </p>
+				<p> {{itemHijo?.provincia}} </p>
 			</li>
 			<li>
 				<span class="pi pi-phone"></span>
-				<p> telefono </p>
+				<p> (506) {{itemHijo?.telefono}} </p>
 			</li>
 			<li>
 				<span class="material-symbols-outlined">mail</span>
-				<p> email </p>
+				<p> {{itemHijo?.email}} </p>
 			</li>
 			<li>
 				<span class="material-symbols-outlined">hallway</span>
-				<p> description </p>
+				<p> {{itemHijo?.description}} </p>
 			</li>
 		</ul>
 	</section>
+
 </div>
 
 

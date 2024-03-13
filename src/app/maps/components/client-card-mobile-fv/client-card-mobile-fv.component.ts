@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LocationsResponse } from '../../interfaces/locationsResponse';
 
 @Component({
@@ -8,5 +8,16 @@ import { LocationsResponse } from '../../interfaces/locationsResponse';
 })
 export class ClientCardMobileFvComponent {
   @Input() itemHijo?: LocationsResponse
+
+  @Input() size?: Boolean
+
+  @Output() sizeChange = new EventEmitter<Boolean>();
+
+
+  resize() {
+    this.size = this.size = !this.size;
+    this.sizeChange.emit(this.size);
+  }
+
 
 }

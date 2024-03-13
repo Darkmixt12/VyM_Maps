@@ -1,14 +1,15 @@
 
-<app-client-card-mobile-fv [itemHijo]="itemHijo"  *ngIf="itemHijo"></app-client-card-mobile-fv>
+<app-client-card-mobile-fv [(size)]="fontSizePx" (sizeChange)="fontSizePx=$event" [itemHijo]="itemHijo"  *ngIf="itemHijo"></app-client-card-mobile-fv>
 
-<div class="mobile-container">
+
+<div class="mobile-container" (click)="toogleLocations()">
 
 
 	<div *ngIf="itemHijo?.image"  class="image-container">
 		<img src="{{itemHijo?.image}}" alt="">
 	</div>
 
-<div class="container-info">
+<div class="container-info" >
 
 	<div class="info-container">
 		<div>

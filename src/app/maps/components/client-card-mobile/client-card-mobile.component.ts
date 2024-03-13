@@ -12,9 +12,11 @@ export class ClientCardMobileComponent {
 
   public hidePlaces: Boolean = false;
 
+  fontSizePx: Boolean = false
+
   toogleLocations(){
-    this.hidePlaces = !this.hidePlaces;
-    console.log(this.hidePlaces)
+    this.fontSizePx = !this.fontSizePx;
+    console.log('hola desde el padre',this.fontSizePx)
   }
 
 
