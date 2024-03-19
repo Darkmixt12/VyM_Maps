@@ -19,12 +19,6 @@ const routes: Routes = [
          {path: 'user', component: UserPageComponent},
          {path: 'information', component: VymPageComponent},
          {path: '**', redirectTo: 'inicio'},
-
-        // {path: '', component: },
-        // {path: '',    component: },
-        // {path: '', component: },
-        // {path: '**', redirectTo: 'fullscreen'},
-
     ]
   }
 

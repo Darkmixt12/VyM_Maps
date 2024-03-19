@@ -11,12 +11,6 @@ const routes: Routes = [
     component: MapsLayoutComponent,
      children: [
        {path: 'fullview',  component: MapPageComponent},
-        // {path: '**', redirectTo: ''},
-
-        // {path: '', component: },
-        // {path: '',    component: },
-        // {path: '', component: },
-        // {path: '**', redirectTo: 'fullscreen'},
 
     ]
   }

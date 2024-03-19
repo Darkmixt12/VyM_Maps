@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MiniMapsComponent } from './components/mini-maps/mini-maps.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MapFormPageComponent } from './pages/map-form-page/map-form-page.component';
@@ -31,7 +30,6 @@ import { VymPageComponent } from './pages/vym-page/vym-page/vym-page.component';
 
 @NgModule({
   declarations: [
-  MiniMapsComponent,
   MapFormPageComponent,
   HomeLayoutComponent,
   MapListComponent,
