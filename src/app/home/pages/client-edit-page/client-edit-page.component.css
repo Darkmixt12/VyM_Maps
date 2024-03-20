@@ -16,14 +16,7 @@
 	width: 100%;
 }
 
-/* .title{
-	display: flex;
-	margin: 10px;
-	justify-content: space-around;
-	color: #fff;
-} */
-
- .title{
+.title{
 	display: grid;
 	grid-template-columns: 1fr 2fr 2fr;
 	column-gap: 50px;

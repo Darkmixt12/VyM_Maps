@@ -1,12 +1,12 @@
 <header class="primary-header">
 	<button
 	(click)="atributo()"
-	class="mobile-nav-toggle p-button-outlined"
-	icon="pi pi-bars"
+	class="mobile-nav-toggle"
+
 	aria-controls="primary-navigation"
 	aria-expanded="false"
   >
-
+	<span class="pi pi-bars"> </span>
   </button>
 <div id="menu" data-visible="false" class="primary-navigation bg-gray-900 min-h-screen z-10 text-slate-300 w-64 left-0 h-screen overflow-y-scroll">
 	<div  id="logo" class="my-4 px-6">
@@ -21,6 +21,7 @@
 	<div id="profile" class="imageProfile px-6 py-15">
 	 <p class="welcomeMessage text-slate-500">Bienvenido!</p>
 	 <a class="inline-flex space-x-2 items-center">
+		<div class="imageName-container">
 		 <span>
 			<button [routerLink]="'/home/user'">
 				<img  class="rounded-full w-8 h-8" src="{{currentUser()!.image}}" alt="">
@@ -30,6 +31,7 @@
 		 <span  class="userName text-sm md:text-base font-bold">
 			 {{currentUser()!.name}}
 		 </span>	
+		</div>
 		 </a>
 	</div>
 
@@ -41,7 +43,7 @@
 	
 
 		<a  *ngFor="let items of navBarRoutes" 
-			[routerLink]="items.url" class="listHome w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3 hover:c-red/5 transition ease-linear duration-150">
+			[routerLink]="items.url" class="listHome w-full px-2 inline-flex space-x-2 items-center  border-slate-700 py-3 hover:c-red/5 transition ease-linear duration-150">
 
 
 		 <div class="itemscolor flex flex-col">

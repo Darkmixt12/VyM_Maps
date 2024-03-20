@@ -4,7 +4,7 @@ import { LngLat, Map, Marker, Popup } from 'mapbox-gl';
 import { LocationArray } from '../../interfaces/Locations';
 import { LocationService } from 'src/app/maps/services/locations.service';
 import { MessageService } from 'primeng/api';
-import * as customValidators from '../../interfaces/Validators'
+
 
 
 
@@ -14,14 +14,13 @@ interface MarkerandColor {
   marker: Marker
 }
 
-
 @Component({
   selector: 'app-map-form-page',
   templateUrl: './map-form-page.component.html',
   providers: [MessageService],
   styleUrls: ['./map-form-page.component.css']
 })
-export class MapFormPageComponent implements AfterViewInit, OnInit{
+export class MapFormPageComponent implements AfterViewInit{
 
 
   private fb = inject(FormBuilder)
@@ -62,13 +61,8 @@ export class MapFormPageComponent implements AfterViewInit, OnInit{
       center: [-84.0484498, 9.9495857], // starting position [lng, lat]
       zoom: 7.5, // starting zoom
       });
-    //this._mapService.setMap(this.map)
  
   }
-
-  ngOnInit(){
-  }
-
 
 addMarker(lngLat: LngLat){
   if(!this.map) return
@@ -105,20 +99,6 @@ inputFormValue(){
   this.myForm.patchValue({
     lngLat: [this.test.lng,this.test.lat]
   })
-}
-
-formlog(myForm : any){
-
-  // if(!myForm.value) return 
-  if(!myForm) return 
-  this.locationsArray.push(myForm)
-  this.saveToLocalStorage()
-  this.myForm.reset()
-  
-}
-
-saveToLocalStorage(){
-  localStorage.setItem('locations', JSON.stringify(this.locationsArray))
 }
 
 saveNewLocation(){

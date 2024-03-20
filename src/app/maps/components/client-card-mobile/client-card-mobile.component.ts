@@ -16,7 +16,6 @@ export class ClientCardMobileComponent {
 
   toogleLocations(){
     this.fontSizePx = !this.fontSizePx;
-    console.log('hola desde el padre',this.fontSizePx)
   }
 
 

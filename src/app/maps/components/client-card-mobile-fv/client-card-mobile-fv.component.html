@@ -13,10 +13,10 @@
 </div>
 
 <div class="socialMedia-container">
-		<button class="pi pi-whatsapp"></button>
-		<button class="pi pi-instagram"></button>
-		<button class="pi pi-facebook"></button>
-		<button class="pi pi-globe"></button>
+		<button *ngIf="itemHijo?.whatsApp" class="whatsapp pi pi-whatsapp"></button>
+		<button *ngIf="itemHijo?.instagram" class="instagram pi pi-instagram"></button>
+		<button *ngIf="itemHijo?.facebook" class="facebook pi pi-facebook"></button>
+		<button *ngIf="itemHijo?.webPage" class="web pi pi-globe"></button>
 </div>
 
 <div>
@@ -24,7 +24,7 @@
 		<ul >
 			<li *ngIf="itemHijo?.driveToLocation">
 				<span class="pi pi-car"></span>
-				<p> {{itemHijo?.driveToLocation}} </p>
+				<a  href="{{itemHijo?.driveToLocation}}"  target="_blank"> Obtener dirección</a>
 			</li>
 			<li>
 				<span class="pi pi-map-marker"></span>

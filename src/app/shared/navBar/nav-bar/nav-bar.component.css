@@ -3,18 +3,24 @@
 @tailwind utilities;
 
 #profile img{
-	width: 60px;
-	height: 60px;
+	width: 40%;
+	height: 40%;
+	margin-left: 30%;
+	margin-top: 10%;
+	
 }
 
 #profile .userName{
-	margin-left: 20px;
+	margin-bottom: 10%;
 }
 
-#profile p{
-	margin-bottom: 20px;
-}
 
+
+.imageName-container{
+	display: flex;
+    justify-content: center;
+	flex-wrap: wrap;
+}
 .btn-logout{
 	margin-top: 50px
 }
@@ -51,9 +57,10 @@
 	backdrop-filter: blur(1rem);
   }
 
-  .mobile-nav-toggle{
+
+.mobile-nav-toggle span{
+	font-size: 25px;
 	color: white;
-	background-color: aquamarine;
 }
 
 
@@ -98,14 +105,24 @@
 		display: none;
 	}
 
-	
-	#profile {
-		margin-top: 35px;
-	}
 
 	#nav{
 		margin-top: 50px;
 	}
+
+	
+	#profile {
+		margin-top: 50px;
+	}
+
+	#profile img {
+		width: 60%;
+		height: 60%;
+		margin-left: 20%;
+		margin-top: 10%;
+	}
+
+
 
 	
 
@@ -136,11 +153,6 @@
 		margin-top: 50px;
 	}
 
-	#profile img{
-		margin-left: 10px;
-		width: 70px;
-		height: 70px;
-	}
 
 	}
 

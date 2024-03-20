@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { AnySourceData, LngLat, LngLatBounds, LngLatLike, Map, Marker, Popup } from 'mapbox-gl'
 import { Feature } from '../interfaces/places';
-import { DirectionsApiClient } from '../api/directionsApiClient';
+
 
 interface MarkerandColor {
   color: string;
@@ -13,7 +13,6 @@ interface MarkerandColor {
   providedIn: 'root'
 })
 export class MapService {
-  private _directionsApi = inject(DirectionsApiClient)
 
   private map: Map | undefined
   private markers: Marker[] = []

@@ -1,6 +1,5 @@
-import { Component, computed, inject } from '@angular/core';
-import { ConnectionService, ConnectionState, ConnectionServiceOptions} from 'ng-connection-service'
-import { AuthService } from 'src/app/auth/services/auth.service';
+import {Component} from '@angular/core';
+
 
 @Component({
 
@@ -10,8 +9,6 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 })
 export class HomeLayoutComponent {
 
-  private authService = inject(AuthService);
-  public user = computed( () => this.authService.currentUser()); 
 
   public sidebarItems = [
     {
@@ -24,12 +21,6 @@ export class HomeLayoutComponent {
       label: 'Buscar', icon: 'search', url: '/map/fullview'
     },
   ]
-
-
-  // get user(){ es igual a usar el user computed de arriba
-  //   return this.authService.currentUser();
-  // }
-
 }
 
 
