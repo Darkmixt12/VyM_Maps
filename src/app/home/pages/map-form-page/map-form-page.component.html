@@ -16,6 +16,9 @@
           aria-describedby="emailHelp"
           placeholder="Ingrese el nombre de la Ubicacion"
         />
+        <span class="msgError" *ngIf="isValidField('title')">
+          El nombre del cliente es requerido
+        </span>
       </div>
 
 
@@ -26,6 +29,9 @@
           class="form-control"
           placeholder="Ingrese una descripcion"
         />
+        <span class="msgError" *ngIf="isValidField('description')">
+          Se requiere una descripción
+        </span>
       </div>
 
   
@@ -37,6 +43,9 @@
           class=" form-control"
           placeholder="Ingrese su numero de Telefono"
         />
+        <span class="msgError" *ngIf="isValidField('telefono')">
+          Numero de telefono obligatorio
+        </span>
 
       </div>
       <section class="spacer"></section>
@@ -64,6 +73,9 @@
                 class=" form-control"
                 placeholder="Ingrese su direccion de Correo"
               />
+              <span class="msgError" *ngIf="isValidField('email')">
+                Direccion de correo electronica obligatoria
+              </span>
             </div>
             <span class="spacer"></span>
             <!--TODO: NUMERO DE TELEFONO --> 

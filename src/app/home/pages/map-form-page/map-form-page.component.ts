@@ -4,6 +4,7 @@ import { LngLat, Map, Marker, Popup } from 'mapbox-gl';
 import { LocationArray } from '../../interfaces/Locations';
 import { LocationService } from 'src/app/maps/services/locations.service';
 import { MessageService } from 'primeng/api';
+import { ValidatorService } from 'src/app/shared/services/validators.service';
 
 
 
@@ -25,6 +26,7 @@ export class MapFormPageComponent implements AfterViewInit{
 
   private fb = inject(FormBuilder)
   private locationService = inject(LocationService);
+  private validatorService = inject(ValidatorService);
 
 
   public currentMarker: MarkerandColor[] = []
@@ -44,7 +46,7 @@ export class MapFormPageComponent implements AfterViewInit{
     description: ['ninguna', [Validators.required]],
     lngLat: ['-84.17663016743874,9.857752791289585', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
     agente: ['O10', Validators.required],
-    email: ['munozste@hotmail.com', [Validators.required, Validators.email]],
+    email: ['munozste@hotmail.com', [Validators.required, Validators.pattern(this.validatorService.emailPattern)]],
     telefono: ['98564578', [Validators.required, Validators.minLength(8),]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
     image: ['https://res.cloudinary.com/dlsxaumhg/image/upload/v1708463020/locationsFolder/huqfmwgbwppicvavscxn.jpg'],
     whatsApp: [''],
@@ -125,8 +127,8 @@ clientDataUpdateMessage( message: string){
 
 }
 
-isValidField(field: string): boolean | null{
-  return this.myForm.controls[field].errors && this.myForm.controls[field].touched;
+isValidField(field: string){
+  return this.validatorService.isValidFiel( this.myForm, field)
 }
 
 getFieldError(field: string): string | null{

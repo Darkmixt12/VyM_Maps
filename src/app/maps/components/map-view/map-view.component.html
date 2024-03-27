@@ -64,14 +64,15 @@
   </div>
   
   <div *ngIf="hidePlaces" class="locations-container">
-    <ul class="listaColor list-group">
+    <ul class="listaColor list-group mt-2">
       <li
         *ngFor="let place of places"
         class="list-group-item list-group-item-action pointer"
         (click)="flyto(place)"
         (click)="getByIdPlace(place._id)"
       >
-        <h6>{{ place.title }}</h6> 
+      <h1 class="list-title">{{ place.title }}</h1> 
+		  <span> {{place.description}} </span>
       </li>
     </ul>
   </div>

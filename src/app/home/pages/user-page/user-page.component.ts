@@ -5,6 +5,7 @@ import { UpdatePassword } from 'src/app/auth/interfaces/updatePassword';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { LocationService } from 'src/app/maps/services/locations.service';
 import { UserService } from 'src/app/maps/services/user.service';
+import { ValidatorService } from 'src/app/shared/services/validators.service';
 
 @Component({
   selector: 'app-user-page',
@@ -21,6 +22,7 @@ export class UserPageComponent implements OnInit {
   private fb = inject(FormBuilder)
   private authService = inject(AuthService)
   private userService = inject(UserService)
+  private validatorService = inject(ValidatorService)
   public currentUser: User | null = this.authService.currentUser()
 
   // IMAGEN PROFILE //
@@ -35,7 +37,11 @@ export class UserPageComponent implements OnInit {
     password: ['', [Validators.required]],
     newPassword: ['', [Validators.required]],
     newPassword2: ['', [Validators.required]],
-  })
+  },
+    {
+      validators: [this.validatorService.isFieldOneEqualFieldTwo('newPassword','newPassword2')]
+    }
+  )
 
   public updateFormUserInfo: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.maxLength(16), Validators.pattern('^[a-z A-Zñ ]*$')]],
