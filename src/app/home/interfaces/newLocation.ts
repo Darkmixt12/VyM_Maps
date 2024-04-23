@@ -1,4 +1,4 @@
-import { LngLat } from "mapbox-gl"
+
 
 export interface Location {
 

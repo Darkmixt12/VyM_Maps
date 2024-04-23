@@ -72,7 +72,7 @@
         (click)="getByIdPlace(place._id)"
       >
       <h1 class="list-title">{{ place.title }}</h1> 
-		  <span> {{place.description}} </span>
+		  <span> {{place.description | titlecase}} </span>
       </li>
     </ul>
   </div>

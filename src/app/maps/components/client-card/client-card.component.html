@@ -19,14 +19,21 @@
 				<button class="deletebtn material-symbols-outlined" (click)="toogleLocations()">delete</button>
 			</div>
 		</div>
+		<hr>
+		<div class="btnMenu">
+			<div class="btnEdit">
+				<span class="material-symbols-outlined">mail</span>
+				<p> {{itemHijo?.email}} </p>
+			</div>
+		</div>
 			<hr>
 			<br>
 
 			<section class="descriptionList">
 				<ul >
-					<li>
+					<!-- <li>
 						<span class="material-symbols-outlined">badge</span>
-					</li>
+					</li> -->
 					<li>
 						<span class="material-symbols-outlined">location_on</span>
 						<p> {{itemHijo?.provincia}} </p>
@@ -34,10 +41,6 @@
 					<li>
 						<span class="material-symbols-outlined">call</span>
 						<p> {{itemHijo?.telefono}} </p>
-					</li>
-					<li>
-						<span class="material-symbols-outlined">mail</span>
-						<p> {{itemHijo?.email}} </p>
 					</li>
 					<li>
 						<span class="material-symbols-outlined">hallway</span>

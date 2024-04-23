@@ -37,7 +37,7 @@ export class ValidatorService {
 				case 'required':
 					return 'Este campo es requerido';
 
-				case 'minLenght':
+				case 'minlength':
 					return `Minimo ${errors['minlength'].requiredLength} caracters.`
 			}
 		}

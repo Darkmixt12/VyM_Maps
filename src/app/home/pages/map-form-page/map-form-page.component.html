@@ -23,11 +23,11 @@
 
 
       <div>
-        <label for="exampleInputEmail1">Decripción</label>
+        <label for="exampleInputEmail1">Dirección</label>
         <input
           formControlName="description"
           class="form-control"
-          placeholder="Ingrese una descripcion"
+          placeholder="Ingrese una ubicacion"
         />
         <span class="msgError" *ngIf="isValidField('description')">
           Se requiere una descripción
@@ -123,8 +123,8 @@
       <div class="btnsForm">
 
         <p-toast></p-toast>
-        <button class="btnFormSubmit" [disabled]="myForm.invalid" (click)="saveNewLocation()" (click)="clientDataUpdateMessage('Cliente creado con exitosamente')">GUARDAR CLIENTE</button>
-        <button (click)="inputFormValue()" (click)="clientDataUpdateMessage('Latitud y Longitudes añadidas')" class="btnFormMarker material-symbols-outlined" label="Top Left">share_location</button>
+        <button class="btnFormSubmit" [disabled]="myForm.invalid" (click)="saveNewLocation()">GUARDAR CLIENTE</button>
+        <button (click)="inputFormValue()"  (click)="clientDataUpdateMessage('Latitud y Longitudes añadidas')" class="btnFormMarker material-symbols-outlined" label="top-left">share_location</button>
 
       </div>
 

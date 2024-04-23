@@ -58,6 +58,13 @@ export class HomePageComponent implements OnInit {
             'rgb(54, 162, 235)',
             'rgb(153, 102, 255)',
             'rgb(201, 203, 207)',
+            'rgb(242, 229, 0)',
+            'rgb(229, 30,  83)',
+            'rgb(240, 153,  153)',
+            'rgb(51, 87, 163)',
+            'rgb(98, 165, 48)',
+            'rgb(149, 32, 130)',
+            'rgb(249, 180, 16)',
           ],
           borderWidth: 1,
           backgroundColor: [
@@ -68,6 +75,13 @@ export class HomePageComponent implements OnInit {
             'rgba(54, 162, 235, 0.2)',
             'rgba(153, 102, 255, 0.2)',
             'rgba(201, 203, 207, 0.2)',
+            'rgb(242, 229, 0, 0.2)',
+            'rgb(229, 30,  83, 0.2)',
+            'rgb(240, 153,  153, 0.2)',
+            'rgb(51, 87, 163, 0.2)',
+            'rgb(98, 165, 48, 0.2)',
+            'rgb(149, 32, 130, 0.2)',
+            'rgb(249, 180, 16, 0.2)',
           ],
         },
       ]
@@ -79,7 +93,11 @@ export class HomePageComponent implements OnInit {
       plugins: {
           legend: {
               labels: {
-              
+                color: 'white',
+                font: {
+                  size: 15 
+                }
+             
               }
           }
       }
@@ -123,6 +141,8 @@ export class HomePageComponent implements OnInit {
               'rgb(54, 162, 235)',
               'rgb(153, 102, 255)',
               'rgb(201, 203, 207)',
+              'rgb(229, 30,  83)',
+              'rgb(240, 153,  153)',
             ],
             borderWidth: 1,
             backgroundColor: [
@@ -133,6 +153,8 @@ export class HomePageComponent implements OnInit {
               'rgba(54, 162, 235, 0.2)',
               'rgba(153, 102, 255, 0.2)',
               'rgba(201, 203, 207, 0.2)',
+              'rgb(229, 30, 83, 0.2)',
+              'rgb(240, 153,  153, 0.2)',
             ],
               }
           ]
@@ -210,7 +232,7 @@ export class HomePageComponent implements OnInit {
           labels: puntoVenta2,
           datasets: [
               {
-                  label: 'Sales',
+                  label: 'Venta Semanal',
                   data: provincias,
             borderColor: [
               'rgb(255, 99, 132)',
@@ -248,7 +270,8 @@ export class HomePageComponent implements OnInit {
             y: {
                 beginAtZero: true,
                 ticks: {
-                    color: textColorSecondary
+                    color: 'white'
+                    
                 },
                 grid: {
                     color: surfaceBorder,
@@ -257,11 +280,16 @@ export class HomePageComponent implements OnInit {
             },
             x: {
                 ticks: {
-                    color: textColorSecondary
+                    color: 'white',
+                    font: {
+                      size: 14
+                    }
+                    
                 },
                 grid: {
                     color: surfaceBorder,
-                    drawBorder: false
+                    drawBorder: false,
+                
                 }
             }
         }

@@ -27,6 +27,7 @@ export class MapFormPageComponent implements AfterViewInit{
   private fb = inject(FormBuilder)
   private locationService = inject(LocationService);
   private validatorService = inject(ValidatorService);
+  public errormessage?: string
 
 
   public currentMarker: MarkerandColor[] = []
@@ -41,14 +42,14 @@ export class MapFormPageComponent implements AfterViewInit{
   private messageService = inject(MessageService);
 
   public myForm: FormGroup = this.fb.group({
-    title: ['testeo', [Validators.required]],
-    provincia: ['Alajuela', Validators.required],
-    description: ['ninguna', [Validators.required]],
-    lngLat: ['-84.17663016743874,9.857752791289585', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
-    agente: ['O10', Validators.required],
-    email: ['munozste@hotmail.com', [Validators.required, Validators.pattern(this.validatorService.emailPattern)]],
-    telefono: ['98564578', [Validators.required, Validators.minLength(8),]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
-    image: ['https://res.cloudinary.com/dlsxaumhg/image/upload/v1708463020/locationsFolder/huqfmwgbwppicvavscxn.jpg'],
+    title: ['', [Validators.required]],
+    provincia: ['', Validators.required],
+    description: ['', [Validators.required]],
+    lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
+    agente: ['', Validators.required],
+    email: ['', [Validators.required, Validators.pattern(this.validatorService.emailPattern)]],
+    telefono: ['', [Validators.required, Validators.minLength(8),Validators.maxLength(8)]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
+    image: ['https://res.cloudinary.com/dlsxaumhg/image/upload/v1713804317/locationsFolder/xezc7tecjxqcadpzrsbf.jpg'],
     whatsApp: [''],
     facebook: [''],
     instagram: [''],
@@ -105,12 +106,14 @@ inputFormValue(){
 
 saveNewLocation(){
   if(this.myForm.invalid) return
-  this.locationService.registerLocation(this.myForm.value).subscribe(result=> {
-    if (result) {
-      //this.myForm.reset()
-    } else{
-      console.log('error al registrar la nueva ubicacion')
-    }
+  this.locationService.registerLocation(this.myForm.value).subscribe( {
+    
+    next: () => {
+      this.myForm.reset(),
+      this.messageService.add({severity: 'success', summary: 'Completado', detail:  'Cliente agregado correctamente'})
+    },
+    error: (error) => {this.messageService.add({ severity: 'error', summary: 'ERROR!', detail: error.error.message });
+  },
     
   })
 
