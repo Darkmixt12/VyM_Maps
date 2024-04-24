@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 #profile img{
-	width: 40%;
-	height: 40%;
+	width: 70px;
+	height: 70px;
 	margin-left: 30%;
 	margin-top: 10%;
 	
@@ -18,8 +18,9 @@
 
 .imageName-container{
 	display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-	flex-wrap: wrap;
+    flex-direction: column;
 }
 .btn-logout{
 	margin-top: 50px

@@ -29,6 +29,9 @@ export class UserPageComponent implements OnInit {
   public imgTemporal: any
   public file?: File;
 
+  public changeType : boolean = true
+  public visible : boolean = true
+
   private locationService = inject(LocationService);
 
 
@@ -151,6 +154,11 @@ deleteImageBeforeUpdate(id: string){
     const imageObject = {image: publicName, name: 'usuario'}
     this.locationService.deleteOldImageFact(imageObject).subscribe()
   })
+}
+
+viewpass(){
+  this.visible = !this.visible
+  this.changeType = !this.changeType
 }
 
 

@@ -57,23 +57,40 @@
 			<p>Ajustes</p>
 		<form action="" [formGroup]="updateFormPassword">
 			<div class="changePasswordContainer">
+
+				<div class="inputBox">
+
 				<label for="">Digite su contraseña</label>
 				<input
 				formControlName="password"
 				class="form-control"
 				type="password">
 
-				<label for="">Nueva contraseña</label>
-				<input
-				formControlName="newPassword"
-				class="form-control"
-				type="password">
+				
+				</div>
+
+				<div class="inputBox">
+
+					<label for="">Nueva contraseña</label>
+					<input
+					formControlName="newPassword"
+					class="form-control"
+					id="password"
+					[type]="changeType?'password':'text'">
+					<div  class="eye-icon" id="toggle" (click)="viewpass()" [ngClass]="visible?'pi pi-eye':'pi pi-eye-slash'"></div>
+
+				</div>
+
+				<div class="inputBox">
 
 				<label for="">Repita contraseña</label>
 				<input
 				formControlName="newPassword2"
 				class="form-control"
-				type="password">
+				[type]="changeType?'password':'text'">
+				<div  class="eye-icon" id="toggle" (click)="viewpass()" [ngClass]="visible?'pi pi-eye':'pi pi-eye-slash'"></div>
+				
+				</div>
 
 				<button (click)="changePassword()">Modificar contraseña</button>
 			</div>
