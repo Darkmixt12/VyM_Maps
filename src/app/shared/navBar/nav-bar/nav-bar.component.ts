@@ -34,7 +34,7 @@ export class NavBarComponent {
   sidebarVisible: boolean = false;
   
   public navBarRoutes = [
-    { label: 'Home', description: 'Informacion', url: './home/inicio'},
+    { label: 'Inicio', description: 'Informacion', url: './home/inicio'},
     { label: 'Mapa', description: 'Mapa Completo', url: '/map/fullview'},
     { label: 'Clientes', description: 'Lista', url: './map-list'},
     { label: 'Nuevo Lugar', description: 'Nueva Ubicacion', url: './form'},

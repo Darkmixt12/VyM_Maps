@@ -89,6 +89,7 @@ export class HomePageComponent implements OnInit {
 
 
   this.options = {
+      responsive: true,
       cutout: '60%',
       plugins: {
           legend: {

@@ -20,23 +20,23 @@
 	</div>
 	<div id="profile" class="imageProfile px-6 py-15">
 	 <p class="welcomeMessage text-slate-500">Bienvenido!</p>
-	 <a class="">
-		
-		
-		<div class="imageName-container">
-		 <span>
-			<button [routerLink]="'/home/user'">
-				<img  class="rounded-full w-8 h-8" src="{{currentUser()!.image}}" alt="">
-			</button>
-			
-		 </span>
-		 <span  class="userName text-sm md:text-base font-bold">
-			 {{currentUser()!.name}}
-		 </span>	
-		</div>
-
-		 </a>
 	</div>
+
+
+
+
+	<div class="imgContainer">
+		<button [routerLink]="'/home/user'">
+			<img  class="profileImage rounded-full w-8 h-8" src="{{currentUser()!.image}}" alt="">
+		</button>
+		<span  class="userName text-sm md:text-base font-bold">
+			{{currentUser()!.name}}
+		</span>
+
+	</div>
+
+
+
 
 	<div id="nav" 
 	class=" w-full px-6"
