@@ -1,5 +1,5 @@
 import { Component, OnInit, computed, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/auth/interfaces';
 import { UpdatePassword } from 'src/app/auth/interfaces/updatePassword';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -34,15 +34,16 @@ export class UserPageComponent implements OnInit {
   public visible : boolean = true
   public changeOldType : boolean = true
   public visibleOld : boolean = true
+  public btneditUser : boolean = true
 
   private locationService = inject(LocationService);
 
 
 
   public updateFormPassword: FormGroup = this.fb.group({
-    password: ['', [Validators.required, Validators.minLength(6)]],
-    newPassword: ['', [Validators.required]],
-    newPassword2: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+    newPassword: ['', [Validators.required, Validators.minLength(6)]],
+    newPassword2: ['', [Validators.required,Validators.minLength(6)]],
   },
     {
       validators: [this.validatorService.isFieldOneEqualFieldTwo('newPassword','newPassword2')]
@@ -50,7 +51,7 @@ export class UserPageComponent implements OnInit {
   )
 
   public updateFormUserInfo: FormGroup = this.fb.group({
-    name: ['', [Validators.required, Validators.maxLength(16), Validators.pattern(this.validatorService.firstNameAndLastnamePattern)]],
+    name: ['', [Validators.required, Validators.maxLength(16), Validators.minLength(5), Validators.pattern(this.validatorService.firstNameAndLastnamePattern)]],
     email: ['', [Validators.required, Validators.pattern(this.validatorService.emailPattern)]],
   })
 
@@ -77,7 +78,7 @@ export class UserPageComponent implements OnInit {
           console.log('contraseña cambiada exitosamente')
         },
         error: (err) => {
-          console.log(err)
+          console.log(err.error.message)
         }
 
       })
@@ -174,10 +175,18 @@ viewOldPass(){
   this.changeOldType = !this.changeOldType
 }
 
-isValidField(field: string){
- return this.validatorService.isValidFiel(this.updateFormUserInfo, field)
+editUser(){
+  this.btneditUser = !this.btneditUser
 }
 
+isValidField(field: string){
+ return this.validatorService.isValidField(this.updateFormUserInfo, field)
+}
+
+getFieldError(field:string, form: FormGroup): string | null{
+  
+  return this.validatorService.getFieldError(field, form)
+}
 
 
 }

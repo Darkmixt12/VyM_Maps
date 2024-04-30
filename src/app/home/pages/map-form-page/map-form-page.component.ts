@@ -131,7 +131,7 @@ clientDataUpdateMessage( message: string){
 }
 
 isValidField(field: string){
-  return this.validatorService.isValidFiel( this.myForm, field)
+  return this.validatorService.isValidField( this.myForm, field)
 }
 
 getFieldError(field: string): string | null{

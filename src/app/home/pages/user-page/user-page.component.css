@@ -4,6 +4,11 @@ body{
 
 	}
 
+
+#titleEdit{
+	display: flex;
+}
+
 .flex{
 	display: flex;
 	justify-content: space-around;
@@ -165,7 +170,7 @@ body{
 }
 
 .errorValidation{
-	color: red;
+	color: #E91E63;
 	font-weight: 400;
 	margin-top: 5px;
 }
@@ -203,4 +208,13 @@ body{
 	top: 50%;
 	cursor: pointer;
 
+}
+
+
+.editProfileBtn{
+	border: none;
+	background: none;
+	font-size: 25px;
+	right: 5px;
+	
 }

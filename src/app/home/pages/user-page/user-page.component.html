@@ -7,7 +7,11 @@
 		
 		<div class="info-container">
 			
-			<h4>Mi perfil de usuario</h4>
+			<div id="titleEdit">
+				<h4>Mi perfil de usuario</h4> 
+				<button (click)="editUser()" class="editProfileBtn pi pi-file-edit"></button>
+			</div>
+	
 			<p>Ajustes</p>
 
 			<div class="flex">
@@ -32,12 +36,14 @@
 				<div class="changeEmailNameContainer">
 					<label for="">Nombre de Usuario</label>
 					<input 
+					[readonly]="btneditUser"
 					formControlName="name"
 					class="form-control"
 					type="text">
 					<span class="errorValidation" *ngIf="isValidField('name')">
-						El nombre de usuario es requerido
+						 {{getFieldError('name', updateFormUserInfo )}}
 					</span>
+
 	
 					<label for="">Direccion de Correo Electronico</label>
 					<input 
@@ -45,8 +51,9 @@
 					class="form-control"
 					type="text">
 					<span class="errorValidation" *ngIf="isValidField('email')">
-						Digite una direccion de correo valida
-					</span>
+						{{getFieldError('email', updateFormUserInfo )}}
+				   </span>
+
 	
 					<button (click)="updateUser()">Editar Usuario</button>
 					
@@ -73,6 +80,7 @@
 				class="form-control"
 				[type]="changeOldType?'password':'text'">
 				<div  class="eye-icon" id="toggle" (click)="viewOldPass()" [ngClass]="visibleOld?'pi pi-eye':'pi pi-eye-slash'"></div>
+
 				
 				</div>
 
@@ -97,8 +105,15 @@
 				formControlName="newPassword2"
 				class="form-control"
 				[type]="changeType?'password':'text'">
-				<div  class="eye-icon" id="toggle" (click)="viewNewPass()" [ngClass]="visible?'pi pi-eye':'pi pi-eye-slash'"></div>
+				<div  class="eye-icon" id="toggle" (click)="viewNewPass()" [ngClass]="visible?'pi pi-eye':'pi pi-eye-slash'"></div>	
 				
+
+				</div>
+
+				<div>
+
+					<br>
+
 				</div>
 
 				<button (click)="changePassword()">Modificar contraseña</button>
