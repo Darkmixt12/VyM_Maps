@@ -16,6 +16,7 @@ import { TagModule } from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { TooltipModule } from 'primeng/tooltip';
 
 import { FileUploadModule } from 'primeng/fileupload';
 import { ClientEditPageComponent } from './pages/client-edit-page/client-edit-page.component';
@@ -50,6 +51,7 @@ import { VymPageComponent } from './pages/vym-page/vym-page/vym-page.component';
     MapRoutingModule,
     SharedModule,
     
+    
 
     
     TableModule,
@@ -63,7 +65,8 @@ import { VymPageComponent } from './pages/vym-page/vym-page/vym-page.component';
     DynamicDialogModule,
     ConfirmDialogModule,
     ConfirmPopupModule,
-    ChartModule
+    ChartModule,
+    TooltipModule
   
 
   ]

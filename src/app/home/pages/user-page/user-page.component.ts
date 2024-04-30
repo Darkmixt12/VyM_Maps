@@ -29,15 +29,18 @@ export class UserPageComponent implements OnInit {
   public imgTemporal: any
   public file?: File;
 
+  // CAMBIO CONTRASEÑA
   public changeType : boolean = true
   public visible : boolean = true
+  public changeOldType : boolean = true
+  public visibleOld : boolean = true
 
   private locationService = inject(LocationService);
 
 
 
   public updateFormPassword: FormGroup = this.fb.group({
-    password: ['', [Validators.required]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
     newPassword: ['', [Validators.required]],
     newPassword2: ['', [Validators.required]],
   },
@@ -47,8 +50,8 @@ export class UserPageComponent implements OnInit {
   )
 
   public updateFormUserInfo: FormGroup = this.fb.group({
-    name: ['', [Validators.required, Validators.maxLength(16), Validators.pattern('^[a-z A-Zñ ]*$')]],
-    email: ['', [Validators.required]],
+    name: ['', [Validators.required, Validators.maxLength(16), Validators.pattern(this.validatorService.firstNameAndLastnamePattern)]],
+    email: ['', [Validators.required, Validators.pattern(this.validatorService.emailPattern)]],
   })
 
 
@@ -69,7 +72,15 @@ export class UserPageComponent implements OnInit {
       }
 
       console.log(updatePassword)
-      this.authService.changePassword(updatePassword).subscribe()
+      this.authService.changePassword(updatePassword).subscribe({
+        next: () => {
+          console.log('contraseña cambiada exitosamente')
+        },
+        error: (err) => {
+          console.log(err)
+        }
+
+      })
     } else{
     console.log('Las contraseñas son distintas.')
     }
@@ -145,21 +156,28 @@ upImage(){
 deleteImageBeforeUpdate(id: string){
   this.authService.getUserInfo(id).subscribe( result =>{
     const SecretUrl = result.image
-    console.log(SecretUrl)
     const SecretUrlArray = SecretUrl.split('/')
-    console.log(SecretUrlArray)
     const SecretUrlKeyCut = SecretUrlArray[SecretUrlArray.length-1]
-    console.log(SecretUrlKeyCut)
     const publicName = SecretUrlKeyCut.split('.')[0]
     const imageObject = {image: publicName, name: 'usuario'}
     this.locationService.deleteOldImageFact(imageObject).subscribe()
   })
 }
 
-viewpass(){
+viewNewPass(){
   this.visible = !this.visible
   this.changeType = !this.changeType
 }
+
+viewOldPass(){
+  this.visibleOld = !this.visibleOld
+  this.changeOldType = !this.changeOldType
+}
+
+isValidField(field: string){
+ return this.validatorService.isValidFiel(this.updateFormUserInfo, field)
+}
+
 
 
 }

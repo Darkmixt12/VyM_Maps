@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 export class ValidatorService {
 	
 
-	public firstNameAndLastnamePattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
+	public firstNameAndLastnamePattern: string = '([a-zA-Zñ]+) ([a-zA-Zñ]+)';
 	public emailPattern : string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
 
@@ -36,7 +36,6 @@ export class ValidatorService {
 			switch(key){
 				case 'required':
 					return 'Este campo es requerido';
-
 				case 'minlength':
 					return `Minimo ${errors['minlength'].requiredLength} caracters.`
 			}
@@ -52,6 +51,8 @@ export class ValidatorService {
 
 			const fieldValue1 = formGroup.get(field1)?.value
 			const fieldValue2 = formGroup.get(field2)?.value
+
+			console.log(fieldValue1, fieldValue2)
 
 			if( fieldValue1 !== fieldValue2) {
 			formGroup.get(field2)?.setErrors({ notEqual: true})

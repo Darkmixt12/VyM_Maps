@@ -16,12 +16,12 @@
 				<label for="">Mi foto de perfil</label>
 				<img *ngIf="!imgTemporal" src="{{ currentUser!.image }}" class="img-avatar" alt="" />
 				<img *ngIf="imgTemporal" src="{{ imgTemporal }}" class="img-avatar" />
-				<input type="file" (change)="uploadFile($event)" id="selectedFile" style="display: none;" />
+				<input type="file"  (change)="uploadFile($event)" id="selectedFile" style="display: none;" />
 				<input type="button" class="BtnUpdated" value="Actualizar Imagen" onclick="document.getElementById('selectedFile').click();"/>
 				
 					<div class="btns-upload">
 						
-						<button *ngIf="file" class="btn-upload" (click)="upImage()">
+						<button *ngIf="file" class="btn-upload" (click)="upImage() ">
 						  Guardar Imagen
 						</button>
 					  </div>
@@ -35,12 +35,18 @@
 					formControlName="name"
 					class="form-control"
 					type="text">
+					<span class="errorValidation" *ngIf="isValidField('name')">
+						El nombre de usuario es requerido
+					</span>
 	
 					<label for="">Direccion de Correo Electronico</label>
 					<input 
 					formControlName="email"
 					class="form-control"
 					type="text">
+					<span class="errorValidation" *ngIf="isValidField('email')">
+						Digite una direccion de correo valida
+					</span>
 	
 					<button (click)="updateUser()">Editar Usuario</button>
 					
@@ -62,10 +68,11 @@
 
 				<label for="">Digite su contraseña</label>
 				<input
+				pInputText pTooltip="Contraseña actual" tooltipPosition="right" 
 				formControlName="password"
 				class="form-control"
-				type="password">
-
+				[type]="changeOldType?'password':'text'">
+				<div  class="eye-icon" id="toggle" (click)="viewOldPass()" [ngClass]="visibleOld?'pi pi-eye':'pi pi-eye-slash'"></div>
 				
 				</div>
 
@@ -73,11 +80,12 @@
 
 					<label for="">Nueva contraseña</label>
 					<input
+					pInputText pTooltip="Nueva contraseña" tooltipPosition="right" 
 					formControlName="newPassword"
 					class="form-control"
 					id="password"
 					[type]="changeType?'password':'text'">
-					<div  class="eye-icon" id="toggle" (click)="viewpass()" [ngClass]="visible?'pi pi-eye':'pi pi-eye-slash'"></div>
+					<div  class="eye-icon" id="toggle" (click)="viewNewPass()" [ngClass]="visible?'pi pi-eye':'pi pi-eye-slash'"></div>
 
 				</div>
 
@@ -85,10 +93,11 @@
 
 				<label for="">Repita contraseña</label>
 				<input
+				pInputText pTooltip="Repita su contraseña" tooltipPosition="right"
 				formControlName="newPassword2"
 				class="form-control"
 				[type]="changeType?'password':'text'">
-				<div  class="eye-icon" id="toggle" (click)="viewpass()" [ngClass]="visible?'pi pi-eye':'pi pi-eye-slash'"></div>
+				<div  class="eye-icon" id="toggle" (click)="viewNewPass()" [ngClass]="visible?'pi pi-eye':'pi pi-eye-slash'"></div>
 				
 				</div>
 

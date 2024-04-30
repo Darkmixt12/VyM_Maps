@@ -164,7 +164,11 @@ body{
 	}
 }
 
-
+.errorValidation{
+	color: red;
+	font-weight: 400;
+	margin-top: 5px;
+}
 
 .inputBox{
 	position: relative;
