@@ -9,7 +9,11 @@
 			
 			<div id="titleEdit">
 				<h4>Mi perfil de usuario</h4> 
-				<button (click)="editUser()" class="editProfileBtn pi pi-file-edit"></button>
+				
+				<div id="btnEditClient"> 
+					<button (click)="editUser()" class="editProfileBtn pi pi-user-edit"></button>
+				</div>
+
 			</div>
 	
 			<p>Ajustes</p>
@@ -38,6 +42,7 @@
 					<input 
 					[readonly]="btneditUser"
 					formControlName="name"
+					[ngClass]="{'whitesmoke' : btneditUser, 'white': !btneditUser}"
 					class="form-control"
 					type="text">
 					<span class="errorValidation" *ngIf="isValidField('name')">
@@ -47,7 +52,9 @@
 	
 					<label for="">Direccion de Correo Electronico</label>
 					<input 
+					[readonly]="btneditUser"
 					formControlName="email"
+					[ngClass]="{'whitesmoke' : btneditUser, 'white': !btneditUser}"
 					class="form-control"
 					type="text">
 					<span class="errorValidation" *ngIf="isValidField('email')">

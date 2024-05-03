@@ -5,6 +5,10 @@
 	color: white;
 }
 
+.errorValidation{
+	color: red;
+}
+
 .formUpdated{
 	width: 400px;
 }

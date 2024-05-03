@@ -107,8 +107,9 @@ label{
 	flex-direction: column;
 }
 
-.msgError{
-	color: red;
+.errorValidation{
+	color: #dc3545;
+	font-size: 15px
 }
 /*! SECCION MAPA */
 

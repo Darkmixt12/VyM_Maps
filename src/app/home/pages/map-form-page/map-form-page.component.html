@@ -1,9 +1,7 @@
 <div class="container-map">
-
-
   <div class="container-form">
-    <h3> NUEVO CLIENTE </h3>
-    <br>
+    <h3>NUEVO CLIENTE</h3>
+    <br />
     <form action="" [formGroup]="myForm">
       <p>Datos del cliente</p>
       <div class="inputPosition">
@@ -16,11 +14,10 @@
           aria-describedby="emailHelp"
           placeholder="Ingrese el nombre de la Ubicacion"
         />
-        <span class="msgError" *ngIf="isValidField('title')">
-          El nombre del cliente es requerido
-        </span>
+        <span class="errorValidation" *ngIf="isValidField('title')">
+          {{getFieldError('title', myForm )}}
+       </span>
       </div>
-
 
       <div>
         <label for="exampleInputEmail1">Dirección</label>
@@ -29,87 +26,85 @@
           class="form-control"
           placeholder="Ingrese una ubicacion"
         />
-        <span class="msgError" *ngIf="isValidField('description')">
-          Se requiere una descripción
-        </span>
+        <span class="errorValidation" *ngIf="isValidField('description')">
+          {{getFieldError('description', myForm )}}
+       </span>
       </div>
 
-  
-    <div class="flex-agente-provincia">
-      <div class="validatorMessage">
-        <label>Telefono</label>
-        <input
-          formControlName="telefono"
-          class=" form-control"
-          placeholder="Ingrese su numero de Telefono"
-        />
-        <span class="msgError" *ngIf="isValidField('telefono')">
-          Numero de telefono obligatorio
-        </span>
-
+      <div class="flex-agente-provincia">
+        <div class="validatorMessage">
+          <label>Telefono</label>
+          <input
+            formControlName="telefono"
+            class="form-control"
+            placeholder="Ingrese su numero de Telefono"
+          />
+          <span class="errorValidation" *ngIf="isValidField('telefono')">
+            {{getFieldError('telefono', myForm )}}
+         </span>
+        </div>
+        <section class="spacer"></section>
+        <div>
+          <label for="exampleInputEmail1">Provincia</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            formControlName="provincia"
+          >
+            <option value="San Jose">San Jose</option>
+            <option value="Heredia">Heredia</option>
+            <option value="Cartago">Cartago</option>
+            <option value="Alajuela">Alajuela</option>
+            <option value="Limon">Limón</option>
+            <option value="Guanacaste">Guanacaste</option>
+            <option value="Puntarenas">Puntarenas</option>
+          </select>
+        </div>
       </div>
-      <section class="spacer"></section>
+
+      <div class="flex-email-tel">
+        <div>
+          <label>Email</label>
+          <input
+            formControlName="email"
+            class="form-control"
+            placeholder="Ingrese su direccion de Correo"
+          />
+          <span class="errorValidation" *ngIf="isValidField('email')">
+            {{getFieldError('email', myForm )}}
+         </span>
+        </div>
+        <span class="spacer"></span>
+        <!--TODO: NUMERO DE TELEFONO -->
+
+        <div class="validatorMessage">
+          <label for="exampleInputEmail1">Agente</label>
+          <select
+            class="form-select select-agente-input"
+            aria-label="Default select example"
+            formControlName="agente"
+          >
+            <option value="25L">25L</option>
+            <option value="23">14</option>
+            <option value="19">19</option>
+            <option value="13F">13F</option>
+            <option value="13C">13C</option>
+            <option value="23">23</option>
+            <option value="26">26</option>
+            <option value="P10">P10</option>
+            <option value="O10">O10</option>
+            <option value="28">28</option>
+            <option value="8F">8F</option>
+            <option value="8G">8G</option>
+            <option value="V1">V1</option>
+            <option value="TELJ">TELJ</option>
+            <option value="TELA">TELA</option>
+          </select>
+        </div>
+      </div>
+
       <div>
-        <label for="exampleInputEmail1">Provincia</label>
-        <select class="form-select" aria-label="Default select example" formControlName="provincia">
-          <option value="San Jose">San Jose</option>
-          <option value="Heredia">Heredia</option>
-          <option value="Cartago">Cartago</option>
-          <option value="Alajuela">Alajuela</option>
-          <option value="Limon">Limón</option>
-          <option value="Guanacaste">Guanacaste</option>
-          <option value="Puntarenas">Puntarenas</option>
-
-        </select>
-      </div>
-
-    </div>
-
-    <div class="flex-email-tel">
-            <div>
-              <label>Email</label>
-              <input
-                formControlName="email"
-                class=" form-control"
-                placeholder="Ingrese su direccion de Correo"
-              />
-              <span class="msgError" *ngIf="isValidField('email')">
-                Direccion de correo electronica obligatoria
-              </span>
-            </div>
-            <span class="spacer"></span>
-            <!--TODO: NUMERO DE TELEFONO --> 
-
-            <div class="validatorMessage">
-              <label for="exampleInputEmail1">Agente</label>
-              <select class="form-select select-agente-input" aria-label="Default select example" formControlName="agente">
-                <option value="25L">25L</option>
-                <option value="23">14</option>
-                <option value="19">19</option>
-                <option value="13F">13F</option>
-                <option value="13C">13C</option>
-                <option value="23">23</option>
-                <option value="26">26</option>
-                <option value="P10">P10</option>
-                <option value="O10">O10</option>
-                <option value="28">28</option>
-                <option value="8F">8F</option>
-                <option value="8G">8G</option>
-                <option value="V1">V1</option>
-                <option value="TELJ">TELJ</option>
-                <option value="TELA">TELA</option>
-      
-              </select>
-      
-            </div>
-           
-    </div> 
-
- 
-
-    
-    <div>
-      <label for="exampleInputEmail1">Ubicacion</label>
+        <label for="exampleInputEmail1">Ubicacion</label>
 
         <input
           [readonly]="true"
@@ -118,54 +113,52 @@
           class="form-control"
           placeholder="Latitud y Logitud"
         />
-    </div>
-
-      <div class="btnsForm">
-
-        <p-toast></p-toast>
-        <button class="btnFormSubmit" [disabled]="myForm.invalid" (click)="saveNewLocation()">GUARDAR CLIENTE</button>
-        <button (click)="inputFormValue()"  (click)="clientDataUpdateMessage('Latitud y Longitudes añadidas')" class="btnFormMarker material-symbols-outlined" label="top-left">share_location</button>
-
       </div>
 
+      <div class="btnsForm">
+        <p-toast></p-toast>
+        <button
+          class="btnFormSubmit"
+          [disabled]="myForm.invalid"
+          (click)="saveNewLocation()"
+        >
+          GUARDAR CLIENTE
+        </button>
+        <button
+          (click)="inputFormValue()"
+          (click)="clientDataUpdateMessage('Latitud y Longitudes añadidas')"
+          class="btnFormMarker material-symbols-outlined"
+          label="top-left"
+        >
+          share_location
+        </button>
+      </div>
     </form>
   </div>
-
-
-
-
-
-
 
   <div class="div-map mt-6">
     <div #mapDiv class="map-container"></div>
 
     <div class="btnsMapInput">
+      <button (click)="createMarker()" class="btn-map">Añadir Marcador</button>
 
-
-    <button (click)="createMarker()" class="btn-map"> Añadir Marcador </button>
-  
-    <div class="input-Lng">
-      <label class="label-lnglat"> Longitud </label>
-      <input class="input-lnglat form-control" type="text" [value]="test?.lng">
+      <div class="input-Lng">
+        <label class="label-lnglat"> Longitud </label>
+        <input
+          class="input-lnglat form-control"
+          type="text"
+          [value]="test?.lng"
+        />
       </div>
 
-    <div class="input-Lat">
-    <label class="label-lnglat"> Latitud </label>
-    <input class="input-lnglat form-control" type="text" [value]="test?.lat">
-      
+      <div class="input-Lat">
+        <label class="label-lnglat"> Latitud </label>
+        <input
+          class="input-lnglat form-control"
+          type="text"
+          [value]="test?.lat"
+        />
+      </div>
     </div>
-
   </div>
-
-
-  </div>
-
-
-
-
-    
- 
-
-
 </div>

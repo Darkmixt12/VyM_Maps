@@ -5,6 +5,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { DialogService, DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { LocationsResponse } from 'src/app/maps/interfaces/locationsResponse';
 import { LocationService } from 'src/app/maps/services/locations.service';
+import { ValidatorService } from 'src/app/shared/services/validators.service';
 
 @Component({
   selector: 'app-client-edit-page',
@@ -18,12 +19,15 @@ export class ClientEditPageComponent implements OnInit {
   private messageService = inject(MessageService);
   private locationService = inject(LocationService);
   private dialogConfig = inject(DynamicDialogConfig)
+  private validatorService = inject(ValidatorService)
+
   private confirmationService = inject(ConfirmationService)
   private dialogDataId = this.dialogConfig.data.id
 
   @Input() imgProfile?: string;
   @Input() itemHijo?: LocationsResponse ;
   public title?: string
+
 
 
   
@@ -38,8 +42,8 @@ export class ClientEditPageComponent implements OnInit {
     provincia: ['', Validators.required],
     description: ['example location place', [Validators.required]],
     agente: ['', Validators.required],
-    email: ['example@gmail.com', [Validators.required, Validators.email]],
-    telefono: ['98741532', [Validators.required, Validators.minLength(8)]],
+    email: ['example@gmail.com', [Validators.required,Validators.pattern(this.validatorService.emailPattern)]],
+    telefono: ['78564123', [Validators.required, Validators.minLength(8),]],
     whatsApp: [''],
     driveToLocation: [''],
     facebook: [''],
@@ -78,6 +82,7 @@ patchForm(): void {
 updateClient(){
   if(!this.myForm.valid) return this.clientDataUpdateMessage('error', 'Error', 'Formulario Incorrecto, no se ha podido actualizar el cliente');
   this.locationService.updatedLocationImage(this.dialogDataId._id, this.myForm.value).subscribe();
+  console.log(this.myForm.value)
   this.clientDataUpdateMessage('success', 'Completado', 'Cliente actualizado correctamente')
 
 }
@@ -107,5 +112,15 @@ confirm2(event: Event) {
       }
   });
 }
+
+isValidField(field: string){
+  return this.validatorService.isValidField( this.myForm, field)
+}
+
+getFieldError(field:string, form: FormGroup): string | null{
+  
+  return this.validatorService.getFieldErrorClient(field, form)
+}
+
 
 }

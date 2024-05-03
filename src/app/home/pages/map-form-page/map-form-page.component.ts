@@ -48,7 +48,7 @@ export class MapFormPageComponent implements AfterViewInit{
     lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
     agente: ['', Validators.required],
     email: ['', [Validators.required, Validators.pattern(this.validatorService.emailPattern)]],
-    telefono: ['', [Validators.required, Validators.minLength(8),Validators.maxLength(8)]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
+    telefono: ['', [Validators.required, Validators.minLength(8),Validators.maxLength(8), Validators.pattern('^[0-9]*$')]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
     image: ['https://res.cloudinary.com/dlsxaumhg/image/upload/v1713804317/locationsFolder/xezc7tecjxqcadpzrsbf.jpg'],
     whatsApp: [''],
     facebook: [''],
@@ -134,33 +134,13 @@ isValidField(field: string){
   return this.validatorService.isValidField( this.myForm, field)
 }
 
-getFieldError(field: string): string | null{
-
-    if( !this.myForm.controls[field] ) return null
-
-    const errores = this.myForm.controls[field].errors || {};
-
-
-    for (const key of Object.keys(errores)) {
-      
-      switch( key ) {
-
-        case 'required': 
-          return 'Este campo es requerido'
-
-        case 'minlength': 
-          return `Minimo ${ errores['minlength'].requiredLength } caracters`
-        
-        case 'maxlength': 
-          return `Maximo ${ errores['maxlength'].requiredLength } caracters`
-
-          case 'pattern': 
-          return `El numero de telefono solo puede contener numeros`
-      }
-    }
-
-    return null
+getFieldError(field:string, form: FormGroup): string | null{
+  
+  return this.validatorService.getFieldErrorClient(field, form)
 }
+
+
+
 
 }    
 

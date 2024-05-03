@@ -6,7 +6,24 @@ body{
 
 
 #titleEdit{
-	display: flex;
+	position: relative;
+}
+
+#btnEditClient{
+	position: absolute;
+	z-index: 1000;
+	right: 5px;
+    top: 2px;
+}
+
+.whitesmoke {
+    background-color:#e6e6e6de;
+	border-color: #e6e6e6de
+}
+
+.white {
+    background-color: white;
+	border-color: #4ade80;
 }
 
 .flex{
@@ -213,7 +230,10 @@ body{
 
 .editProfileBtn{
 	border: none;
-	background: none;
+background-color: #DADADA;
+color: black;
+padding: 5px;
+border-radius: 5px;
 	font-size: 25px;
 	right: 5px;
 	
