@@ -1,12 +1,14 @@
 <app-loading *ngIf="!isUserLocationReady; else mapReady"></app-loading>
 
-	<ng-template #mapReady>
+	<ng-template #mapReady class="mapfull">
 		<app-map-view ></app-map-view>
-		<app-my-location></app-my-location>
 		
-		
-		
-		<alone-btn-home/>
+		<div class="container-btns">
+			<app-my-location></app-my-location>
+			<alone-btn-home/>
+		</div>
+
+
 		
 	</ng-template>
 

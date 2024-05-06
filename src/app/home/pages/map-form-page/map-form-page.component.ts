@@ -28,7 +28,7 @@ export class MapFormPageComponent implements AfterViewInit{
   private locationService = inject(LocationService);
   private validatorService = inject(ValidatorService);
   public errormessage?: string
-
+  readonly imageDefault: string = 'https://res.cloudinary.com/dlsxaumhg/image/upload/v1715028791/locationsFolder/xw2cb7u0fnnwxozjrd85.jpg'
 
   public currentMarker: MarkerandColor[] = []
   public test?: LngLat
@@ -49,7 +49,7 @@ export class MapFormPageComponent implements AfterViewInit{
     agente: ['', Validators.required],
     email: ['', [Validators.required, Validators.pattern(this.validatorService.emailPattern)]],
     telefono: ['', [Validators.required, Validators.minLength(8),Validators.maxLength(8), Validators.pattern('^[0-9]*$')]], //Validators.maxLength(8),  Validators.pattern('^[0-9]*$')//]],
-    image: ['https://res.cloudinary.com/dlsxaumhg/image/upload/v1713804317/locationsFolder/xezc7tecjxqcadpzrsbf.jpg'],
+    image: [this.imageDefault],
     whatsApp: [''],
     facebook: [''],
     instagram: [''],
@@ -109,8 +109,10 @@ saveNewLocation(){
   this.locationService.registerLocation(this.myForm.value).subscribe( {
     
     next: () => {
-      this.myForm.reset(),
+      console.log(this.myForm.value)
+      this.myForm.reset({image: this.imageDefault}),
       this.messageService.add({severity: 'success', summary: 'Completado', detail:  'Cliente agregado correctamente'})
+   
     },
     error: (error) => {this.messageService.add({ severity: 'error', summary: 'ERROR!', detail: error.error.message });
   },

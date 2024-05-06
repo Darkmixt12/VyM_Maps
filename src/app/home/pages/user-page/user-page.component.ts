@@ -132,7 +132,6 @@ export class UserPageComponent implements OnInit {
       this.imgTemporal = reader.result
     }
 
-
 }
 
 upImage(){
@@ -149,9 +148,8 @@ upImage(){
     if(!this.currentUser?.image) return
       this.currentUser.image = objectTest.image
     })
-
+    this.file = undefined
   })
-
 }
 
 deleteImageBeforeUpdate(id: string){

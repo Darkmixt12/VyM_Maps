@@ -50,7 +50,7 @@ label{
 
 .btnFormSubmit, .btnFormMarker{
 	padding: 5px;
-	background: #38bdf8;
+	background: #20c997;
 	color: black;
 	border-radius: 5px;
 	border: none;
@@ -71,7 +71,7 @@ label{
 	width: 90px;
 	font-size: 50px;
 	font-weight: 300;
-	background-color: #fb923c;
+	background-color: #20c997;
 }
 
 .flex-agente-provincia{
@@ -161,7 +161,7 @@ label{
 .btn-map{
 	font-weight: 300;
 	padding: 15px;
-	background-color: #fb923c;
+	background-color: #20c997;
 	border-radius: 5px;
 	border: none;
 	color: black;

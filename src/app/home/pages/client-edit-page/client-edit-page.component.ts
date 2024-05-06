@@ -40,10 +40,10 @@ export class ClientEditPageComponent implements OnInit {
   public myForm: FormGroup = this.fb.group({
     title: ['', [Validators.required, Validators.maxLength(36)]],
     provincia: ['', Validators.required],
-    description: ['example location place', [Validators.required]],
+    description: ['', [Validators.required]],
     agente: ['', Validators.required],
-    email: ['example@gmail.com', [Validators.required,Validators.pattern(this.validatorService.emailPattern)]],
-    telefono: ['78564123', [Validators.required, Validators.minLength(8),]],
+    email: ['', [Validators.required,Validators.pattern(this.validatorService.emailPattern)]],
+    telefono: ['', [Validators.required,Validators.pattern('^[0-9]*$'), Validators.minLength(8), Validators.maxLength(8)]],
     whatsApp: [''],
     driveToLocation: [''],
     facebook: [''],
