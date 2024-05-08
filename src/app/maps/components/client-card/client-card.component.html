@@ -20,19 +20,19 @@
 				</div>
 
 				<div *ngIf="itemHijo?.instagram"  class="btnInstagram">
-					<a class="pi pi-instagram" href="{{itemHijo?.facebook}}"  target="_blank"></a>
+					<a class="pi pi-instagram" href="{{itemHijo?.instagram}}" target  target="_blank"></a>
 				</div>
 
 				<div *ngIf="itemHijo?.whatsApp"  class="btnWhatsapp">
-					<a class="pi pi-whatsapp" href="{{itemHijo?.facebook}}"  target="_blank"></a>
+					<a class="pi pi-whatsapp" href="{{itemHijo?.whatsApp}}"  target="_blank"></a>
 				</div>
 
 				<div *ngIf="itemHijo?.twitter"  class="btnTwitter">
-					<a class="pi pi-twitter" href="{{itemHijo?.facebook}}"  target="_blank"></a>
+					<a class="pi pi-twitter" href="{{itemHijo?.twitter}}"  target="_blank"></a>
 				
 				</div>
 				<div *ngIf="itemHijo?.webPage"  class="btnGoogle">
-					<a class="pi pi-google" href="{{itemHijo?.facebook}}"  target="_blank"></a>
+					<a class="pi pi-google" href="{{itemHijo?.webPage}}"  target="_blank"></a>
 			
 				</div>
 
@@ -50,14 +50,13 @@
 			<hr>
 
 				<section class="descriptionList">
+					
+					<div>
+						<a class="btnDirections"  href="{{itemHijo?.driveToLocation}}"  target="_blank"> Obtener dirección</a>
+					</div>
+
 					<ul >
-						<!-- <li>
-							<span class="material-symbols-outlined">badge</span>
-						</li> -->
-						<li *ngIf="itemHijo?.driveToLocation">
-							<span class="material-symbols-outlined">local_shipping</span>
-							<a  href="{{itemHijo?.driveToLocation}}"  target="_blank"> Obtener dirección</a>
-						</li>
+						
 						<li>
 							<span class="material-symbols-outlined">location_on</span>
 							<p> {{itemHijo?.provincia}} </p>

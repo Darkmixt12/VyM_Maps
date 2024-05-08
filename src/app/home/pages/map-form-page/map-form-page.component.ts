@@ -42,9 +42,9 @@ export class MapFormPageComponent implements AfterViewInit{
   private messageService = inject(MessageService);
 
   public myForm: FormGroup = this.fb.group({
-    title: ['', [Validators.required]],
+    title: ['', [Validators.required,Validators.maxLength(30)]],
     provincia: ['', Validators.required],
-    description: ['', [Validators.required]],
+    description: ['', [Validators.required,Validators.maxLength(30)]],
     lngLat: ['', [Validators.required, Validators.pattern('^[-0-9,.]*$')]],
     agente: ['', Validators.required],
     email: ['', [Validators.required, Validators.pattern(this.validatorService.emailPattern)]],

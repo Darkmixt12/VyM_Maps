@@ -8,43 +8,42 @@
 	<img src="{{itemHijo?.image}} " alt="">
 	<div class="grid">
 		<h2> {{itemHijo?.agente}} </h2>
-		<h2 class="titleName"> {{itemHijo?.title}}</h2>
+		<h2 class="titleName"> {{itemHijo?.title | titlecase}}</h2>
 	</div>
 </div>
 
-<div class="socialMedia-container">
-		<button *ngIf="itemHijo?.whatsApp" class="whatsapp pi pi-whatsapp"></button>
-		<button *ngIf="itemHijo?.instagram" class="instagram pi pi-instagram"></button>
-		<button *ngIf="itemHijo?.facebook" class="facebook pi pi-facebook"></button>
-		<button *ngIf="itemHijo?.webPage" class="web pi pi-globe"></button>
+<div class="socialMedia-container" *ngIf="itemHijo?.facebook || itemHijo?.webPage || itemHijo?.instagram || itemHijo?.whatsApp">
+
+		<a class="whatsapp pi pi-whatsapp" *ngIf="itemHijo?.whatsApp"  href="{{itemHijo?.whatsApp}}"  target="_blank"></a>
+		<a class="instagram pi pi-instagram" *ngIf="itemHijo?.instagram"  href="{{itemHijo?.instagram}}"  target="_blank"></a>
+		<a class="facebook pi pi-facebook" *ngIf="itemHijo?.facebook" href="{{itemHijo?.facebook}}"  target="_blank"></a>
+		<a class="web pi pi-google" *ngIf="itemHijo?.webPage"  href="{{itemHijo?.webPage}}"  target="_blank"></a>
+
 </div>
 
-<div>
-	<section class="descriptionList">
-		<ul >
-			<li *ngIf="itemHijo?.driveToLocation">
-				<span class="pi pi-car"></span>
-				<a  href="{{itemHijo?.driveToLocation}}"  target="_blank"> Obtener dirección</a>
-			</li>
-			<li>
-				<span class="pi pi-map-marker"></span>
-				<p> {{itemHijo?.provincia}} </p>
-			</li>
-			<li>
-				<span class="pi pi-phone"></span>
-				<p> (506) {{itemHijo?.telefono}} </p>
-			</li>
-			<li>
-				<span class="material-symbols-outlined">mail</span>
-				<p> {{itemHijo?.email}} </p>
-			</li>
-			<li>
-				<span class="material-symbols-outlined">hallway</span>
-				<p> {{itemHijo?.description}} </p>
-			</li>
-		</ul>
-	</section>
+<div class="infoContainer">
 
+	<div class="infoImages"  >
+		<span  *ngIf="itemHijo?.driveToLocation" class="pi pi-car"></span>
+		<span  class="pi pi-map-marker"></span>
+		<span  class="pi pi-mobile"></span>
+		<span  class="pi pi-envelope"></span>
+		<!--<span  *ngIf="itemHijo?.description" class="pi pi-phone"></span> -->
+	</div>
+
+	<div class="infoDetails">
+
+		<a  *ngIf="itemHijo?.driveToLocation"  href="{{itemHijo?.driveToLocation}}" target="_blank"> Obtener dirección</a>
+		<p> {{itemHijo?.provincia}}</p>
+		<p>	{{itemHijo?.telefono}}</p>
+		<p> {{itemHijo?.email}}</p>
+		<!--<p> {{itemHijo?.description}} </p> -->
+	</div>
+
+</div>
+
+<div class="infoDescription">
+		<p> {{itemHijo?.description| titlecase}} </p>
 </div>
 
 

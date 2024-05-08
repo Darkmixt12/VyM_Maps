@@ -3,7 +3,7 @@
     top: 0%;
     left: 0%;
     color: white;
-    background-color: black;
+    background-color: #0e0e0e;
     width: 100%;
     height: 100%;
 	z-index: 3;
@@ -13,17 +13,75 @@
 
 }
 
+.infoContainer{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 15px;
+    border: 2px solid #434142;
+    background: #272727;
+
+}
+
+.infoDescription{
+    display: flex;
+    border: 2px solid #434142;
+    background: #272727;
+    margin: 10px;
+    border-radius: 5px;
+
+}
+
+.infoDescription p{
+    font-weight: 500;
+}
+
+.infoContainer span, p, a{
+    padding: 20px;
+    margin: 0px;
+    text-decoration: none;
+}
+
+.infoContainer a{
+    background-color: #209486;
+    color: whitesmoke;
+    margin: 10px;
+    width: 147px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 20%;
+}
+
+
+.infoDetails, .infoImages{
+    display: flex;
+    flex-direction: column;
+}
+
+.infoImages{
+    border: 2px solid #434142;
+    background: #3a3739;
+    border-radius: 50px;
+}
+
+
+
+
+
+
 .title{
     width: 100%;
     margin: 0  auto;
     display: flex;
     justify-content: center;
+    background: #818ea1;
 }
 
 
 /*! flecha para cerrar el tab*/
 .closeTab{
-    font-size: 35px;
+    font-size: 25px;
     border: none;
     background: transparent;
 }
@@ -37,12 +95,13 @@
 .grid{
     display: grid;
     justify-items: center;
-    
     grid-template-columns: 1fr 3fr;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 5px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    background: #272727;
 }
 
 img{
@@ -54,21 +113,19 @@ img{
 /* OCIAL MEDIA CONTAINER */
 
 .socialMedia-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-items: center;
-    margin-top: 10px;
-    font-size: 33px;
-    padding-bottom: 20px;
-    border-bottom: solid 1px #515151;
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid #434142;
+    margin: 0px 17px;
+    border-radius: 50px;
+    background: #272727;
 
+    
+}
+.socialMedia-container a{
+    font-size: 25px;
 }
 
-.socialMedia-container button{
-    background: transparent;
-    border: none;
-    color: #959393
-}
 
 .socialMedia-container .whatsapp{
     color: #58D68D
@@ -88,21 +145,7 @@ img{
 
 /* Informacion general  */
 
-.descriptionList ul li{
-	padding-top: 5px 5px 5px;
-	display: flex;
-	align-items: stretch;
-}
 
-.descriptionList li {
-    padding: 10px;
-    margin-left: 20px;
-}
-
-.descriptionList{
-    padding-top:20px
-  
-}
 
 span{
     font-size: 22px;
@@ -111,6 +154,6 @@ span{
 
 .titleName{
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 500;
 }
 
