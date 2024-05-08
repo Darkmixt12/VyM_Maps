@@ -1,18 +1,15 @@
 
-
-
-.container-btns{
-	background: white;
-	width: 500px;
-	z-index: 99999
+app-my-location, alone-btn-home{
+	position: absolute;
+	top: 35px;
+	right: 150px;
+	color: white;
+	
 }
 
+alone-btn-home{
+	right: 200px;
 
-app-my-location{
-	position: absolute;
-	top: 30px;
-	left: 30px;
-	
 }
 
 .mapfull{

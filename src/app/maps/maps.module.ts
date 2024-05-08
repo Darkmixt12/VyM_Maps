@@ -14,6 +14,8 @@ import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.
 import { ClientCardMobileComponent } from './components/client-card-mobile/client-card-mobile.component';
 import { ClientCardMobileFvComponent } from './components/client-card-mobile-fv/client-card-mobile-fv.component';
 
+import { TooltipModule } from 'primeng/tooltip';
+
 
 
 
@@ -37,6 +39,7 @@ import { ClientCardMobileFvComponent } from './components/client-card-mobile-fv/
     CommonModule,
     BtnHomeComponent,
     MapRoutingModule,
+    TooltipModule
   
   ]
 })

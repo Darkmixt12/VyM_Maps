@@ -125,6 +125,7 @@
           GUARDAR CLIENTE
         </button>
         <button
+          pTooltip="Obtener latitud y longitud" 
           (click)="inputFormValue()"
           (click)="clientDataUpdateMessage('Latitud y Longitudes añadidas')"
           class="btnFormMarker material-symbols-outlined"
@@ -140,7 +141,10 @@
     <div #mapDiv class="map-container"></div>
 
     <div class="btnsMapInput">
-      <button (click)="createMarker()" class="btn-map">Añadir Marcador</button>
+      <button 
+      pTooltip="Agregar marcador de latitud y longitud" 
+      tooltipPosition="top" 
+      (click)="createMarker()" class="btn-map">Añadir Marcador</button>
 
       <div class="input-Lng">
         <label class="label-lnglat"> Longitud </label>

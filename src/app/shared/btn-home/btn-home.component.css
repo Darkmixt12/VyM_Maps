@@ -1,12 +1,3 @@
-button{
-	position: fixed;
-	top: 30px;
-	left: 300px;
-	color: white;
-}
-
-
-
 @media only screen and (max-width: 1110px) {
 
 	button{

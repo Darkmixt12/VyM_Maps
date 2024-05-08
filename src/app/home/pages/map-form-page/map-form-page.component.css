@@ -4,8 +4,8 @@
 .container-form{
 	background-color: #1f2937;
 	border-radius: 20px;
-	margin-left: 250px; /*! para que no pegue con el navbar fixed */
-	width: 55%;
+	margin-left: 300px; /*! para que no pegue con el navbar fixed */
+	width: 50%;
 	padding-right: 25px;
 	padding-left:  25px;
 	padding-top: 20px;
@@ -32,7 +32,7 @@ h3{
 	margin-top: 20px;
 	font-size: 30px;
 	font-weight: 500;
-}
+} 
 
 label{
 	color: white;
@@ -160,7 +160,7 @@ label{
 
 .btn-map{
 	font-weight: 300;
-	padding: 15px;
+	padding: 10px;
 	background-color: #20c997;
 	border-radius: 5px;
 	border: none;

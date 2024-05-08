@@ -14,13 +14,8 @@ export class ClientCardComponent {
   @Input() itemHijo?: LocationsResponse ;
   private router = inject(Router)
   public hideCard: boolean = false
-  toogleLocations() {
-    this.hidePlaces = !this.hidePlaces;
-  }
 
-  addNewLocation(){
-    this.router.navigateByUrl('home/form')
-  }
+
 
   hideCardClient(){
     this.itemHijo = undefined

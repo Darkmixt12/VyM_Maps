@@ -1,3 +1,19 @@
+.container{
+	position: relative;
+}
+
+.closeCard{
+	position: absolute;
+    font-size: 20px;
+    color: #E91E63;
+    top: -105px;
+    left: 280px;
+    z-index: 99999;
+    border-radius: 5px;
+    padding: 59px;
+}
+
+
 .containerClient{
 	background-color: #fff;
 	position: absolute;
@@ -65,6 +81,17 @@ h1{
 	flex-wrap: wrap;
 }
 
+
+.container-SocialMedia{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.container-SocialMedia a{
+	font-size: 25px;
+	text-decoration: none;
+}
+
 button{
     color: #0671c3;
 	outline: none !important;
@@ -92,23 +119,27 @@ button{
 	font-size: 30px;
 }
 
-.closeCard{
-	color: #E91E63;
-	border-radius: 5px;
-	padding: 3px;
-	margin-left: 320px;
+
+
+/** BTN DE LOS SOCIAL MEDIA COLORES! */
+
+.btnFacebook a{
+	color: #1877F2;
 }
 
-.deletebtn{
-	color: #E91E63;
+.btnInstagram a{
+	color: #E91E63
 }
 
-.newLocationbtn{
-	color: #58D68D;
+.btnWhatsapp a{
+	color: #58D68D
+}
+
+.btnTwitter a{
+	color: #1DA1F2
 }
 
 
-@media only screen and (max-width: 800px) {
-
-	
+.btnGoogle a{
+	color: #673ab7
 }

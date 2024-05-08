@@ -1,5 +1,5 @@
 
-	<div *ngIf="itemHijo?._id">
+	<div class="container" *ngIf="itemHijo?._id">
 		<div>
 				<button class="closeCard pi pi-times" (click)="hideCardClient()"></button>
 		</div>
@@ -11,33 +11,53 @@
 				<h1> {{itemHijo?.title}} </h1>
 			</section>
 			<hr>
-			<div class="btnMenu">
-				<div class="btnEdit">
-					<button class="material-symbols-outlined">directions_car</button>
-					
+
+			<!-- TODO: DIV PARA LAS REDES SOCIALES -->
+			<div class="container-SocialMedia">
+
+				<div *ngIf="itemHijo?.facebook" class="btnFacebook">
+					<a class="pi pi-facebook" href="{{itemHijo?.facebook}}"  target="_blank"></a>
 				</div>
-				<div class="btnAdd">
-					<button class="newLocationbtn material-symbols-outlined" (click)="addNewLocation()">add_location_alt</button>
+
+				<div *ngIf="itemHijo?.instagram"  class="btnInstagram">
+					<a class="pi pi-instagram" href="{{itemHijo?.facebook}}"  target="_blank"></a>
 				</div>
-				<div class="btnDel">
-					<button class="deletebtn material-symbols-outlined" (click)="toogleLocations()">delete</button>
+
+				<div *ngIf="itemHijo?.whatsApp"  class="btnWhatsapp">
+					<a class="pi pi-whatsapp" href="{{itemHijo?.facebook}}"  target="_blank"></a>
 				</div>
+
+				<div *ngIf="itemHijo?.twitter"  class="btnTwitter">
+					<a class="pi pi-twitter" href="{{itemHijo?.facebook}}"  target="_blank"></a>
+				
+				</div>
+				<div *ngIf="itemHijo?.webPage"  class="btnGoogle">
+					<a class="pi pi-google" href="{{itemHijo?.facebook}}"  target="_blank"></a>
+			
+				</div>
+
 			</div>
+			
 			<hr>
+
 			<div class="btnMenu">
 				<div class="btnEdit">
 					<span class="material-symbols-outlined">mail</span>
 					<p> {{itemHijo?.email}} </p>
 				</div>
 			</div>
-				<hr>
-				<br>
-	
+
+			<hr>
+
 				<section class="descriptionList">
 					<ul >
 						<!-- <li>
 							<span class="material-symbols-outlined">badge</span>
 						</li> -->
+						<li *ngIf="itemHijo?.driveToLocation">
+							<span class="material-symbols-outlined">local_shipping</span>
+							<a  href="{{itemHijo?.driveToLocation}}"  target="_blank"> Obtener dirección</a>
+						</li>
 						<li>
 							<span class="material-symbols-outlined">location_on</span>
 							<p> {{itemHijo?.provincia}} </p>
@@ -52,7 +72,7 @@
 						</li>
 					</ul>
 				</section>
-				<app-delete-dialog (changeToTrue)="toogleLocations()" [hidePlacesChild]="hidePlaces" [ChildLocation]="itemHijo"></app-delete-dialog>
+				<!-- <app-delete-dialog (changeToTrue)="toogleLocations()" [hidePlacesChild]="hidePlaces" [ChildLocation]="itemHijo"></app-delete-dialog> -->
 		</div>
 
 
